@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Temporary files
+*.tmp
+.DS_Store
+
+# Build scripts (keep for reference but not essential)
+generate_pdf.js
+package.json
+
+# Other files
+ppt_extracted/
+*.pptx
+ifanzy_updated.html

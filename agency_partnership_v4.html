@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iFanzy 機構合作夥伴計劃</title>
+<style>
+:root {
+  --bg:#0a0a0a;
+  --panel:#151515;
+  --yellow:#ffc61a;
+  --yellow-glow:#ffdb4d;
+  --white:#ffffff;
+  --gray:#b4b4b4;
+  --muted:#767676;
+  --line:rgba(255,255,255,.11);
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-snap-type:y mandatory; scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--white);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+
+/* Enhanced background with texture */
+.slide {
+  position:relative; width:100vw; height:100vh; min-height:100vh;
+  padding:0; scroll-snap-align:start; overflow:hidden;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(255,198,26,.15), transparent 35%),
+    radial-gradient(circle at 25% 80%, rgba(255,198,26,.08), transparent 40%),
+    var(--bg);
+}
+.slide:before {
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:
+    radial-gradient(ellipse 90% 60% at 50% 20%, rgba(0,0,0,.8), transparent 85%),
+    linear-gradient(to bottom, rgba(0,0,0,.6), transparent 90%);
+  mask-composite:intersect;
+}
+.slide:after {
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,198,26,.06), transparent 45%);
+  opacity:.6;
+}
+
+/* Brand mark */
+.wordmark {
+  position:fixed; left:clamp(32px,5vw,80px); top:clamp(32px,4vh,56px); z-index:100;
+  font-size:clamp(22px,2.2vw,32px); font-weight:900;
+  letter-spacing:-.04em; color:var(--yellow);
+  text-shadow:0 0 40px rgba(255,198,26,.4);
+}
+
+/* Language switcher */
+.lang-switcher {
+  position:fixed; right:clamp(32px,5vw,80px); top:clamp(32px,4vh,56px); z-index:100;
+  display:flex; gap:12px; align-items:center;
+}
+.lang-btn {
+  padding:10px 18px;
+  background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:8px;
+  color:var(--gray);
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .3s;
+  text-decoration:none;
+  backdrop-filter:blur(12px);
+}
+.lang-btn:hover {
+  background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+  border-color:rgba(255,198,26,.3);
+  color:var(--white);
+  transform:translateY(-2px);
+}
+.lang-btn.active {
+  background:linear-gradient(135deg, rgba(255,198,26,.15), rgba(255,198,26,.08));
+  border-color:rgba(255,198,26,.4);
+  color:var(--yellow);
+  box-shadow:0 0 20px rgba(255,198,26,.2);
+}
+
+/* Content container with proper centering */
+.content {
+  position:relative; z-index:2;
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(80px,12vh,140px) clamp(32px,6vw,100px) clamp(80px,10vh,120px);
+  max-width:1600px; margin:0 auto;
+}
+.content.center { text-align:center; align-items:center; }
+
+/* Typography with better spacing */
+.kicker {
+  color:var(--yellow); font-size:clamp(11px,1.1vw,13px);
+  font-weight:850; letter-spacing:.2em; text-transform:uppercase;
+  margin-bottom:clamp(20px,2.5vh,32px);
+  opacity:.95;
+}
+h1 {
+  margin:0; font-size:clamp(56px,7vw,98px);
+  line-height:1.25; letter-spacing:-.02em; font-weight:900;
+  text-shadow:0 2px 40px rgba(0,0,0,.5);
+}
+h2 {
+  margin:0; font-size:clamp(42px,5.2vw,72px);
+  line-height:1.3; letter-spacing:-.018em; font-weight:880;
+  text-shadow:0 2px 30px rgba(0,0,0,.4);
+}
+h3 {
+  margin:0; font-size:clamp(20px,2vw,28px);
+  line-height:1.35; letter-spacing:-.02em; font-weight:700;
+}
+p {
+  margin:0; color:var(--gray);
+  font-size:clamp(18px,1.8vw,22px);
+  line-height:1.55; letter-spacing:-.01em;
+}
+.small { color:var(--muted); font-size:clamp(14px,1.4vw,17px); line-height:1.6; }
+.yellow { color:var(--yellow); }
+.accent {
+  width:clamp(60px,8vw,80px); height:4px; border-radius:999px;
+  background:linear-gradient(90deg, var(--yellow), var(--yellow-glow));
+  margin:clamp(28px,3.5vh,40px) auto 0;
+  box-shadow:0 0 20px rgba(255,198,26,.5);
+}
+.tagline {
+  font-size:clamp(20px,2.2vw,26px); color:var(--gray);
+  margin-top:clamp(24px,3vh,36px); max-width:clamp(600px,60vw,920px);
+  line-height:1.5; letter-spacing:-.015em;
+}
+
+/* Premium button */
+.btn {
+  display:inline-flex; align-items:center; gap:12px;
+  padding:clamp(16px,2vh,22px) clamp(32px,4vw,48px);
+  border-radius:999px;
+  background:linear-gradient(135deg, var(--yellow) 0%, var(--yellow-glow) 100%);
+  color:#0a0a0a;
+  font-size:clamp(15px,1.6vw,18px); font-weight:800;
+  letter-spacing:-.015em;
+  border:0; cursor:pointer;
+  text-decoration:none;
+  position:relative; overflow:hidden;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.3) inset,
+    0 8px 24px rgba(255,198,26,.35),
+    0 16px 48px rgba(255,198,26,.2);
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+}
+.btn:before {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,.2), transparent 60%);
+  opacity:0; transition:opacity .3s;
+}
+.btn:hover {
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.4) inset,
+    0 12px 32px rgba(255,198,26,.45),
+    0 24px 64px rgba(255,198,26,.25);
+}
+.btn:hover:before { opacity:1; }
+
+/* Layout grids */
+.two {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(40px,6vw,80px);
+  align-items:center;
+}
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px,2vw,24px);
+  margin-top:clamp(48px,6vh,72px);
+}
+.card-grid.three { grid-template-columns:repeat(3,1fr); }
+.card-grid.two { grid-template-columns:repeat(2,1fr); gap:clamp(20px,3vw,32px); }
+
+/* Premium cards with enhanced depth */
+.card {
+  min-height:clamp(180px,22vh,220px);
+  border:1px solid rgba(255,255,255,.14);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.09) 0%, rgba(255,255,255,.03) 100%);
+  border-radius:clamp(28px,3.5vw,36px);
+  padding:clamp(36px,4.5vw,48px) clamp(28px,3.5vw,38px);
+  backdrop-filter:blur(28px) saturate(190%);
+  position:relative; overflow:hidden;
+  transition:all .5s cubic-bezier(.22,.61,.36,1);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.1) inset,
+    0 12px 40px rgba(0,0,0,.5),
+    0 2px 4px rgba(0,0,0,.25);
+  text-align:center;
+}
+.card:before {
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,198,26,.1), transparent 70%);
+  opacity:0; transition:opacity .4s;
+}
+.card h3 {
+  font-size:clamp(26px,3vw,42px);
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-.035em;
+  margin-bottom:clamp(16px,2vh,24px);
+  background:linear-gradient(135deg, var(--white) 0%, var(--gray) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+}
+.card p {
+  font-size:clamp(16px,1.7vw,20px);
+  line-height:1.6;
+  color:#a8a8a8;
+  letter-spacing:-.01em;
+}
+.card:hover {
+  transform:translateY(-8px) scale(1.015);
+  border-color:rgba(255,198,26,.25);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.15) inset,
+    0 20px 56px rgba(0,0,0,.6),
+    0 0 0 1px rgba(255,198,26,.15),
+    0 12px 40px rgba(255,198,26,.15);
+}
+.card:hover:before { opacity:1; }
+
+/* Enhanced cards for feature-rich sections */
+.card.enhanced {
+  min-height:clamp(200px,24vh,240px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.035) 100%);
+  border:1px solid rgba(255,255,255,.16);
+  padding:clamp(38px,4.8vw,50px) clamp(32px,4vw,42px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.12) inset,
+    0 16px 48px rgba(0,0,0,.55),
+    0 2px 6px rgba(0,0,0,.3);
+}
+.card.enhanced h3 {
+  font-size:clamp(24px,2.6vw,34px);
+  margin-bottom:clamp(16px,2vh,22px);
+  font-weight:800;
+}
+.card.enhanced p {
+  font-size:clamp(16px,1.7vw,19px);
+  line-height:1.7;
+  color:#b0b0b0;
+}
+.card.enhanced:hover {
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.18) inset,
+    0 24px 64px rgba(0,0,0,.65),
+    0 0 0 1px rgba(255,198,26,.25),
+    0 16px 48px rgba(255,198,26,.2);
+}
+.card:before {
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,198,26,.12), transparent 60%);
+  opacity:0; transition:opacity .4s;
+}
+.card:after {
+  content:""; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+  opacity:0; transition:opacity .4s;
+}
+.card:hover {
+  transform:translateY(-6px) scale(1.01);
+  border-color:rgba(255,198,26,.3);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.12) inset,
+    0 16px 48px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,198,26,.15),
+    0 8px 32px rgba(255,198,26,.15);
+}
+.card:hover:before { opacity:1; }
+.card:hover:after { opacity:1; }
+.card h3 { margin-bottom:12px; }
+.card p { font-size:clamp(15px,1.5vw,17px); color:#a0a0a0; line-height:1.6; }
+
+/* Icon box with glow */
+.icon-box {
+  width:clamp(44px,5vw,52px); height:clamp(44px,5vw,52px);
+  border-radius:clamp(14px,2vw,18px);
+  border:1px solid rgba(255,198,26,.4);
+  background:
+    linear-gradient(135deg, rgba(255,198,26,.15), rgba(255,198,26,.05));
+  display:grid; place-items:center; color:var(--yellow);
+  margin-bottom:clamp(20px,2.5vh,28px);
+  font-weight:850; font-size:clamp(20px,2.2vw,26px);
+  box-shadow:
+    0 0 24px rgba(255,198,26,.2),
+    0 1px 0 rgba(255,255,255,.1) inset;
+  position:relative;
+}
+.icon-box:before {
+  content:""; position:absolute; inset:-2px;
+  background:linear-gradient(135deg, rgba(255,198,26,.3), transparent);
+  border-radius:inherit; z-index:-1; opacity:0;
+  transition:opacity .3s;
+}
+.card:hover .icon-box:before { opacity:1; }
+
+/* Flow steps with premium style */
+.flow {
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:clamp(12px,1.5vw,16px);
+  margin-top:clamp(40px,5vh,60px);
+}
+.step {
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border-radius:clamp(20px,2.5vw,28px);
+  padding:clamp(20px,2.5vw,28px) clamp(16px,2vw,22px);
+  min-height:clamp(140px,18vh,180px);
+  position:relative; overflow:hidden;
+  backdrop-filter:blur(12px);
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.step:before {
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(255,198,26,.08), transparent 70%);
+  opacity:0; transition:opacity .3s;
+}
+.step:hover {
+  transform:translateY(-4px);
+  border-color:rgba(255,198,26,.25);
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.4),
+    0 0 0 1px rgba(255,198,26,.1);
+}
+.step:hover:before { opacity:1; }
+.step .num {
+  color:var(--yellow); font-size:clamp(11px,1.2vw,13px);
+  font-weight:900; letter-spacing:.12em;
+  margin-bottom:clamp(16px,2vh,20px);
+  text-shadow:0 0 12px rgba(255,198,26,.5);
+}
+.step h3 { font-size:clamp(18px,2vw,22px); margin-bottom:clamp(8px,1vh,12px); }
+.step p { font-size:clamp(13px,1.4vw,15px); line-height:1.5; color:var(--muted); }
+
+/* Big number with premium effect */
+.big-number {
+  color:var(--yellow);
+  font-size:clamp(120px,18vw,240px);
+  line-height:.8; letter-spacing:-.08em; font-weight:900;
+  background:linear-gradient(135deg, var(--yellow) 0%, var(--yellow-glow) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 40px rgba(255,198,26,.3));
+}
+
+/* List with better spacing */
+.list {
+  display:flex; flex-direction:column;
+  gap:clamp(16px,2vh,22px);
+  margin-top:clamp(28px,3.5vh,40px);
+}
+.item {
+  display:flex; gap:clamp(12px,1.5vw,16px); align-items:flex-start;
+  font-size:clamp(18px,1.9vw,21px); color:#d0d0d0; line-height:1.45;
+  letter-spacing:-.012em;
+}
+.item .mark {
+  color:var(--yellow); font-weight:900; min-width:clamp(16px,2vw,20px);
+  text-shadow:0 0 12px rgba(255,198,26,.4);
+}
+
+/* Premium panels */
+.panel {
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.025) 100%);
+  border-radius:clamp(28px,3.5vw,40px);
+  padding:clamp(32px,4vw,48px);
+  min-height:clamp(340px,42vh,440px);
+  position:relative; overflow:hidden;
+  backdrop-filter:blur(24px) saturate(180%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.08) inset,
+    0 12px 40px rgba(0,0,0,.4);
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+}
+.panel:before {
+  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+}
+.panel:hover {
+  transform:translateY(-4px);
+  border-color:rgba(255,198,26,.2);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.12) inset,
+    0 16px 48px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,198,26,.1);
+}
+.panel h3 {
+  margin-bottom:clamp(24px,3vh,32px);
+  font-size:clamp(26px,3vw,36px);
+  letter-spacing:-.025em;
+}
+.compare {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(20px,3vw,32px);
+  margin-top:clamp(40px,5vh,56px);
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  .slide { min-height:900px; }
+  .two, .compare { grid-template-columns:1fr; gap:clamp(32px,5vh,48px); }
+  .card-grid, .flow { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:640px){
+  .card-grid, .flow { grid-template-columns:1fr; }
+  .wordmark { font-size:24px; left:24px; top:28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wordmark">iFanzy</div>
+
+<div class="lang-switcher">
+<a href="agency_partnership_v4.html" class="lang-btn active">EN</a>
+<a href="agency_partnership_v4_tc.html" class="lang-btn">繁中</a>
+</div>
+
+<!-- Slide 1: Hero -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">機構合作夥伴</div>
+<h1>引領 AI 創作者<br/>商業新紀元</h1>
+<p class="tagline">
+與頂尖創作者機構共創 AI 時代新商機
+</p>
+<div class="accent"></div>
+<div style="margin-top:clamp(48px,6vh,64px)">
+<a href="#contact" class="btn">開始合作 →</a>
+</div>
+</div>
+</section>
+
+<!-- Slide 2: Market -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">市場機遇</div>
+<h2>創作者經濟正在<br/>進入 <span class="yellow">AI 時代</span></h2>
+<p class="tagline" style="font-size:clamp(22px,2.6vw,32px);font-weight:600;color:var(--yellow);margin-top:clamp(32px,4vh,48px)">
+AI 正在重新定義創作者經濟的未來
+</p>
+<div class="card-grid">
+<div class="card">
+<h3>$500B+</h3>
+<p>創作者經濟</p>
+</div>
+<div class="card">
+<h3>70M+</h3>
+<p>全球創作者</p>
+</div>
+<div class="card">
+<h3>24/7</h3>
+<p>全天候期待</p>
+</div>
+<div class="card">
+<h3>AI</h3>
+<p>下一個增長引擎</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 3: Problem -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">發展瓶頸</div>
+<h2>傳統機構遇到<br/><span class="yellow">天花板</span></h2>
+<div class="flow">
+<div class="step">
+<div class="num">01</div>
+<h3>創作者時間</h3>
+<p>僅限24小時</p>
+</div>
+<div class="step">
+<div class="num">02</div>
+<h3>人工聊天</h3>
+<p>依賴人力</p>
+</div>
+<div class="step">
+<div class="num">03</div>
+<h3>聊天團隊</h3>
+<p>擴展成本高</p>
+</div>
+<div class="step">
+<div class="num">04</div>
+<h3>營運</h3>
+<p>開銷倍增</p>
+</div>
+<div class="step">
+<div class="num">05</div>
+<h3>管理</h3>
+<p>複雜度增長</p>
+</div>
+<div class="step">
+<div class="num">06</div>
+<h3>支援</h3>
+<p>資源緊張</p>
+</div>
+<div class="step" style="background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
+<div class="num">→</div>
+<h3 style="color:var(--yellow)">收入天花板</h3>
+<p style="color:var(--gray)">利潤萎縮</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 4: Solution -->
+<section class="slide">
+<div class="content">
+<div class="two">
+<div>
+<div class="kicker">AI 改變一切</div>
+<h2>從有限到<br/><span class="yellow">無限規模</span></h2>
+<div class="list">
+<div class="item"><span class="mark">✓</span> 同時進行無限對話</div>
+<div class="item"><span class="mark">✓</span> 全時區24/7可用</div>
+<div class="item"><span class="mark">✓</span> 收入增長不需增加人員</div>
+<div class="item"><span class="mark">✓</span> AI 數位分身倍增創作者產能</div>
+<div class="item"><span class="mark">✓</span> 全天候自動化變現</div>
+</div>
+</div>
+<div style="text-align:center">
+<div class="big-number">∞</div>
+<p style="margin-top:clamp(24px,3vh,36px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
+AI 無限倍增創作者產能
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 5: Platform -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">為何選擇 iFANZY</div>
+<h2>AI 創作者業務<span class="yellow">平台</span></h2>
+<p class="tagline">專為機構打造，助力 AI 創作者業務規模化</p>
+<div class="card-grid">
+<div class="card">
+<h3>創作者授權</h3>
+<p>真實授權確保信任與真實性</p>
+</div>
+<div class="card">
+<h3 style="font-size:clamp(24px,2.8vw,38px);white-space:nowrap">24/7 AI 直播</h3>
+<p>全球首創 AI 持續直播技術</p>
+</div>
+<div class="card">
+<h3>AI 對話變現</h3>
+<p>將每次對話轉化為收入</p>
+</div>
+<div class="card">
+<h3>機構儀表板</h3>
+<p>集中管理所有創作者</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 6: Platform Features -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">平台功能</div>
+<h2>完整創作者<span class="yellow">業務套件</span></h2>
+<div class="card-grid" style="margin-top:clamp(56px,7vh,80px)">
+<div class="card enhanced">
+<h3>AI 分身</h3>
+<p>打造經創作者授權的 AI 數位分身</p>
+</div>
+<div class="card enhanced">
+<h3>直播工作室</h3>
+<p>隨時啟動 AI 驅動的直播</p>
+</div>
+<div class="card enhanced">
+<h3>真人與 AI 模式</h3>
+<p>創作者本人與AI<br/>自由切換</p>
+</div>
+<div class="card enhanced">
+<h3>內容管理</h3>
+<p>管理貼文、付費內容和 AI 資產</p>
+</div>
+<div class="card enhanced">
+<h3>變現</h3>
+<p>訂閱、打賞、付費內容、AI 直播等</p>
+</div>
+<div class="card enhanced">
+<h3>錢包</h3>
+<p>追蹤收入並安全提現</p>
+</div>
+<div class="card enhanced">
+<h3>數據分析</h3>
+<p>了解粉絲行為並優化增長</p>
+</div>
+<div class="card enhanced">
+<h3>創作者儀表板</h3>
+<p>集中管理整個創作者業務</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 7: ROI -->
+<section class="slide">
+<div class="content">
+<div class="two">
+<div>
+<div class="kicker">經濟效益</div>
+<h2>更高 ROI<br/>透過 <span class="yellow">AI</span></h2>
+<div class="list">
+<div class="item"><span class="mark">→</span> 小型機構：20 位創作者</div>
+<div class="item"><span class="mark">→</span> 中型機構：100 位創作者</div>
+<div class="item"><span class="mark">→</span> 企業級機構：500+ 位創作者</div>
+</div>
+<p style="margin-top:clamp(40px,5vh,56px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
+收入增長快於營運成本
+</p>
+</div>
+<div>
+<div class="compare">
+<div class="panel" style="background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+<h3 style="color:#999;font-size:clamp(32px,3.8vw,48px);margin-bottom:clamp(24px,3vh,36px);line-height:1;white-space:nowrap">傳統模式</h3>
+<p class="small" style="font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">招募瓶頸<br/>限制擴張</p>
+</div>
+<div class="panel" style="background:linear-gradient(135deg,rgba(255,198,26,.14),rgba(255,198,26,.05));border:1px solid rgba(255,198,26,.45);box-shadow:0 1px 0 rgba(255,198,26,.15) inset,0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,198,26,.12),0 8px 32px rgba(255,198,26,.15);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+<h3 style="color:var(--yellow);font-size:clamp(32px,3.8vw,48px);margin-bottom:clamp(24px,3vh,36px);text-shadow:0 0 20px rgba(255,198,26,.3);line-height:1;white-space:nowrap">AI 驅動</h3>
+<p class="small" style="color:var(--gray);font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">無需增員<br/>無限擴張</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 8: Partnership -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">合作模式</div>
+<h2>攜手共贏<br/><span class="yellow">協作模式</span></h2>
+<p class="tagline" style="margin-top:clamp(24px,3vh,36px);margin-bottom:clamp(48px,6vh,72px)">
+專注您的專長——其他交給我們
+</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,56px);max-width:1400px;margin:0 auto">
+<div class="panel">
+<h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">機構專注</h3>
+<div class="list">
+<div class="item"><span class="mark">•</span> 招募創作者</div>
+<div class="item"><span class="mark">•</span> 內容策略</div>
+<div class="item"><span class="mark">•</span> 創作者管理</div>
+<div class="item"><span class="mark">•</span> 社群增長</div>
+<div class="item"><span class="mark">•</span> 社群營運</div>
+</div>
+</div>
+<div class="panel">
+<h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">iFanzy 負責</h3>
+<div class="list">
+<div class="item"><span class="mark">•</span> AI 平台</div>
+<div class="item"><span class="mark">•</span> 支付處理</div>
+<div class="item"><span class="mark">•</span> KYC 與合規</div>
+<div class="item"><span class="mark">•</span> 內容審核</div>
+<div class="item"><span class="mark">•</span> 產品更新</div>
+<div class="item"><span class="mark">•</span> 客戶服務</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 9: Launch -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">快速啟動</div>
+<h2>簡單 <span class="yellow">4 步</span><br/>即刻變現</h2>
+<p class="tagline" style="margin-top:clamp(24px,3vh,36px);margin-bottom:clamp(56px,7vh,80px)">
+以週計而非月計開始產生收入
+</p>
+<div class="flow" style="grid-template-columns:repeat(4,1fr)">
+<div class="step">
+<div class="num">步驟 1</div>
+<h3>簽署協議</h3>
+<p>簽署合作並確定條款</p>
+</div>
+<div class="step">
+<div class="num">步驟 2</div>
+<h3>入駐培訓</h3>
+<p>團隊培訓與儀表板設置</p>
+</div>
+<div class="step">
+<div class="num">步驟 3</div>
+<h3>AI 設置</h3>
+<p>配置創作者檔案與 AI 分身</p>
+</div>
+<div class="step" style="background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
+<div class="num">步驟 4</div>
+<h3 style="color:var(--yellow)">正式啟動</h3>
+<p style="color:var(--gray)">上線並開始產生收入</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 10: Advantages -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">競爭優勢</div>
+<h2>為何選擇<br/><span class="yellow">iFanzy</span></h2>
+<div class="card-grid three" style="margin-top:clamp(56px,7vh,80px)">
+<div class="card">
+<h3>創作者授權</h3>
+<p>每個 AI 均經創作者授權並驗證</p>
+</div>
+<div class="card">
+<h3>24/7 AI 直播</h3>
+<p>業界首創持續性 AI 直播</p>
+</div>
+<div class="card">
+<h3>機構儀表板</h3>
+<p>企業級管理工具</p>
+</div>
+<div class="card">
+<h3>全球支付</h3>
+<p>多幣種支持與合規</p>
+</div>
+<div class="card">
+<h3>AI 變現</h3>
+<p>AI 的多種收入流</p>
+</div>
+<div class="card">
+<h3>安全</h3>
+<p>KYC、審核與風險控制</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 11: Vision -->
+<section class="slide">
+<div class="content center">
+<div class="kicker">我們的願景</div>
+<h2 style="font-size:clamp(50px,6vw,86px);max-width:clamp(700px,80vw,1000px);margin:0 auto;line-height:1">
+讓每位創作者<br/>都擁有 <span class="yellow">AI 分身帝國</span>
+</h2>
+<div class="accent"></div>
+<div class="flow" style="grid-template-columns:repeat(3,1fr);margin-top:clamp(64px,8vh,96px)">
+<div class="step">
+<h3>AI 直播與語音</h3>
+<p>即時語音互動與直播</p>
+</div>
+<div class="step">
+<h3>AI 分身生態</h3>
+<p>多維度 AI 分身互動體驗</p>
+</div>
+<div class="step">
+<h3>AI 創作者中樞</h3>
+<p>完整 AI 創作者業務生態</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 12: Contact -->
+<section class="slide" id="contact">
+<div class="content center">
+<div class="kicker">共創未來</div>
+<h2>準備好開啟<br/><span class="yellow">AI 增長時代？</span></h2>
+<p class="tagline" style="font-size:clamp(20px,2.4vw,28px);margin-top:clamp(32px,4vh,48px);line-height:1.5">
+在 AI 時代，攜手贏得更大市場。<br/>讓我們一起打造下一代創作者業務。
+</p>
+<div class="accent"></div>
+<div style="margin-top:clamp(56px,7vh,72px);display:flex;flex-direction:column;gap:clamp(18px,2.5vh,28px);align-items:center">
+<div style="font-size:clamp(19px,2.1vw,24px);letter-spacing:-.012em">
+<a href="https://www.ifanzy.com" style="color:var(--yellow);text-decoration:none;font-weight:700;text-shadow:0 0 20px rgba(255,198,26,.3)">www.ifanzy.com</a>
+</div>
+<div style="font-size:clamp(19px,2.1vw,24px);letter-spacing:-.012em">
+<a href="mailto:business@ifanzy.com" style="color:var(--yellow);text-decoration:none;font-weight:700;text-shadow:0 0 20px rgba(255,198,26,.3)">business@ifanzy.com</a>
+</div>
+</div>
+<div style="margin-top:clamp(48px,6vh,64px)">
+<a href="mailto:business@ifanzy.com" class="btn" style="font-size:clamp(16px,1.8vw,19px);padding:clamp(18px,2.5vh,24px) clamp(36px,5vw,52px)">
+開始合作洽談 →
+</a>
+</div>
+</div>
+</section>
+
+<script>
+// Language switcher with scroll position preservation
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetUrl = this.getAttribute('href');
+    const currentScroll = window.pageYOffset;
+    const slideHeight = window.innerHeight;
+    const currentSlide = Math.round(currentScroll / slideHeight);
+
+    // Store scroll position
+    sessionStorage.setItem('slidePosition', currentSlide);
+
+    // Navigate to target page
+    window.location.href = targetUrl;
+  });
+});
+
+// Restore scroll position on load
+window.addEventListener('load', function() {
+  const savedSlide = sessionStorage.getItem('slidePosition');
+  if (savedSlide !== null) {
+    const slideHeight = window.innerHeight;
+    window.scrollTo({
+      top: parseInt(savedSlide) * slideHeight,
+      behavior: 'instant'
+    });
+    sessionStorage.removeItem('slidePosition');
+  }
+});
+</script>
+
+</body>
+</html>

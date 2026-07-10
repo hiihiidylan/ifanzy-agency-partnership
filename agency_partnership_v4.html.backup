@@ -101,7 +101,7 @@ body {
 
 /* Typography with better spacing */
 .kicker {
-  color:var(--yellow); font-size:clamp(13px,1.4vw,16px);
+  color:var(--yellow); font-size:clamp(11px,1.1vw,13px);
   font-weight:850; letter-spacing:.2em; text-transform:uppercase;
   margin-bottom:clamp(20px,2.5vh,32px);
   opacity:.95;
@@ -822,29 +822,29 @@ AI 無限倍增創作者產能
 <div class="kicker">競爭優勢</div>
 <h2>為何選擇<br/><span class="yellow">iFanzy</span></h2>
 <div class="card-grid three" style="margin-top:clamp(56px,7vh,80px)">
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">創作者授權</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">每個 AI 均經創作者授權並驗證</p>
+<div class="card">
+<h3>創作者授權</h3>
+<p>每個 AI 均經創作者授權並驗證</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">24/7 AI 直播</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">業界首創持續性 AI 直播</p>
+<div class="card">
+<h3>24/7 AI 直播</h3>
+<p>業界首創持續性 AI 直播</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">機構儀表板</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">企業級管理工具</p>
+<div class="card">
+<h3>機構儀表板</h3>
+<p>企業級管理工具</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">全球支付</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">多幣種支持與合規</p>
+<div class="card">
+<h3>全球支付</h3>
+<p>多幣種支持與合規</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">AI 變現</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">AI 的多種收入流</p>
+<div class="card">
+<h3>AI 變現</h3>
+<p>AI 的多種收入流</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">安全</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">KYC、審核與風險控制</p>
+<div class="card">
+<h3>安全</h3>
+<p>KYC、審核與風險控制</p>
 </div>
 </div>
 </div>

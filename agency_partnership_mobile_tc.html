@@ -427,15 +427,487 @@ p {
   gap:clamp(20px,3vw,32px);
   margin-top:clamp(40px,5vh,56px);
 }
+.partnership-layout {
+  display:grid;
+  grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
+  width:100%;
+}
+.partnership-copy {
+  text-align:left;
+}
+.partnership-copy .kicker {
+  font-size:clamp(18px,1.8vw,26px);
+  letter-spacing:.18em;
+}
+.partnership-copy h2 {
+  font-size:clamp(34px,4vw,56px);
+  line-height:1.22;
+}
+.partnership-copy .tagline {
+  font-size:clamp(17px,1.7vw,22px);
+  max-width:460px;
+}
+.partnership-panels {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(20px,3vw,36px);
+}
+.partnership-panels .panel {
+  min-height:clamp(360px,46vh,480px);
+}
+.partnership-panels .panel h3 {
+  font-size:clamp(22px,2.3vw,30px) !important;
+  white-space:nowrap;
+}
+.launch-layout {
+  display:grid;
+  grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
+  width:100%;
+}
+.launch-copy {
+  text-align:left;
+}
+.launch-copy .kicker {
+  font-size:clamp(15px,1.45vw,21px);
+  letter-spacing:.18em;
+}
+.launch-copy h2 {
+  font-size:clamp(26px,2.9vw,42px);
+  line-height:1.24;
+}
+.launch-copy .tagline {
+  font-size:clamp(15px,1.45vw,19px);
+  max-width:480px;
+}
+.launch-steps {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(10px,1.4vh,15px);
+}
+.launch-steps .step {
+  min-height:auto;
+  padding:clamp(16px,1.9vw,22px) clamp(22px,2.7vw,30px);
+}
+.launch-steps .step .num {
+  font-size:clamp(13px,1.35vw,16px);
+  margin-bottom:clamp(8px,1vh,11px);
+}
+.launch-steps .step h3 {
+  font-size:clamp(22px,2.35vw,29px);
+  margin-bottom:clamp(4px,.6vh,7px);
+  line-height:1.15;
+}
+.launch-steps .step p {
+  font-size:clamp(16px,1.65vw,20px);
+  line-height:1.28;
+}
+.revenue-formula {
+  display:grid;
+  gap:clamp(8px,1vh,12px);
+  margin-top:clamp(18px,2.2vh,26px);
+  color:var(--gray);
+  font-size:clamp(15px,1.55vw,19px);
+  line-height:1.3;
+  font-weight:700;
+}
+.revenue-formula span {
+  display:block;
+}
+.revenue-formula .formula-add {
+  color:var(--yellow);
+  font-size:clamp(18px,1.9vw,24px);
+  font-weight:900;
+}
+.revenue-formula .formula-result {
+  color:var(--white);
+}
+.revenue-formula strong {
+  color:var(--yellow);
+  font-weight:900;
+}
+.features-layout {
+  grid-template-columns:.5fr 1.5fr !important;
+  gap:clamp(22px,3vw,40px) !important;
+}
+.features-copy .kicker {
+  font-size:clamp(16px,1.7vw,23px);
+}
+.features-copy h2 {
+  font-size:clamp(22px,2.65vw,36px) !important;
+  line-height:1.2;
+}
+.features-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(10px,1.35vw,16px) !important;
+}
+.features-grid .card.enhanced {
+  padding:clamp(16px,2vw,24px) clamp(18px,2.2vw,26px) !important;
+}
+.features-grid .card h3 {
+  margin-bottom:clamp(6px,.8vh,10px);
+  line-height:1.08;
+  white-space:nowrap;
+}
+.features-grid .card p {
+  line-height:1.22;
+  white-space:nowrap;
+}
+.roi-layout {
+  grid-template-columns:.72fr 1.28fr;
+}
+.roi-copy .kicker {
+  font-size:clamp(16px,1.7vw,23px);
+}
+.roi-copy h2 {
+  font-size:clamp(26px,3vw,42px);
+}
+.roi-copy .list {
+  gap:clamp(12px,1.5vh,17px);
+}
+.roi-copy .item {
+  font-size:clamp(16px,1.65vw,19px);
+}
+.roi-note {
+  margin-top:clamp(28px,3.5vh,42px) !important;
+  font-size:clamp(17px,1.85vw,22px) !important;
+}
+.roi-compare {
+  gap:clamp(18px,2.5vw,28px);
+  margin-top:0;
+}
+.roi-compare .panel {
+  min-height:clamp(280px,34vh,380px);
+  padding:clamp(30px,3.8vw,44px);
+  border-radius:clamp(24px,3vw,34px);
+}
+.roi-compare .panel h3 {
+  font-size:clamp(26px,2.8vw,36px) !important;
+  margin-bottom:clamp(18px,2.2vh,26px) !important;
+  line-height:1.08 !important;
+  white-space:nowrap;
+}
+.roi-compare .panel p {
+  font-size:clamp(18px,2vw,24px) !important;
+  line-height:1.42 !important;
+}
+.advantages-layout {
+  display:grid;
+  grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
+  width:100%;
+}
+.advantages-copy {
+  text-align:left;
+}
+.advantages-copy .kicker {
+  font-size:clamp(15px,1.45vw,21px);
+  letter-spacing:.16em;
+}
+.advantages-copy h2 {
+  font-size:clamp(30px,3.5vw,48px);
+  line-height:1.24;
+}
+.advantages-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(14px,2vw,22px);
+}
+.advantages-grid .card {
+  min-height:clamp(130px,16vh,170px);
+  padding:clamp(22px,2.8vw,30px) clamp(20px,2.5vw,28px);
+}
+.advantages-grid .card h3 {
+  font-size:clamp(18px,1.9vw,25px) !important;
+  margin-bottom:clamp(9px,1.2vh,13px) !important;
+  white-space:nowrap;
+}
+.advantages-grid .card p {
+  font-size:clamp(14px,1.45vw,17px) !important;
+  white-space:nowrap;
+}
+.vision-layout {
+  display:grid;
+  grid-template-columns:minmax(280px,.76fr) minmax(0,1.24fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
+  width:100%;
+}
+.vision-copy {
+  text-align:left;
+}
+.vision-copy .kicker {
+  font-size:clamp(18px,1.8vw,26px);
+  letter-spacing:.18em;
+}
+.vision-copy h2 {
+  font-size:clamp(24px,2.55vw,38px);
+  line-height:1.18;
+  max-width:720px;
+}
+.vision-copy h2 .title-line {
+  display:block;
+  white-space:nowrap;
+}
+.vision-steps {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(18px,2.5vh,28px);
+}
+.vision-steps .step {
+  min-height:auto;
+  padding:clamp(28px,3.4vw,38px) clamp(28px,3.5vw,42px);
+}
+.vision-steps .step h3 {
+  font-size:clamp(22px,2.4vw,30px);
+}
+.vision-steps .step p {
+  font-size:clamp(15px,1.5vw,18px);
+}
+.tech-layout {
+  display:grid;
+  grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);
+  gap:clamp(30px,5vw,70px);
+  align-items:center;
+  width:100%;
+}
+.tech-copy {
+  text-align:left;
+}
+.tech-copy .kicker {
+  font-size:clamp(13px,1.2vw,18px);
+  line-height:1.35;
+  letter-spacing:.16em;
+}
+.tech-copy .kicker span {
+  display:block;
+}
+.tech-copy h2 {
+  font-size:clamp(20px,2.05vw,30px);
+  line-height:1.28;
+  max-width:620px;
+}
+.tech-stack {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(22px,3vh,34px);
+}
+.tech-section-title {
+  color:var(--yellow);
+  font-size:clamp(18px,2vw,24px);
+  margin-bottom:clamp(16px,2vh,24px);
+  text-align:left;
+  letter-spacing:.04em;
+}
+.tech-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,1.6vw,18px);
+}
+.tech-tile {
+  border:1.5px solid rgba(255,255,255,.18);
+  background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%);
+  border-radius:clamp(14px,1.8vw,18px);
+  padding:clamp(18px,2.2vw,26px);
+  backdrop-filter:blur(32px);
+  box-shadow:0 12px 48px rgba(0,0,0,.5);
+  text-align:center;
+}
+.tech-tile.highlight {
+  border-color:rgba(255,198,26,.35);
+  background:linear-gradient(135deg, rgba(255,198,26,.12) 0%, rgba(255,198,26,.03) 100%);
+  box-shadow:0 16px 56px rgba(255,198,26,.15),0 0 0 1px rgba(255,198,26,.1) inset;
+}
+.tech-icon {
+  width:clamp(38px,4.4vw,46px);
+  height:clamp(38px,4.4vw,46px);
+  border-radius:10px;
+  background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+  border:1.5px solid rgba(255,255,255,.2);
+  display:grid;
+  place-items:center;
+  margin:0 auto clamp(10px,1.3vh,14px);
+  font-size:clamp(18px,2.2vw,24px);
+}
+.tech-tile.highlight .tech-icon {
+  background:linear-gradient(135deg, rgba(255,198,26,.25), rgba(255,198,26,.1));
+  border-color:rgba(255,198,26,.5);
+  color:var(--yellow);
+  box-shadow:0 0 32px rgba(255,198,26,.25);
+}
+.tech-tile h4 {
+  font-size:clamp(14px,1.5vw,18px);
+  font-weight:800;
+  margin:0 0 clamp(4px,.6vh,6px);
+  line-height:1.3;
+}
+.tech-tile p {
+  font-size:clamp(12px,1.25vw,14px);
+  color:#b0b0b0;
+  line-height:1.4;
+}
+.expertise-layout {
+  display:grid;
+  grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);
+  gap:clamp(30px,5vw,70px);
+  align-items:center;
+  width:100%;
+}
+.expertise-copy {
+  text-align:left;
+}
+.expertise-copy .kicker {
+  font-size:clamp(15px,1.45vw,21px);
+  letter-spacing:.16em;
+}
+.expertise-copy h2 {
+  font-size:clamp(18px,1.85vw,28px);
+  line-height:1.28;
+  max-width:720px;
+}
+.expertise-copy h2 .title-line {
+  display:block;
+  white-space:nowrap;
+}
+.expertise-stack {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(24px,3vh,36px);
+}
+.expertise-stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(18px,2.5vw,30px);
+}
+.expertise-stat {
+  border:1px solid rgba(255,198,26,.3);
+  background:linear-gradient(135deg, rgba(255,198,26,.08) 0%, rgba(255,198,26,.02) 100%);
+  border-radius:clamp(22px,2.8vw,30px);
+  padding:clamp(28px,3.4vw,42px);
+  text-align:center;
+}
+.expertise-number {
+  font-size:clamp(48px,5.8vw,72px);
+  font-weight:900;
+  color:var(--yellow);
+  margin-bottom:clamp(14px,1.8vh,22px);
+  text-shadow:0 0 30px rgba(255,198,26,.4);
+}
+.expertise-stat p {
+  font-size:clamp(15px,1.55vw,19px);
+  line-height:1.55;
+}
+.expertise-points {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(14px,2vh,22px);
+}
+.expertise-points .item {
+  font-size:clamp(20px,2.15vw,27px);
+  font-weight:700;
+}
+.contact-layout {
+  display:grid;
+  grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);
+  gap:clamp(36px,5vw,76px);
+  align-items:center;
+  width:100%;
+}
+.contact-copy {
+  text-align:left;
+}
+.contact-copy .kicker {
+  font-size:clamp(18px,1.9vw,28px);
+  letter-spacing:.18em;
+}
+.contact-copy .tagline {
+  font-size:clamp(21px,2.15vw,28px);
+  max-width:620px;
+  line-height:1.34;
+  margin-top:clamp(28px,3.5vh,42px);
+}
+.contact-copy .tagline span {
+  display:block;
+}
+.contact-copy .tagline span + span {
+  margin-top:clamp(8px,1vh,12px);
+}
+.contact-copy .tagline .phrase-gap {
+  margin-top:clamp(22px,3vh,34px);
+}
+.contact-copy .tagline strong {
+  color:var(--white);
+  font-weight:850;
+}
+.contact-card {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,198,26,.36);
+  background:
+    radial-gradient(circle at 85% 12%, rgba(255,198,26,.18), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  border-radius:clamp(28px,3.4vw,38px);
+  padding:clamp(42px,5vw,64px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.14) inset,
+    0 24px 70px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,198,26,.12),
+    0 18px 58px rgba(255,198,26,.14);
+  backdrop-filter:blur(28px) saturate(180%);
+}
+.contact-card:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg, rgba(255,255,255,.16), transparent 42%);
+  opacity:.55;
+}
+.contact-card > * {
+  position:relative;
+  z-index:1;
+}
+.contact-card h2 {
+  font-size:clamp(38px,4.6vw,66px);
+  line-height:1.2;
+  margin-bottom:clamp(38px,5vh,58px);
+}
+.contact-links {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(18px,2.4vh,26px);
+}
+.contact-link {
+  display:block;
+  border:1px solid rgba(255,255,255,.13);
+  background:linear-gradient(135deg, rgba(0,0,0,.24), rgba(255,255,255,.04));
+  border-radius:clamp(18px,2.2vw,24px);
+  padding:clamp(20px,2.5vw,28px);
+  color:var(--yellow);
+  text-decoration:none;
+  font-size:clamp(21px,2.3vw,30px);
+  font-weight:850;
+  text-shadow:0 0 20px rgba(255,198,26,.28);
+}
 
 /* Responsive */
 @media(max-width:1024px){
   .slide { min-height:900px; }
-  .two, .compare { grid-template-columns:1fr; gap:clamp(32px,5vh,48px); }
+  .two, .compare, .partnership-layout, .launch-layout, .advantages-layout, .vision-layout, .tech-layout, .expertise-layout, .contact-layout { grid-template-columns:1fr; gap:clamp(32px,5vh,48px); }
   .card-grid, .flow { grid-template-columns:1fr 1fr; }
+  .partnership-copy, .launch-copy, .advantages-copy, .vision-copy, .tech-copy, .expertise-copy, .contact-copy { text-align:center; }
+  .partnership-copy .tagline, .launch-copy .tagline, .contact-copy .tagline { margin-left:auto; margin-right:auto; }
+  .tech-section-title { text-align:center; }
 }
 @media(max-width:640px){
-  .card-grid, .flow { grid-template-columns:1fr; }
+  .card-grid, .flow, .partnership-panels, .advantages-grid, .tech-grid, .expertise-stats { grid-template-columns:1fr; }
+  .partnership-panels .panel h3 { white-space:normal; }
+  .advantages-grid .card h3, .advantages-grid .card p { white-space:normal; }
   .wordmark { font-size:24px; left:24px; top:28px; }
 }
 </style>
@@ -509,37 +981,37 @@ AI 正在重新定義創作者經濟的未來
 <div class="content">
 <div class="two" style="align-items:center">
 <div>
-<div class="kicker">發展瓶頸</div>
-<h2 style="font-size:clamp(28px,3.4vw,46px)">傳統機構遇到<br/><span class="yellow">天花板</span></h2>
+<div class="kicker" style="font-size:clamp(16px,1.7vw,23px)">發展瓶頸</div>
+<h2 style="font-size:clamp(24px,2.8vw,38px)">傳統機構遇到<br/><span class="yellow">天花板</span></h2>
 </div>
-<div style="display:flex;flex-direction:column;gap:clamp(12px,1.5vh,18px)">
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px)">
+<div style="display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">01</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px)">創作者時間</h3><p style="font-size:clamp(14px,1.5vw,17px)">僅限24小時</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">創作者時間</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">僅限24小時</p></div>
 </div>
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">02</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px)">人工聊天</h3><p style="font-size:clamp(14px,1.5vw,17px)">依賴人力</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">人工聊天</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">依賴人力</p></div>
 </div>
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">03</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px)">聊天團隊</h3><p style="font-size:clamp(14px,1.5vw,17px)">擴展成本高</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">聊天團隊</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">擴展成本高</p></div>
 </div>
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">04</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px)">營運</h3><p style="font-size:clamp(14px,1.5vw,17px)">開銷倍增</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">營運</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">開銷倍增</p></div>
 </div>
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">05</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px)">管理</h3><p style="font-size:clamp(14px,1.5vw,17px)">複雜度增長</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">管理</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">複雜度增長</p></div>
 </div>
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">06</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px)">支援</h3><p style="font-size:clamp(14px,1.5vw,17px)">資源緊張</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">支援</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">資源緊張</p></div>
 </div>
-<div class="step" style="min-height:auto;padding:clamp(20px,2.5vw,28px) clamp(24px,3vw,32px);display:flex;align-items:center;gap:clamp(18px,2.2vw,26px);background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px);background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
 <div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">→</div>
-<div><h3 style="margin-bottom:4px;font-size:clamp(18px,2.1vw,24px);color:var(--yellow)">收入天花板</h3><p style="color:var(--gray);font-size:clamp(14px,1.5vw,17px)">利潤萎縮</p></div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15;color:var(--yellow)">收入天花板</h3><p style="color:var(--gray);font-size:clamp(14px,1.5vw,17px);line-height:1.25">利潤萎縮</p></div>
 </div>
 </div>
 </div>
@@ -580,8 +1052,10 @@ AI 無限倍增創作者產能
   <div>
     <div class="kicker">與現有平台共存</div>
     <h2 style="font-size:clamp(24px,3vw,40px)">額外收入渠道<br/>而非<span class="yellow">平台替代</span></h2>
-    <p class="tagline" style="margin-top:clamp(16px,2vh,24px);font-size:clamp(13px,1.4vw,17px)">
-    現有平台保持不變 + 增加 iFanzy = 雙倍收入，零額外工作
+    <p class="revenue-formula">
+    <span>現有平台保持不變</span>
+    <span class="formula-add">+ 增加 iFanzy</span>
+    <span class="formula-result">= <strong>雙倍收入</strong>，零額外工作</span>
     </p>
   </div>
 
@@ -670,12 +1144,12 @@ AI 無限倍增創作者產能
 <!-- Slide 7: Platform Features -->
 <section class="slide">
 <div class="content">
-<div class="two" style="grid-template-columns:.65fr 1.35fr;align-items:center;gap:clamp(28px,3.5vw,48px)">
-<div>
+<div class="two features-layout" style="grid-template-columns:.65fr 1.35fr;align-items:center;gap:clamp(28px,3.5vw,48px)">
+<div class="features-copy">
 <div class="kicker">平台功能</div>
 <h2 style="font-size:clamp(24px,3vw,40px)">完整創作者<br/><span class="yellow">業務套件</span></h2>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)">
+<div class="features-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)">
 <div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
 <h3>AI 分身</h3>
 <p>打造經創作者授權的 AI 數位分身</p>
@@ -716,8 +1190,8 @@ AI 無限倍增創作者產能
 <!-- Slide 7: ROI -->
 <section class="slide">
 <div class="content">
-<div class="two">
-<div>
+<div class="two roi-layout">
+<div class="roi-copy">
 <div class="kicker">經濟效益</div>
 <h2>更高 ROI<br/>透過 <span class="yellow">AI</span></h2>
 <div class="list">
@@ -725,12 +1199,12 @@ AI 無限倍增創作者產能
 <div class="item"><span class="mark">→</span> 中型機構：100 位創作者</div>
 <div class="item"><span class="mark">→</span> 企業級機構：500+ 位創作者</div>
 </div>
-<p style="margin-top:clamp(40px,5vh,56px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
+<p class="roi-note" style="margin-top:clamp(40px,5vh,56px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
 收入增長快於營運成本
 </p>
 </div>
 <div>
-<div class="compare">
+<div class="compare roi-compare">
 <div class="panel" style="background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
 <h3 style="color:#999;font-size:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vh,36px);line-height:1.1">傳統模式</h3>
 <p class="small" style="font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">招募瓶頸<br/>限制擴張</p>
@@ -747,13 +1221,16 @@ AI 無限倍增創作者產能
 
 <!-- Slide 8: Partnership -->
 <section class="slide">
-<div class="content center">
+<div class="content">
+<div class="partnership-layout">
+<div class="partnership-copy">
 <div class="kicker">合作模式</div>
 <h2>攜手共贏<br/><span class="yellow">協作模式</span></h2>
-<p class="tagline" style="margin-top:clamp(24px,3vh,36px);margin-bottom:clamp(48px,6vh,72px)">
+<p class="tagline" style="margin-top:clamp(24px,3vh,36px)">
 專注您的專長——其他交給我們
 </p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,56px);max-width:1400px;margin:0 auto">
+</div>
+<div class="partnership-panels">
 <div class="panel">
 <h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">機構專注</h3>
 <div class="list">
@@ -777,17 +1254,21 @@ AI 無限倍增創作者產能
 </div>
 </div>
 </div>
+</div>
 </section>
 
 <!-- Slide 9: Launch -->
 <section class="slide">
-<div class="content center">
+<div class="content">
+<div class="launch-layout">
+<div class="launch-copy">
 <div class="kicker">快速啟動</div>
 <h2>簡單 <span class="yellow">4 步</span><br/>即刻變現</h2>
-<p class="tagline" style="margin-top:clamp(24px,3vh,36px);margin-bottom:clamp(56px,7vh,80px)">
+<p class="tagline" style="margin-top:clamp(24px,3vh,36px)">
 以週計而非月計開始產生收入
 </p>
-<div class="flow" style="grid-template-columns:repeat(4,1fr)">
+</div>
+<div class="launch-steps">
 <div class="step">
 <div class="num">步驟 1</div>
 <h3>簽署協議</h3>
@@ -810,37 +1291,42 @@ AI 無限倍增創作者產能
 </div>
 </div>
 </div>
+</div>
 </section>
 
 <!-- Slide 10: Advantages -->
 <section class="slide">
-<div class="content center">
+<div class="content">
+<div class="advantages-layout">
+<div class="advantages-copy">
 <div class="kicker">競爭優勢</div>
 <h2>為何選擇<br/><span class="yellow">iFanzy</span></h2>
-<div class="card-grid three" style="margin-top:clamp(56px,7vh,80px)">
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
+</div>
+<div class="advantages-grid">
+<div class="card">
 <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">創作者授權</h3>
 <p style="font-size:clamp(14px,1.5vw,16px)">每個 AI 均經創作者授權並驗證</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
+<div class="card">
 <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">24/7 AI 直播</h3>
 <p style="font-size:clamp(14px,1.5vw,16px)">業界首創持續性 AI 直播</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
+<div class="card">
 <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">機構儀表板</h3>
 <p style="font-size:clamp(14px,1.5vw,16px)">企業級管理工具</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
+<div class="card">
 <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">全球支付</h3>
 <p style="font-size:clamp(14px,1.5vw,16px)">多幣種支持與合規</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
+<div class="card">
 <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">AI 變現</h3>
 <p style="font-size:clamp(14px,1.5vw,16px)">AI 的多種收入流</p>
 </div>
-<div class="card" style="min-height:clamp(160px,20vh,200px)">
+<div class="card">
 <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">安全</h3>
 <p style="font-size:clamp(14px,1.5vw,16px)">KYC、審核與風險控制</p>
+</div>
 </div>
 </div>
 </div>
@@ -848,13 +1334,13 @@ AI 無限倍增創作者產能
 
 <!-- Slide 11: Vision -->
 <section class="slide">
-<div class="content center">
+<div class="content">
+<div class="vision-layout">
+<div class="vision-copy">
 <div class="kicker">我們的願景</div>
-<h2 style="font-size:clamp(50px,6vw,86px);max-width:clamp(700px,80vw,1000px);margin:0 auto;line-height:1">
-讓每位創作者<br/>都擁有 <span class="yellow">AI 分身帝國</span>
-</h2>
-<div class="accent"></div>
-<div class="flow" style="grid-template-columns:repeat(3,1fr);margin-top:clamp(64px,8vh,96px)">
+<h2><span class="title-line">讓每位創作者</span><span class="title-line">都擁有 <span class="yellow">AI 分身帝國</span></span></h2>
+</div>
+<div class="vision-steps">
 <div class="step">
 <h3>AI 直播與語音</h3>
 <p>即時語音互動與直播</p>
@@ -869,111 +1355,108 @@ AI 無限倍增創作者產能
 </div>
 </div>
 </div>
+</div>
 </section>
 
 <!-- Slide 12: 全球 AI 團隊 -->
 <section class="slide">
-<div class="content center">
-  <div class="kicker">全球領先 AI 技術團隊</div>
-  <h2 style="margin-bottom:clamp(16px,2vh,20px)">
-    以<span class="yellow">自主技術</span><br/>
-    驅動創新
-  </h2>
-
-  <!-- 全球團隊與技術板塊 -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,64px);margin-top:clamp(40px,5vh,52px);max-width:clamp(1200px,95vw,1500px);margin-left:auto;margin-right:auto">
-
-    <!-- 左側：全球團隊 -->
-    <div>
-      <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:clamp(24px,3vh,32px);color:var(--yellow);text-align:center;letter-spacing:0.05em">全球 AI 團隊</h3>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,20px)">
-        <div style="border:1.5px solid rgba(255,255,255,.18);background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%);border-radius:clamp(14px,1.8vw,18px);padding:clamp(22px,2.8vw,28px);backdrop-filter:blur(32px);box-shadow:0 12px 48px rgba(0,0,0,.5);text-align:center">
-          <div style="width:clamp(40px,4.8vw,48px);height:clamp(40px,4.8vw,48px);border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.2);display:grid;place-items:center;margin:0 auto clamp(12px,1.5vh,16px);font-size:clamp(18px,2.3vw,24px)">🇺🇸</div>
-          <h4 style="font-size:clamp(15px,1.7vw,18px);font-weight:800;margin-bottom:clamp(4px,.6vh,6px);line-height:1.3">矽谷</h4>
-          <p style="font-size:clamp(12px,1.3vw,14px);color:#b0b0b0;line-height:1.4">核心研發</p>
-        </div>
-        <div style="border:1.5px solid rgba(255,255,255,.18);background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%);border-radius:clamp(14px,1.8vw,18px);padding:clamp(22px,2.8vw,28px);backdrop-filter:blur(32px);box-shadow:0 12px 48px rgba(0,0,0,.5);text-align:center">
-          <div style="width:clamp(40px,4.8vw,48px);height:clamp(40px,4.8vw,48px);border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.2);display:grid;place-items:center;margin:0 auto clamp(12px,1.5vh,16px);font-size:clamp(18px,2.3vw,24px)">🇯🇵</div>
-          <h4 style="font-size:clamp(15px,1.7vw,18px);font-weight:800;margin-bottom:clamp(4px,.6vh,6px);line-height:1.3">日本</h4>
-          <p style="font-size:clamp(12px,1.3vw,14px);color:#b0b0b0;line-height:1.4">AI 直播創新</p>
-        </div>
-        <div style="border:1.5px solid rgba(255,255,255,.18);background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%);border-radius:clamp(14px,1.8vw,18px);padding:clamp(22px,2.8vw,28px);backdrop-filter:blur(32px);box-shadow:0 12px 48px rgba(0,0,0,.5);text-align:center">
-          <div style="width:clamp(40px,4.8vw,48px);height:clamp(40px,4.8vw,48px);border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.2);display:grid;place-items:center;margin:0 auto clamp(12px,1.5vh,16px);font-size:clamp(18px,2.3vw,24px)">🇸🇬</div>
-          <h4 style="font-size:clamp(15px,1.7vw,18px);font-weight:800;margin-bottom:clamp(4px,.6vh,6px);line-height:1.3">新加坡</h4>
-          <p style="font-size:clamp(12px,1.3vw,14px);color:#b0b0b0;line-height:1.4">產品與運營</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 右側：自主 AI 技術 -->
-    <div>
-      <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:clamp(24px,3vh,32px);color:var(--yellow);text-align:center;letter-spacing:0.05em">自主 AI 技術</h3>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,20px)">
-        <div style="border:1.5px solid rgba(255,198,26,.35);background:linear-gradient(135deg, rgba(255,198,26,.12) 0%, rgba(255,198,26,.03) 100%);border-radius:clamp(14px,1.8vw,18px);padding:clamp(22px,2.8vw,28px);backdrop-filter:blur(32px);box-shadow:0 16px 56px rgba(255,198,26,.15),0 0 0 1px rgba(255,198,26,.1) inset;text-align:center">
-          <div style="width:clamp(40px,4.8vw,48px);height:clamp(40px,4.8vw,48px);border-radius:10px;background:linear-gradient(135deg, rgba(255,198,26,.25), rgba(255,198,26,.1));border:1.5px solid rgba(255,198,26,.5);display:grid;place-items:center;margin:0 auto clamp(12px,1.5vh,16px);color:var(--yellow);font-size:clamp(18px,2.3vw,24px);font-weight:900;box-shadow:0 0 32px rgba(255,198,26,.25)">🤖</div>
-          <h4 style="font-size:clamp(15px,1.7vw,18px);font-weight:800;margin-bottom:clamp(4px,.6vh,6px);line-height:1.3">AI 直播專用<br/>大型模型</h4>
-        </div>
-        <div style="border:1.5px solid rgba(255,198,26,.35);background:linear-gradient(135deg, rgba(255,198,26,.12) 0%, rgba(255,198,26,.03) 100%);border-radius:clamp(14px,1.8vw,18px);padding:clamp(22px,2.8vw,28px);backdrop-filter:blur(32px);box-shadow:0 16px 56px rgba(255,198,26,.15),0 0 0 1px rgba(255,198,26,.1) inset;text-align:center">
-          <div style="width:clamp(40px,4.8vw,48px);height:clamp(40px,4.8vw,48px);border-radius:10px;background:linear-gradient(135deg, rgba(255,198,26,.25), rgba(255,198,26,.1));border:1.5px solid rgba(255,198,26,.5);display:grid;place-items:center;margin:0 auto clamp(12px,1.5vh,16px);color:var(--yellow);font-size:clamp(18px,2.3vw,24px);font-weight:900;box-shadow:0 0 32px rgba(255,198,26,.25)">👤</div>
-          <h4 style="font-size:clamp(15px,1.7vw,18px);font-weight:800;margin-bottom:clamp(4px,.6vh,6px);line-height:1.3">數位分身<br/>技術</h4>
-        </div>
-        <div style="border:1.5px solid rgba(255,198,26,.35);background:linear-gradient(135deg, rgba(255,198,26,.12) 0%, rgba(255,198,26,.03) 100%);border-radius:clamp(14px,1.8vw,18px);padding:clamp(22px,2.8vw,28px);backdrop-filter:blur(32px);box-shadow:0 16px 56px rgba(255,198,26,.15),0 0 0 1px rgba(255,198,26,.1) inset;text-align:center">
-          <div style="width:clamp(40px,4.8vw,48px);height:clamp(40px,4.8vw,48px);border-radius:10px;background:linear-gradient(135deg, rgba(255,198,26,.25), rgba(255,198,26,.1));border:1.5px solid rgba(255,198,26,.5);display:grid;place-items:center;margin:0 auto clamp(12px,1.5vh,16px);color:var(--yellow);font-size:clamp(18px,2.3vw,24px);font-weight:900;box-shadow:0 0 32px rgba(255,198,26,.25)">⚖️</div>
-          <h4 style="font-size:clamp(15px,1.7vw,18px);font-weight:800;margin-bottom:clamp(4px,.6vh,6px);line-height:1.3">AI 直播平台<br/>知識產權</h4>
-        </div>
-      </div>
-    </div>
-
-  </div>
+<div class="content">
+<div class="tech-layout">
+<div class="tech-copy">
+<div class="kicker"><span>全球領先</span><span>AI 技術團隊</span></div>
+<h2>以<span class="yellow">自主技術</span><br/>驅動創新</h2>
+</div>
+<div class="tech-stack">
+<div>
+<h3 class="tech-section-title">全球 AI 團隊</h3>
+<div class="tech-grid">
+<div class="tech-tile">
+<div class="tech-icon">🇺🇸</div>
+<h4>矽谷</h4>
+<p>核心研發</p>
+</div>
+<div class="tech-tile">
+<div class="tech-icon">🇯🇵</div>
+<h4>日本</h4>
+<p>AI 直播創新</p>
+</div>
+<div class="tech-tile">
+<div class="tech-icon">🇸🇬</div>
+<h4>新加坡</h4>
+<p>產品與運營</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="tech-section-title">自主 AI 技術</h3>
+<div class="tech-grid">
+<div class="tech-tile highlight">
+<div class="tech-icon">🤖</div>
+<h4>AI 直播專用<br/>大型模型</h4>
+</div>
+<div class="tech-tile highlight">
+<div class="tech-icon">👤</div>
+<h4>數位分身<br/>技術</h4>
+</div>
+<div class="tech-tile highlight">
+<div class="tech-icon">⚖️</div>
+<h4>AI 直播平台<br/>知識產權</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 
 <!-- Slide 13: 團隊經驗 -->
 <section class="slide">
-<div class="content center">
-  <div class="kicker">實戰經驗</div>
-  <h2 style="margin-bottom:clamp(32px,4vh,48px)">
-    專業團隊具備<br/>
-    <span class="yellow">規模化 AI 實戰經驗</span>
-  </h2>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(32px,4vw,48px);margin-top:clamp(48px,6vh,64px);max-width:clamp(900px,85vw,1100px);margin-left:auto;margin-right:auto">
-    <div style="border:1px solid rgba(255,198,26,.3);background:linear-gradient(135deg, rgba(255,198,26,.08) 0%, rgba(255,198,26,.02) 100%);border-radius:clamp(24px,3vw,32px);padding:clamp(32px,4vw,48px);text-align:center">
-      <div style="font-size:clamp(48px,6vw,72px);font-weight:900;color:var(--yellow);margin-bottom:clamp(16px,2vh,24px);text-shadow:0 0 30px rgba(255,198,26,.4)">3000萬</div>
-      <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6">團隊運營的 AI 陪伴產品擁有 3000 萬月活用戶</p>
-    </div>
-    <div style="border:1px solid rgba(255,198,26,.3);background:linear-gradient(135deg, rgba(255,198,26,.08) 0%, rgba(255,198,26,.02) 100%);border-radius:clamp(24px,3vw,32px);padding:clamp(32px,4vw,48px);text-align:center">
-      <div style="font-size:clamp(48px,6vw,72px);font-weight:900;color:var(--yellow);margin-bottom:clamp(16px,2vh,24px);text-shadow:0 0 30px rgba(255,198,26,.4)">$6000萬</div>
-      <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6">AI 消費產品月經常性收入超過 6000 萬美元</p>
-    </div>
-  </div>
-  <div class="list" style="margin-top:clamp(48px,6vh,64px);text-align:center;max-width:clamp(700px,80vw,900px);margin-left:auto;margin-right:auto">
-    <div class="item" style="font-size:clamp(18px,2vw,22px)"><span class="mark" style="color:var(--yellow)">✓</span> 多年 AI 互動與變現專業經驗</div>
-    <div class="item" style="font-size:clamp(18px,2vw,22px)"><span class="mark" style="color:var(--yellow)">✓</span> 將成熟 AI 經驗應用於創作者經濟</div>
-  </div>
+<div class="content">
+<div class="expertise-layout">
+<div class="expertise-copy">
+<div class="kicker">實戰經驗</div>
+<h2><span class="title-line">專業團隊具備</span><span class="title-line yellow">規模化 AI</span><span class="title-line yellow">實戰經驗</span></h2>
+</div>
+<div class="expertise-stack">
+<div class="expertise-stats">
+<div class="expertise-stat">
+<div class="expertise-number">3000萬</div>
+<p>團隊運營的 AI 陪伴產品擁有 3000 萬月活用戶</p>
+</div>
+<div class="expertise-stat">
+<div class="expertise-number">$6000萬</div>
+<p>AI 消費產品月經常性收入超過 6000 萬美元</p>
+</div>
+</div>
+<div class="expertise-points">
+<div class="item"><span class="mark">✓</span> 多年 AI 互動與變現專業經驗</div>
+<div class="item"><span class="mark">✓</span> 將成熟 AI 經驗應用於創作者經濟</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 
 <!-- Slide 14: Contact -->
 <section class="slide" id="contact">
-<div class="content center">
+<div class="content">
+<div class="contact-layout">
+<div class="contact-copy">
 <div class="kicker">共創未來</div>
-<h2>準備好開啟<br/><span class="yellow">AI 增長時代？</span></h2>
-<p class="tagline" style="font-size:clamp(20px,2.4vw,28px);margin-top:clamp(32px,4vh,48px);line-height:1.5">
-在 AI 時代，攜手贏得更大市場。<br/>讓我們一起打造下一代創作者業務。
+<p class="tagline">
+<span>在 AI 時代，</span>
+<span>攜手贏得<strong>更大市場。</strong></span>
+<span class="phrase-gap">讓我們一起打造</span>
+<span>下一代<strong>創作者業務。</strong></span>
 </p>
-<div class="accent"></div>
-<div style="margin-top:clamp(56px,7vh,72px);display:flex;flex-direction:column;gap:clamp(18px,2.5vh,28px);align-items:center">
-<div style="font-size:clamp(19px,2.1vw,24px);letter-spacing:-.012em">
-<a href="https://www.ifanzy.com" style="color:var(--yellow);text-decoration:none;font-weight:700;text-shadow:0 0 20px rgba(255,198,26,.3)">www.ifanzy.com</a>
 </div>
-<div style="font-size:clamp(19px,2.1vw,24px);letter-spacing:-.012em">
-<a href="mailto:business@ifanzy.com" style="color:var(--yellow);text-decoration:none;font-weight:700;text-shadow:0 0 20px rgba(255,198,26,.3)">business@ifanzy.com</a>
+<div class="contact-card">
+<h2>準備好開啟<br/><span class="yellow">AI 增長時代？</span></h2>
+<div class="contact-links">
+<a class="contact-link" href="https://www.ifanzy.com">www.ifanzy.com</a>
+<a class="contact-link" href="mailto:business@ifanzy.com">business@ifanzy.com</a>
 </div>
 </div>
-<div style="margin-top:clamp(48px,6vh,64px)">
-<a href="mailto:business@ifanzy.com" class="btn" style="font-size:clamp(16px,1.8vw,19px);padding:clamp(18px,2.5vh,24px) clamp(36px,5vw,52px)">
-開始合作洽談 →
-</a>
 </div>
 </div>
 </section>

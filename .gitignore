@@ -1,14 +1,9 @@
-# Node modules
+# PDF generation dependencies
 node_modules/
-package-lock.json
 
 # Temporary files
 *.tmp
 .DS_Store
-
-# Build scripts (keep for reference but not essential)
-generate_pdf.js
-package.json
 
 # Other files
 ppt_extracted/

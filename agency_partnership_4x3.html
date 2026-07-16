@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iFanzy Agency Partnership Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg:#0a0a0a;
+  --panel:#151515;
+  --yellow:#ffc61a;
+  --yellow-glow:#ffdb4d;
+  --white:#ffffff;
+  --gray:#b4b4b4;
+  --muted:#767676;
+  --line:rgba(255,255,255,.11);
+  --slide-w:min(100vw, calc(100vh * 4 / 3));
+  --slide-h:min(100vh, calc(100vw * 3 / 4));
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-snap-type:y mandatory; scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--white);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+
+/* Enhanced background with texture */
+.slide {
+  position:relative; width:var(--slide-w); height:var(--slide-h); min-height:var(--slide-h);
+  margin:0 auto;
+  padding:0; scroll-snap-align:start; overflow:hidden;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(255,198,26,.15), transparent 35%),
+    radial-gradient(circle at 25% 80%, rgba(255,198,26,.08), transparent 40%),
+    var(--bg);
+}
+.slide:before {
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:
+    radial-gradient(ellipse 90% 60% at 50% 20%, rgba(0,0,0,.8), transparent 85%),
+    linear-gradient(to bottom, rgba(0,0,0,.6), transparent 90%);
+  mask-composite:intersect;
+}
+.slide:after {
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,198,26,.06), transparent 45%);
+  opacity:.6;
+}
+
+/* Brand mark */
+.wordmark {
+  position:fixed; left:calc((100vw - var(--slide-w)) / 2 + clamp(32px,5vh,72px)); top:clamp(28px,4vh,52px); z-index:100;
+  font-size:clamp(22px,2.2vw,32px); font-weight:900;
+  letter-spacing:-.04em; color:var(--yellow);
+  text-shadow:0 0 40px rgba(255,198,26,.4);
+}
+
+/* Language switcher */
+.lang-switcher {
+  position:fixed; right:calc((100vw - var(--slide-w)) / 2 + clamp(32px,5vh,72px)); top:clamp(28px,4vh,52px); z-index:100;
+  display:flex; gap:12px; align-items:center;
+}
+.lang-btn {
+  padding:10px 18px;
+  background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:8px;
+  color:var(--gray);
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .3s;
+  text-decoration:none;
+  backdrop-filter:blur(12px);
+}
+.lang-btn:hover {
+  background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+  border-color:rgba(255,198,26,.3);
+  color:var(--white);
+  transform:translateY(-2px);
+}
+.lang-btn.active {
+  background:linear-gradient(135deg, rgba(255,198,26,.15), rgba(255,198,26,.08));
+  border-color:rgba(255,198,26,.4);
+  color:var(--yellow);
+  box-shadow:0 0 20px rgba(255,198,26,.2);
+}
+
+/* Content container with proper centering */
+.content {
+  position:relative; z-index:2;
+  min-height:var(--slide-h);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(58px,9vh,110px) clamp(32px,7vh,92px) clamp(58px,8vh,98px);
+  max-width:var(--slide-w); margin:0 auto;
+}
+.content.center { text-align:center; align-items:center; }
+
+/* Typography with better spacing */
+.kicker {
+  color:var(--yellow); font-size:clamp(24px,2.6vw,34px);
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+  margin-bottom:clamp(20px,2.5vh,32px);
+  opacity:1;
+  text-shadow:0 0 24px rgba(255,198,26,.35);
+}
+h1 {
+  margin:0; font-size:clamp(56px,7vw,98px);
+  line-height:1.25; letter-spacing:-.02em; font-weight:900;
+  text-shadow:0 2px 40px rgba(0,0,0,.5);
+}
+.hero-title {
+  font-size:clamp(66px,9.8vh,104px) !important;
+  line-height:1.08;
+  letter-spacing:-.018em;
+  white-space:normal;
+}
+.hero-title span {
+  display:block;
+}
+.hero-title .yellow {
+  text-shadow:0 0 34px rgba(255,198,26,.32);
+}
+.hero-tagline {
+  font-size:clamp(22px,3vh,30px) !important;
+  line-height:1.45;
+}
+.hero-tagline span {
+  display:block;
+}
+.market-copy .kicker {
+  font-size:clamp(32px,4.8vh,48px);
+  font-weight:900;
+  letter-spacing:.2em;
+}
+.market-copy h2 {
+  font-size:clamp(52px,7.4vh,78px) !important;
+  line-height:1.08;
+  font-weight:950;
+  letter-spacing:-.025em;
+}
+.market-copy .tagline {
+  font-size:clamp(26px,3.8vh,38px) !important;
+  line-height:1.18;
+  font-weight:850 !important;
+  letter-spacing:-.012em;
+}
+.problem-copy .kicker {
+  font-size:clamp(34px,5vh,52px) !important;
+  font-weight:900;
+  letter-spacing:.2em;
+}
+.problem-copy h2 {
+  font-size:clamp(64px,9.2vh,96px) !important;
+  line-height:1.08;
+  font-weight:950;
+  letter-spacing:-.025em;
+}
+.solution-copy .kicker {
+  font-size:clamp(32px,4.8vh,50px);
+  font-weight:900;
+  letter-spacing:.18em;
+}
+.solution-copy h2 {
+  font-size:clamp(58px,8.4vh,88px);
+  line-height:1.08;
+  font-weight:950;
+  letter-spacing:-.025em;
+}
+.solution-copy .list {
+  gap:clamp(14px,1.9vh,22px);
+  margin-top:clamp(30px,4vh,44px);
+}
+.solution-copy .item {
+  font-size:clamp(22px,3vh,32px);
+  font-weight:760;
+  line-height:1.24;
+}
+.solution-copy .item .mark {
+  font-size:1.12em;
+}
+h2 {
+  margin:0; font-size:clamp(42px,5.2vw,72px);
+  line-height:1.3; letter-spacing:-.018em; font-weight:880;
+  text-shadow:0 2px 30px rgba(0,0,0,.4);
+}
+h3 {
+  margin:0; font-size:clamp(20px,2vw,28px);
+  line-height:1.35; letter-spacing:-.02em; font-weight:700;
+}
+p {
+  margin:0; color:var(--gray);
+  font-size:clamp(18px,1.8vw,22px);
+  line-height:1.55; letter-spacing:-.01em;
+}
+.small { color:var(--muted); font-size:clamp(14px,1.4vw,17px); line-height:1.6; }
+.yellow { color:var(--yellow); }
+.accent {
+  width:clamp(60px,8vw,80px); height:4px; border-radius:999px;
+  background:linear-gradient(90deg, var(--yellow), var(--yellow-glow));
+  margin:clamp(28px,3.5vh,40px) auto 0;
+  box-shadow:0 0 20px rgba(255,198,26,.5);
+}
+.tagline {
+  font-size:clamp(20px,2.2vw,26px); color:var(--gray);
+  margin-top:clamp(24px,3vh,36px); max-width:clamp(600px,60vw,920px);
+  line-height:1.5; letter-spacing:-.015em;
+}
+
+/* Premium button */
+.btn {
+  display:inline-flex; align-items:center; gap:12px;
+  padding:clamp(16px,2vh,22px) clamp(32px,4vw,48px);
+  border-radius:999px;
+  background:linear-gradient(135deg, var(--yellow) 0%, var(--yellow-glow) 100%);
+  color:#0a0a0a;
+  font-size:clamp(15px,1.6vw,18px); font-weight:800;
+  letter-spacing:-.015em;
+  border:0; cursor:pointer;
+  text-decoration:none;
+  position:relative; overflow:hidden;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.3) inset,
+    0 8px 24px rgba(255,198,26,.35),
+    0 16px 48px rgba(255,198,26,.2);
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+}
+.btn:before {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,.2), transparent 60%);
+  opacity:0; transition:opacity .3s;
+}
+.btn:hover {
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.4) inset,
+    0 12px 32px rgba(255,198,26,.45),
+    0 24px 64px rgba(255,198,26,.25);
+}
+.btn:hover:before { opacity:1; }
+
+/* Layout grids */
+.two {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(40px,6vw,80px);
+  align-items:center;
+}
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px,2vw,24px);
+  margin-top:clamp(48px,6vh,72px);
+}
+.card-grid.three { grid-template-columns:repeat(3,1fr); }
+.card-grid.two { grid-template-columns:repeat(2,1fr); gap:clamp(20px,3vw,32px); }
+
+/* Premium cards with enhanced depth */
+.card {
+  min-height:clamp(180px,22vh,220px);
+  border:1px solid rgba(255,255,255,.14);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.09) 0%, rgba(255,255,255,.03) 100%);
+  border-radius:clamp(28px,3.5vw,36px);
+  padding:clamp(36px,4.5vw,48px) clamp(28px,3.5vw,38px);
+  backdrop-filter:blur(28px) saturate(190%);
+  position:relative; overflow:hidden;
+  transition:all .5s cubic-bezier(.22,.61,.36,1);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.1) inset,
+    0 12px 40px rgba(0,0,0,.5),
+    0 2px 4px rgba(0,0,0,.25);
+  text-align:center;
+}
+.card:before {
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,198,26,.1), transparent 70%);
+  opacity:0; transition:opacity .4s;
+}
+.card h3 {
+  font-size:clamp(26px,3vw,42px);
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:-.035em;
+  margin-bottom:clamp(16px,2vh,24px);
+  background:linear-gradient(135deg, var(--white) 0%, var(--gray) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+}
+.card p {
+  font-size:clamp(16px,1.7vw,20px);
+  line-height:1.6;
+  color:#a8a8a8;
+  letter-spacing:-.01em;
+}
+.card:hover {
+  transform:translateY(-8px) scale(1.015);
+  border-color:rgba(255,198,26,.25);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.15) inset,
+    0 20px 56px rgba(0,0,0,.6),
+    0 0 0 1px rgba(255,198,26,.15),
+    0 12px 40px rgba(255,198,26,.15);
+}
+.card:hover:before { opacity:1; }
+
+/* Enhanced cards for feature-rich sections */
+.card.enhanced {
+  min-height:clamp(200px,24vh,240px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.035) 100%);
+  border:1px solid rgba(255,255,255,.16);
+  padding:clamp(38px,4.8vw,50px) clamp(32px,4vw,42px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.12) inset,
+    0 16px 48px rgba(0,0,0,.55),
+    0 2px 6px rgba(0,0,0,.3);
+}
+.card.enhanced h3 {
+  font-size:clamp(24px,2.6vw,34px);
+  margin-bottom:clamp(16px,2vh,22px);
+  font-weight:800;
+}
+.card.enhanced p {
+  font-size:clamp(16px,1.7vw,19px);
+  line-height:1.7;
+  color:#b0b0b0;
+}
+.card.enhanced:hover {
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.18) inset,
+    0 24px 64px rgba(0,0,0,.65),
+    0 0 0 1px rgba(255,198,26,.25),
+    0 16px 48px rgba(255,198,26,.2);
+}
+.card:before {
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,198,26,.12), transparent 60%);
+  opacity:0; transition:opacity .4s;
+}
+.card:after {
+  content:""; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+  opacity:0; transition:opacity .4s;
+}
+.card:hover {
+  transform:translateY(-6px) scale(1.01);
+  border-color:rgba(255,198,26,.3);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.12) inset,
+    0 16px 48px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,198,26,.15),
+    0 8px 32px rgba(255,198,26,.15);
+}
+.card:hover:before { opacity:1; }
+.card:hover:after { opacity:1; }
+.card h3 { margin-bottom:12px; }
+.card p { font-size:clamp(15px,1.5vw,17px); color:#a0a0a0; line-height:1.6; }
+
+/* Icon box with glow */
+.icon-box {
+  width:clamp(44px,5vw,52px); height:clamp(44px,5vw,52px);
+  border-radius:clamp(14px,2vw,18px);
+  border:1px solid rgba(255,198,26,.4);
+  background:
+    linear-gradient(135deg, rgba(255,198,26,.15), rgba(255,198,26,.05));
+  display:grid; place-items:center; color:var(--yellow);
+  margin-bottom:clamp(20px,2.5vh,28px);
+  font-weight:850; font-size:clamp(20px,2.2vw,26px);
+  box-shadow:
+    0 0 24px rgba(255,198,26,.2),
+    0 1px 0 rgba(255,255,255,.1) inset;
+  position:relative;
+}
+.icon-box:before {
+  content:""; position:absolute; inset:-2px;
+  background:linear-gradient(135deg, rgba(255,198,26,.3), transparent);
+  border-radius:inherit; z-index:-1; opacity:0;
+  transition:opacity .3s;
+}
+.card:hover .icon-box:before { opacity:1; }
+
+/* Flow steps with premium style */
+.flow {
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:clamp(12px,1.5vw,16px);
+  margin-top:clamp(40px,5vh,60px);
+}
+.step {
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border-radius:clamp(20px,2.5vw,28px);
+  padding:clamp(20px,2.5vw,28px) clamp(16px,2vw,22px);
+  min-height:clamp(140px,18vh,180px);
+  position:relative; overflow:hidden;
+  backdrop-filter:blur(12px);
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.step:before {
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(255,198,26,.08), transparent 70%);
+  opacity:0; transition:opacity .3s;
+}
+.step:hover {
+  transform:translateY(-4px);
+  border-color:rgba(255,198,26,.25);
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.4),
+    0 0 0 1px rgba(255,198,26,.1);
+}
+.step:hover:before { opacity:1; }
+.step .num {
+  color:var(--yellow); font-size:clamp(11px,1.2vw,13px);
+  font-weight:900; letter-spacing:.12em;
+  margin-bottom:clamp(16px,2vh,20px);
+  text-shadow:0 0 12px rgba(255,198,26,.5);
+}
+.step h3 { font-size:clamp(18px,2vw,22px); margin-bottom:clamp(8px,1vh,12px); }
+.step p { font-size:clamp(13px,1.4vw,15px); line-height:1.5; color:var(--muted); }
+
+/* Big number with premium effect */
+.big-number {
+  color:var(--yellow);
+  font-size:clamp(120px,18vw,240px);
+  line-height:.8; letter-spacing:-.08em; font-weight:900;
+  background:linear-gradient(135deg, var(--yellow) 0%, var(--yellow-glow) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 40px rgba(255,198,26,.3));
+}
+
+/* List with better spacing */
+.list {
+  display:flex; flex-direction:column;
+  gap:clamp(16px,2vh,22px);
+  margin-top:clamp(28px,3.5vh,40px);
+}
+.item {
+  display:flex; gap:clamp(12px,1.5vw,16px); align-items:flex-start;
+  font-size:clamp(18px,1.9vw,21px); color:#d0d0d0; line-height:1.45;
+  letter-spacing:-.012em;
+}
+.item .mark {
+  color:var(--yellow); font-weight:900; min-width:clamp(16px,2vw,20px);
+  text-shadow:0 0 12px rgba(255,198,26,.4);
+}
+
+/* Premium panels */
+.panel {
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.025) 100%);
+  border-radius:clamp(28px,3.5vw,40px);
+  padding:clamp(32px,4vw,48px);
+  min-height:clamp(340px,42vh,440px);
+  position:relative; overflow:hidden;
+  backdrop-filter:blur(24px) saturate(180%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.08) inset,
+    0 12px 40px rgba(0,0,0,.4);
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+}
+.panel:before {
+  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+}
+.panel:hover {
+  transform:translateY(-4px);
+  border-color:rgba(255,198,26,.2);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.12) inset,
+    0 16px 48px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,198,26,.1);
+}
+.panel h3 {
+  margin-bottom:clamp(24px,3vh,32px);
+  font-size:clamp(26px,3vw,36px);
+  letter-spacing:-.025em;
+}
+.compare {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(20px,3vw,32px);
+  margin-top:clamp(40px,5vh,56px);
+}
+.partnership-layout {
+  display:grid;
+  grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
+  width:100%;
+}
+.partnership-copy {
+  text-align:left;
+}
+.partnership-copy .kicker {
+  font-size:clamp(29px,3.05vw,44px);
+  line-height:.96;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.partnership-copy h2 {
+  font-size:clamp(56px,5.85vw,82px);
+  line-height:.9;
+  font-weight:950;
+  letter-spacing:-.06em;
+}
+.partnership-copy .tagline {
+  font-size:clamp(27px,2.85vw,38px);
+  line-height:.98;
+  font-weight:900;
+  letter-spacing:-.04em;
+  max-width:520px;
+}
+.partnership-copy.partnership-copy-en h2 {
+  font-size:clamp(48px,5vw,70px);
+  line-height:.9;
+  letter-spacing:-.075em;
+}
+.partnership-copy.partnership-copy-en h2 span {
+  display:block;
+}
+.partnership-panels {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(16px,2.2vw,28px);
+}
+.partnership-panels .panel {
+  min-height:clamp(320px,39vh,420px);
+  padding:clamp(24px,3vw,36px);
+}
+.partnership-panels .panel h3 {
+  font-size:clamp(19px,1.9vw,25px) !important;
+  line-height:1.05 !important;
+  margin-bottom:clamp(18px,2.2vh,28px) !important;
+  letter-spacing:-.035em;
+  white-space:nowrap;
+}
+.launch-layout {
+  display:grid;
+  grid-template-columns:minmax(360px,1.08fr) minmax(0,.92fr);
+  gap:clamp(26px,3.6vw,52px);
+  align-items:center;
+  width:100%;
+}
+.launch-copy {
+  text-align:left;
+}
+.launch-copy .kicker {
+  font-size:clamp(32px,3.35vw,48px);
+  line-height:.92;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.launch-copy h2 {
+  font-size:clamp(70px,7.2vw,102px);
+  line-height:.84;
+  font-weight:950;
+  letter-spacing:-.065em;
+}
+.launch-copy .tagline {
+  font-size:clamp(32px,3.35vw,48px);
+  line-height:.92;
+  font-weight:900;
+  letter-spacing:-.045em;
+  max-width:620px;
+}
+.launch-steps {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(10px,1.4vh,15px);
+  width:100%;
+  max-width:clamp(360px,35vw,500px);
+  justify-self:end;
+}
+.launch-steps .step {
+  min-height:auto;
+  padding:clamp(16px,1.9vw,22px) clamp(22px,2.7vw,30px);
+}
+.launch-steps .step .num {
+  font-size:clamp(13px,1.35vw,16px);
+  margin-bottom:clamp(8px,1vh,11px);
+}
+.launch-steps .step h3 {
+  font-size:clamp(22px,2.35vw,29px);
+  margin-bottom:clamp(4px,.6vh,7px);
+  line-height:1.15;
+}
+.launch-steps .step p {
+  font-size:clamp(16px,1.65vw,20px);
+  line-height:1.28;
+}
+.revenue-formula {
+  display:grid;
+  gap:clamp(8px,1vh,12px);
+  margin-top:clamp(18px,2.2vh,26px);
+  color:var(--gray);
+  font-size:clamp(15px,1.55vw,19px);
+  line-height:1.3;
+  font-weight:700;
+}
+.revenue-formula span {
+  display:block;
+}
+.revenue-formula .formula-add {
+  color:var(--yellow);
+  font-size:clamp(18px,1.9vw,24px);
+  font-weight:900;
+}
+.revenue-formula .formula-result {
+  color:var(--white);
+}
+.revenue-formula strong {
+  color:var(--yellow);
+  font-weight:900;
+}
+.revenue-copy .kicker {
+  font-size:clamp(24px,2.5vw,36px);
+  line-height:1.18;
+  font-weight:900;
+  letter-spacing:.075em;
+}
+.revenue-copy h2 {
+  font-size:clamp(28px,2.85vw,42px) !important;
+  line-height:1.16;
+  font-weight:950;
+  letter-spacing:-.045em;
+}
+.revenue-copy .revenue-formula {
+  font-size:clamp(17px,1.85vw,23px);
+  line-height:1.18;
+  font-weight:850;
+  gap:clamp(9px,1.1vh,13px);
+}
+.revenue-copy .revenue-formula span {
+  white-space:nowrap;
+}
+.revenue-copy .revenue-formula .formula-result {
+  line-height:1.16;
+}
+.revenue-copy .revenue-formula .formula-add {
+  font-size:clamp(20px,2.2vw,28px);
+}
+.features-layout {
+  grid-template-columns:.5fr 1.5fr !important;
+  gap:clamp(22px,3vw,40px) !important;
+}
+.features-copy .kicker {
+  font-size:clamp(20px,2.2vw,31px);
+  line-height:1.02;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.features-copy h2 {
+  font-size:clamp(38px,4.35vw,62px) !important;
+  line-height:1.02;
+  font-weight:950;
+  letter-spacing:-.035em;
+}
+.features-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(10px,1.35vw,16px) !important;
+}
+.features-grid .card.enhanced {
+  padding:clamp(16px,2vw,24px) clamp(18px,2.2vw,26px) !important;
+}
+.features-grid .card h3 {
+  margin-bottom:clamp(6px,.8vh,10px);
+  font-size:clamp(17px,1.85vw,24px);
+  line-height:1.08;
+  white-space:nowrap;
+}
+.features-grid .card p {
+  font-size:clamp(13px,1.35vw,17px);
+  line-height:1.22;
+  white-space:normal;
+}
+.roi-layout {
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(28px,4vw,54px);
+}
+.roi-copy .kicker {
+  font-size:clamp(25px,2.75vw,38px);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.roi-copy h2 {
+  font-size:clamp(54px,6.1vw,84px);
+  line-height:.98;
+  font-weight:950;
+  letter-spacing:-.04em;
+}
+.roi-copy .list {
+  gap:clamp(14px,1.65vh,20px);
+  margin-top:clamp(26px,3.4vh,40px);
+}
+.roi-copy .item {
+  font-size:clamp(21px,2.15vw,28px);
+  line-height:1.1;
+  font-weight:850;
+  white-space:nowrap;
+}
+.roi-copy .item .mark {
+  font-size:1.12em;
+  font-weight:950;
+}
+.roi-note {
+  margin-top:clamp(30px,3.7vh,46px) !important;
+  font-size:clamp(25px,2.75vw,36px) !important;
+  line-height:1.12 !important;
+  font-weight:900 !important;
+}
+.roi-compare {
+  gap:clamp(12px,1.55vw,20px);
+  margin-top:0;
+}
+.roi-compare .panel {
+  min-height:clamp(270px,32vh,360px);
+  padding:clamp(24px,3vw,38px);
+  border-radius:clamp(20px,2.4vw,28px);
+  min-width:0;
+}
+.roi-compare .panel h3 {
+  font-size:clamp(20px,2.05vw,27px) !important;
+  margin-bottom:clamp(14px,1.7vh,22px) !important;
+  line-height:1.08 !important;
+  letter-spacing:-.035em;
+  white-space:nowrap;
+}
+.roi-compare .panel p {
+  font-size:clamp(15px,1.65vw,20px) !important;
+  line-height:1.35 !important;
+}
+.advantages-layout {
+  display:grid;
+  grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:center;
+  width:100%;
+}
+.advantages-copy {
+  text-align:left;
+}
+.advantages-copy .kicker {
+  font-size:clamp(28px,3vw,44px);
+  line-height:.94;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.advantages-copy h2 {
+  font-size:clamp(64px,6.9vw,98px);
+  line-height:.9;
+  font-weight:950;
+  letter-spacing:-.065em;
+}
+.advantages-copy h2 .yellow {
+  letter-spacing:.015em;
+}
+.advantages-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(14px,2vw,22px);
+}
+.advantages-grid .card {
+  min-height:clamp(130px,16vh,170px);
+  padding:clamp(22px,2.8vw,30px) clamp(20px,2.5vw,28px);
+}
+.advantages-grid .card h3 {
+  font-size:clamp(18px,1.9vw,25px) !important;
+  margin-bottom:clamp(9px,1.2vh,13px) !important;
+  line-height:1.08 !important;
+  white-space:normal;
+}
+.advantages-grid .card p {
+  font-size:clamp(14px,1.45vw,17px) !important;
+  line-height:1.28 !important;
+  white-space:normal;
+}
+.vision-layout {
+  display:grid;
+  grid-template-columns:minmax(360px,1.1fr) minmax(0,.9fr);
+  gap:clamp(14px,2vw,30px);
+  align-items:center;
+  width:100%;
+}
+.vision-copy {
+  text-align:left;
+}
+.vision-copy .kicker {
+  font-size:clamp(32px,3.35vw,48px);
+  line-height:1.08;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.vision-copy h2 {
+  font-size:clamp(64px,6.65vw,94px);
+  line-height:1.02;
+  font-weight:950;
+  letter-spacing:-.065em;
+  max-width:720px;
+}
+.vision-copy h2 .title-line {
+  display:block;
+  white-space:nowrap;
+}
+.vision-steps {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(14px,1.9vh,22px);
+  width:100%;
+  max-width:clamp(360px,34vw,500px);
+  justify-self:start;
+}
+.vision-steps .step {
+  min-height:auto;
+  padding:clamp(22px,2.7vw,32px) clamp(24px,3vw,36px);
+}
+.vision-steps .step h3 {
+  font-size:clamp(22px,2.4vw,30px);
+  white-space:nowrap;
+}
+.vision-steps .step p {
+  font-size:clamp(15px,1.5vw,18px);
+  white-space:nowrap;
+}
+.tech-layout {
+  display:grid;
+  grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);
+  gap:clamp(30px,5vw,70px);
+  align-items:center;
+  width:100%;
+}
+.tech-copy {
+  text-align:left;
+}
+.tech-copy .kicker {
+  font-size:clamp(29px,3vw,44px);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.tech-copy .kicker span {
+  display:block;
+}
+.tech-copy h2 {
+  font-size:clamp(48px,5vw,72px);
+  line-height:.94;
+  font-weight:950;
+  letter-spacing:-.06em;
+  max-width:620px;
+}
+.tech-stack {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(22px,3vh,34px);
+}
+.tech-section-title {
+  color:var(--yellow);
+  font-size:clamp(18px,2vw,24px);
+  margin-bottom:clamp(16px,2vh,24px);
+  text-align:left;
+  letter-spacing:.04em;
+}
+.tech-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,1.6vw,18px);
+}
+.tech-tile {
+  border:1.5px solid rgba(255,255,255,.18);
+  background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%);
+  border-radius:clamp(14px,1.8vw,18px);
+  padding:clamp(18px,2.2vw,26px);
+  backdrop-filter:blur(32px);
+  box-shadow:0 12px 48px rgba(0,0,0,.5);
+  text-align:center;
+}
+.tech-tile.highlight {
+  border-color:rgba(255,198,26,.35);
+  background:linear-gradient(135deg, rgba(255,198,26,.12) 0%, rgba(255,198,26,.03) 100%);
+  box-shadow:0 16px 56px rgba(255,198,26,.15),0 0 0 1px rgba(255,198,26,.1) inset;
+}
+.tech-icon {
+  width:clamp(38px,4.4vw,46px);
+  height:clamp(38px,4.4vw,46px);
+  border-radius:10px;
+  background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+  border:1.5px solid rgba(255,255,255,.2);
+  display:grid;
+  place-items:center;
+  margin:0 auto clamp(10px,1.3vh,14px);
+  font-size:clamp(18px,2.2vw,24px);
+}
+.tech-tile.highlight .tech-icon {
+  background:linear-gradient(135deg, rgba(255,198,26,.25), rgba(255,198,26,.1));
+  border-color:rgba(255,198,26,.5);
+  color:var(--yellow);
+  box-shadow:0 0 32px rgba(255,198,26,.25);
+}
+.tech-tile h4 {
+  font-size:clamp(14px,1.5vw,18px);
+  font-weight:800;
+  margin:0 0 clamp(4px,.6vh,6px);
+  line-height:1.3;
+}
+.tech-tile p {
+  font-size:clamp(12px,1.25vw,14px);
+  color:#b0b0b0;
+  line-height:1.4;
+}
+.expertise-layout {
+  display:grid;
+  grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr);
+  gap:clamp(22px,3.3vw,48px);
+  align-items:center;
+  width:100%;
+}
+.expertise-copy {
+  text-align:left;
+}
+.expertise-copy .kicker {
+  font-size:clamp(32px,3.35vw,48px);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.expertise-copy h2 {
+  font-size:clamp(48px,5vw,72px);
+  line-height:.96;
+  font-weight:950;
+  letter-spacing:-.06em;
+  max-width:720px;
+}
+.expertise-copy h2 .title-line {
+  display:block;
+  white-space:nowrap;
+}
+.expertise-stack {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(18px,2.25vh,28px);
+  max-width:clamp(540px,48vw,700px);
+  justify-self:end;
+}
+.expertise-stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(12px,1.6vw,20px);
+}
+.expertise-stat {
+  border:1px solid rgba(255,198,26,.3);
+  background:linear-gradient(135deg, rgba(255,198,26,.08) 0%, rgba(255,198,26,.02) 100%);
+  border-radius:clamp(22px,2.8vw,30px);
+  padding:clamp(20px,2.4vw,30px);
+  text-align:center;
+}
+.expertise-number {
+  font-size:clamp(42px,4.9vw,62px);
+  font-weight:900;
+  color:var(--yellow);
+  margin-bottom:clamp(14px,1.8vh,22px);
+  text-shadow:0 0 30px rgba(255,198,26,.4);
+}
+.expertise-stat p {
+  font-size:clamp(14px,1.4vw,17px);
+  line-height:1.35;
+}
+.expertise-points {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(10px,1.35vh,16px);
+}
+.expertise-points .item {
+  font-size:clamp(17px,1.8vw,23px);
+  font-weight:700;
+}
+.contact-layout {
+  display:grid;
+  grid-template-columns:minmax(360px,1.05fr) minmax(0,.95fr);
+  gap:clamp(28px,4vw,58px);
+  align-items:center;
+  width:100%;
+}
+.contact-copy {
+  text-align:left;
+}
+.contact-copy .kicker {
+  font-size:clamp(42px,4.4vw,64px);
+  line-height:.98;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.contact-copy .tagline {
+  color:var(--white);
+  font-size:clamp(29px,3vw,44px);
+  max-width:720px;
+  line-height:1.08;
+  font-weight:850;
+  letter-spacing:-.04em;
+  margin-top:clamp(26px,3.2vh,38px);
+}
+.contact-copy .tagline span {
+  display:block;
+}
+.contact-copy .tagline span + span {
+  margin-top:clamp(8px,1vh,12px);
+}
+.contact-copy .tagline .phrase-gap {
+  margin-top:clamp(22px,3vh,34px);
+}
+.contact-copy .tagline strong {
+  color:var(--yellow);
+  font-weight:950;
+}
+.contact-copy.contact-copy-en .tagline {
+  font-size:clamp(24px,2.45vw,35px);
+  line-height:1.12;
+  max-width:760px;
+}
+.contact-copy.contact-copy-en .tagline .phrase-gap {
+  margin-top:clamp(14px,1.8vh,22px);
+}
+.contact-card {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,198,26,.36);
+  background:
+    radial-gradient(circle at 85% 12%, rgba(255,198,26,.18), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  border-radius:clamp(24px,2.8vw,32px);
+  padding:clamp(32px,3.8vw,48px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.14) inset,
+    0 24px 70px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,198,26,.12),
+    0 18px 58px rgba(255,198,26,.14);
+  backdrop-filter:blur(28px) saturate(180%);
+}
+.contact-card:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg, rgba(255,255,255,.16), transparent 42%);
+  opacity:.55;
+}
+.contact-card > * {
+  position:relative;
+  z-index:1;
+}
+.contact-card h2 {
+  font-size:clamp(32px,3.7vw,52px);
+  line-height:1.12;
+  margin-bottom:clamp(28px,3.5vh,42px);
+}
+.contact-links {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(10px,1.35vh,16px);
+}
+.contact-link {
+  display:block;
+  border:0;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  color:var(--yellow);
+  text-decoration:none;
+  font-size:clamp(20px,2.15vw,28px);
+  font-weight:850;
+  text-shadow:0 0 20px rgba(255,198,26,.28);
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  :root { --slide-w:100vw; --slide-h:75vw; }
+  .slide { min-height:var(--slide-h); }
+  .two, .compare, .partnership-layout, .launch-layout, .advantages-layout, .vision-layout, .tech-layout, .expertise-layout, .contact-layout { grid-template-columns:1fr; gap:clamp(32px,5vh,48px); }
+  .card-grid, .flow { grid-template-columns:1fr 1fr; }
+  .partnership-copy, .launch-copy, .advantages-copy, .vision-copy, .tech-copy, .expertise-copy, .contact-copy { text-align:center; }
+  .partnership-copy .tagline, .launch-copy .tagline, .contact-copy .tagline { margin-left:auto; margin-right:auto; }
+  .tech-section-title { text-align:center; }
+}
+@media(max-width:640px){
+  .card-grid, .flow, .partnership-panels, .advantages-grid, .tech-grid, .expertise-stats { grid-template-columns:1fr; }
+  .partnership-panels .panel h3 { white-space:normal; }
+  .advantages-grid .card h3, .advantages-grid .card p { white-space:normal; }
+  .wordmark { font-size:24px; left:24px; top:28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wordmark">iFanzy</div>
+
+<div class="lang-switcher">
+<a href="agency_partnership_4x3.html" class="lang-btn active">EN</a>
+<a href="agency_partnership_4x3_tc.html" class="lang-btn">繁中</a>
+</div>
+
+<!-- Slide 1: Hero -->
+<section class="slide">
+<div class="content">
+<div class="two" style="grid-template-columns:1.08fr .92fr;align-items:center;gap:clamp(32px,4vw,56px)">
+<div>
+<h1 class="hero-title"><span>Leading the</span><span class="yellow">New Era of</span><span class="yellow">AI Creator</span><span>Business</span></h1>
+</div>
+<div style="background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.25);border-radius:clamp(24px,3vw,32px);padding:clamp(40px,5vw,60px);backdrop-filter:blur(24px);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.1) inset">
+<div class="kicker" style="margin-bottom:clamp(18px,2.2vh,26px)">Agency Partnership</div>
+<p class="tagline hero-tagline" style="margin-top:0;font-size:clamp(20px,2.4vw,28px)">
+<span>Co-creating AI-era</span>
+<span>opportunities with</span>
+<span>top creator agencies</span>
+</p>
+<div class="accent" style="margin-left:0;margin-top:clamp(28px,3.5vh,38px)"></div>
+<div style="margin-top:clamp(32px,4vh,44px)">
+<a href="#contact" class="btn">Start Partnership →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 2: Market -->
+<section class="slide">
+<div class="content">
+<div class="two" style="grid-template-columns:.8fr 1.2fr;align-items:center">
+<div class="market-copy">
+<div class="kicker">Market Opportunity</div>
+<h2 style="font-size:clamp(28px,3.4vw,46px)">Creator Economy Entering<br/>the <span class="yellow">AI Era</span></h2>
+<p class="tagline" style="font-size:clamp(15px,1.6vw,20px);font-weight:600;color:var(--yellow);margin-top:clamp(18px,2.2vh,26px)">
+AI is redefining the future of creator economy
+</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.2vw,28px)">
+<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3>$500B+</h3>
+<p>Creator Economy</p>
+</div>
+<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3>70M+</h3>
+<p>Global Creators</p>
+</div>
+<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3>24/7</h3>
+<p>Always-On Expectations</p>
+</div>
+<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3>AI</h3>
+<p>Next Growth Engine</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 3: Problem -->
+<section class="slide">
+<div class="content">
+<div class="two" style="align-items:center">
+<div class="problem-copy">
+<div class="kicker" style="font-size:clamp(16px,1.7vw,23px)">Growth Bottleneck</div>
+<h2 style="font-size:clamp(24px,2.8vw,38px)">Traditional Agencies Hit<br/><span class="yellow">The Ceiling</span></h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">01</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">Creator Time</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">Limited to 24 hours</p></div>
+</div>
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">02</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">Manual Chat</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">Labor-dependent</p></div>
+</div>
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">03</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">Chat Teams</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">High scaling costs</p></div>
+</div>
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">04</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">Operations</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">Expenses multiply</p></div>
+</div>
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">05</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">Management</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">Complexity grows</p></div>
+</div>
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">06</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">Support</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">Resources strained</p></div>
+</div>
+<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px);background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
+<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">→</div>
+<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15;color:var(--yellow)">Revenue Ceiling</h3><p style="color:var(--gray);font-size:clamp(14px,1.5vw,17px);line-height:1.25">Margins shrink</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 4: Solution -->
+<section class="slide">
+<div class="content">
+<div class="two" style="gap:clamp(24px,3vw,40px)">
+<div class="solution-copy">
+<div class="kicker">AI Changes Everything</div>
+<h2>From Limited to<br/><span class="yellow">Infinite Scale</span></h2>
+<div class="list">
+<div class="item"><span class="mark">✓</span> Unlimited simultaneous conversations</div>
+<div class="item"><span class="mark">✓</span> Available 24/7 across all timezones</div>
+<div class="item"><span class="mark">✓</span> Revenue growth without hiring more staff</div>
+<div class="item"><span class="mark">✓</span> AI digital twins multiply creator capacity</div>
+<div class="item"><span class="mark">✓</span> Round-the-clock automated monetization</div>
+</div>
+</div>
+<div style="text-align:center;background:linear-gradient(135deg,rgba(255,198,26,.14),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.3);border-radius:clamp(24px,3vw,32px);padding:clamp(40px,5vw,64px) clamp(32px,4vw,48px);backdrop-filter:blur(24px);box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.12) inset">
+<div class="big-number">∞</div>
+<p style="margin-top:clamp(24px,3vh,36px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
+AI infinitely multiplies creator capacity
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 5: Additional Revenue Channel -->
+<section class="slide">
+<div class="content">
+<div class="two" style="grid-template-columns:.55fr 1.45fr;gap:clamp(28px,3.5vw,48px);align-items:center">
+
+  <!-- Left: Text -->
+  <div class="revenue-copy">
+    <div class="kicker">WORKS<br/>WITH<br/>EXISTING<br/>PLATFORMS</div>
+    <h2 style="font-size:clamp(24px,3vw,40px)"><span class="yellow">Additional<br/>Revenue<br/>Channel</span><br/>Not Platform<br/>Replacement</h2>
+  </div>
+
+  <!-- Right: 3 Modules -->
+  <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(16px,2vw,28px);align-items:stretch">
+
+  <!-- Existing Platforms Stay the Same -->
+  <div style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1.5px solid rgba(255,255,255,.15);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(0,0,0,.4)">
+    <h3 style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:rgba(255,255,255,.95)">Existing Platforms</h3>
+    <div style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700">Stay the Same</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
+        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">OnlyFans</div>
+      </div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
+        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">Patreon</div>
+      </div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
+        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">Fanvue</div>
+      </div>
+    </div>
+    <div style="margin-top:clamp(14px,1.8vh,20px);padding-top:clamp(14px,1.8vh,20px);border-top:1px solid rgba(255,255,255,.08)">
+      <div style="font-size:clamp(12px,1.3vw,15px);color:#999;line-height:1.6;text-align:center">Continue operations<br/>Income unchanged</div>
+    </div>
+  </div>
+
+  <!-- Plus Sign -->
+  <div style="font-size:clamp(30px,3.8vw,46px);font-weight:900;color:var(--yellow);text-shadow:0 0 30px rgba(255,198,26,.5);line-height:1;align-self:center">+</div>
+
+  <!-- Add iFanzy -->
+  <div style="background:linear-gradient(135deg,rgba(255,198,26,.16),rgba(255,198,26,.05));border:2px solid rgba(255,198,26,.45);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 20px 72px rgba(255,198,26,.25),0 0 0 1px rgba(255,198,26,.2) inset;position:relative">
+    <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;font-size:clamp(10px,1.1vw,13px);font-weight:800;padding:clamp(5px,.7vw,7px) clamp(11px,1.5vw,15px);border-radius:clamp(11px,1.3vw,14px);letter-spacing:.08em;box-shadow:0 4px 16px rgba(255,198,26,.4);white-space:nowrap">NEW CHANNEL</div>
+    <h3 style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);margin-top:clamp(6px,.8vh,10px);text-align:center;color:var(--yellow)">iFanzy</h3>
+    <div style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700;opacity:.9">AI Fully Automated</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(12px,1.4vh,16px)">
+      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+        <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">🤖</div>
+        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Auto-Chat</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+        <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">📹</div>
+        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Live Streaming</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+        <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">💰</div>
+        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Auto-Monetization</div>
+      </div>
+    </div>
+    <div style="margin-top:clamp(14px,1.8vh,20px);padding-top:clamp(14px,1.8vh,20px);border-top:1px solid rgba(255,198,26,.2)">
+      <div style="font-size:clamp(12px,1.3vw,15px);color:var(--yellow);line-height:1.6;text-align:center;font-weight:700">Zero Manual Work<br/>Pure Additional Income</div>
+    </div>
+  </div>
+
+  <!-- Equals Sign -->
+  <div style="font-size:clamp(30px,3.8vw,46px);font-weight:900;color:var(--yellow);text-shadow:0 0 30px rgba(255,198,26,.5);line-height:1;align-self:center">=</div>
+
+  <!-- Dual Income -->
+  <div style="background:linear-gradient(135deg,rgba(255,198,26,.12),rgba(255,198,26,.03));border:1.5px solid rgba(255,198,26,.3);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(255,198,26,.15)">
+    <h3 style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:var(--yellow)">Result</h3>
+    <div style="text-align:center;margin-bottom:clamp(16px,2vh,22px)">
+      <div style="font-size:clamp(30px,3.6vw,46px);font-weight:900;color:var(--yellow);line-height:1;margin-bottom:clamp(8px,1vh,12px);text-shadow:0 0 30px rgba(255,198,26,.4)">2×</div>
+      <div style="font-size:clamp(15px,1.7vw,19px);font-weight:800;color:rgba(255,255,255,.95);line-height:1.4">Dual Income</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
+      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+        <div style="color:var(--yellow);font-size:clamp(14px,1.6vw,18px);line-height:1">✓</div>
+        <div style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">Additional channel</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+        <div style="color:var(--yellow);font-size:clamp(14px,1.6vw,18px);line-height:1">✓</div>
+        <div style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">Zero extra time</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+        <div style="color:var(--yellow);font-size:clamp(14px,1.6vw,18px);line-height:1">✓</div>
+        <div style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">Stacked revenue</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- Slide 7: Platform Features -->
+<section class="slide">
+<div class="content">
+<div class="two features-layout" style="grid-template-columns:.65fr 1.35fr;align-items:center;gap:clamp(28px,3.5vw,48px)">
+<div class="features-copy">
+<div class="kicker">PLATFORM FEATURES</div>
+<h2 style="font-size:clamp(24px,3vw,40px)">Complete Creator<br/><span class="yellow">Business Suite</span></h2>
+</div>
+<div class="features-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)">
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>AI Twins</h3>
+<p>Build creator-authorized AI digital twins</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Live Studio</h3>
+<p>Launch AI-powered live streams anytime</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Real & AI Modes</h3>
+<p>Seamlessly switch between creator and AI</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Content Management</h3>
+<p>Manage posts, paid content, and AI assets</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Monetization</h3>
+<p>Subscriptions, tips, paid content, AI live, etc.</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Wallet</h3>
+<p>Track revenue and secure withdrawals</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Analytics</h3>
+<p>Understand fan behavior and optimize growth</p>
+</div>
+<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3>Creator Dashboard</h3>
+<p>Centralized management of entire creator business</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 7: ROI -->
+<section class="slide">
+<div class="content">
+<div class="two roi-layout">
+<div class="roi-copy">
+<div class="kicker">Economic Impact</div>
+<h2>Higher ROI<br/>Through <span class="yellow">AI</span></h2>
+<div class="list">
+<div class="item"><span class="mark">→</span> Small Agency: 20 creators</div>
+<div class="item"><span class="mark">→</span> Medium Agency: 100 creators</div>
+<div class="item"><span class="mark">→</span> Enterprise Agency: 500+ creators</div>
+</div>
+<p class="roi-note" style="margin-top:clamp(40px,5vh,56px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
+Revenue grows faster than operational costs
+</p>
+</div>
+<div>
+<div class="compare roi-compare">
+<div class="panel" style="background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+<h3 style="color:#999;font-size:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vh,36px);line-height:1.1">Traditional Model</h3>
+<p class="small" style="font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">Hiring bottleneck<br/>limits expansion</p>
+</div>
+<div class="panel" style="background:linear-gradient(135deg,rgba(255,198,26,.14),rgba(255,198,26,.05));border:1px solid rgba(255,198,26,.45);box-shadow:0 1px 0 rgba(255,198,26,.15) inset,0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,198,26,.12),0 8px 32px rgba(255,198,26,.15);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+<h3 style="color:var(--yellow);font-size:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vh,36px);text-shadow:0 0 20px rgba(255,198,26,.3);line-height:1.1">AI-Powered</h3>
+<p class="small" style="color:var(--gray);font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">No hiring needed<br/>infinite expansion</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 8: Partnership -->
+<section class="slide">
+<div class="content">
+<div class="partnership-layout">
+<div class="partnership-copy partnership-copy-en">
+<div class="kicker">Partnership Model</div>
+<h2><span>Win</span><span>Together</span><span class="yellow">Collaborative</span><span class="yellow">Model</span></h2>
+<p class="tagline" style="margin-top:clamp(24px,3vh,36px)">
+Focus on your strengths<br/>leave the rest to us
+</p>
+</div>
+<div class="partnership-panels">
+<div class="panel">
+<h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">Agency Focuses On</h3>
+<div class="list">
+<div class="item"><span class="mark">•</span> Creator recruitment</div>
+<div class="item"><span class="mark">•</span> Content strategy</div>
+<div class="item"><span class="mark">•</span> Creator management</div>
+<div class="item"><span class="mark">•</span> Community growth</div>
+<div class="item"><span class="mark">•</span> Community operations</div>
+</div>
+</div>
+<div class="panel">
+<h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">iFanzy Handles</h3>
+<div class="list">
+<div class="item"><span class="mark">•</span> AI platform</div>
+<div class="item"><span class="mark">•</span> Payment processing</div>
+<div class="item"><span class="mark">•</span> KYC & compliance</div>
+<div class="item"><span class="mark">•</span> Content moderation</div>
+<div class="item"><span class="mark">•</span> Product updates</div>
+<div class="item"><span class="mark">•</span> Customer support</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 9: Launch -->
+<section class="slide">
+<div class="content">
+<div class="launch-layout">
+<div class="launch-copy">
+<div class="kicker">QUICK LAUNCH</div>
+<h2>Simple<br/><span class="yellow">4 Steps</span><br/>To<br/>Start Earning</h2>
+<p class="tagline" style="margin-top:clamp(24px,3vh,36px)">
+Start<br/>generating revenue<br/>in weeks<br/>not months
+</p>
+</div>
+<div class="launch-steps">
+<div class="step">
+<div class="num">STEP 1</div>
+<h3>Sign Agreement</h3>
+<p>Sign partnership and set terms</p>
+</div>
+<div class="step">
+<div class="num">STEP 2</div>
+<h3>Onboarding</h3>
+<p>Team training and dashboard setup</p>
+</div>
+<div class="step">
+<div class="num">STEP 3</div>
+<h3>AI Setup</h3>
+<p>Configure creator profiles and AI twins</p>
+</div>
+<div class="step" style="background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
+<div class="num">STEP 4</div>
+<h3 style="color:var(--yellow)">Go Live</h3>
+<p style="color:var(--gray)">Launch and start earning</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 10: Advantages -->
+<section class="slide">
+<div class="content">
+<div class="advantages-layout">
+<div class="advantages-copy">
+<div class="kicker">COMPETITIVE<br/>ADVANTAGES</div>
+<h2>Why<br/>Choose<br/><span class="yellow">iFanzy</span></h2>
+</div>
+<div class="advantages-grid">
+<div class="card">
+<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Creator Authorization</h3>
+<p style="font-size:clamp(14px,1.5vw,16px)">Every AI is creator-authorized and verified</p>
+</div>
+<div class="card">
+<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">24/7 AI Live</h3>
+<p style="font-size:clamp(14px,1.5vw,16px)">Industry-first continuous AI live streaming</p>
+</div>
+<div class="card">
+<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Agency Dashboard</h3>
+<p style="font-size:clamp(14px,1.5vw,16px)">Enterprise-grade management tools</p>
+</div>
+<div class="card">
+<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Global Payments</h3>
+<p style="font-size:clamp(14px,1.5vw,16px)">Multi-currency support and compliance</p>
+</div>
+<div class="card">
+<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">AI Monetization</h3>
+<p style="font-size:clamp(14px,1.5vw,16px)">Multiple revenue streams for AI</p>
+</div>
+<div class="card">
+<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Security</h3>
+<p style="font-size:clamp(14px,1.5vw,16px)">KYC, moderation, and risk control</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 11: Vision -->
+<section class="slide">
+<div class="content">
+<div class="vision-layout">
+<div class="vision-copy">
+<div class="kicker">Our Vision</div>
+<h2><span class="title-line">Every</span><span class="title-line">Creator</span><span class="title-line">with an</span><span class="title-line yellow">AI Twin</span><span class="title-line yellow">Empire</span></h2>
+</div>
+<div class="vision-steps">
+<div class="step">
+<h3>AI Live & Voice</h3>
+<p>Real-time voice interaction and live streaming</p>
+</div>
+<div class="step">
+<h3>AI Twin Ecosystem</h3>
+<p>Multi-dimensional AI twin interaction experience</p>
+</div>
+<div class="step">
+<h3>AI Creator Hub</h3>
+<p>Complete AI creator business ecosystem</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 12: Global AI Team -->
+<section class="slide">
+<div class="content">
+<div class="tech-layout">
+<div class="tech-copy">
+<div class="kicker"><span>GLOBAL</span><span>LEADING</span><span>AI TECHNOLOGY</span><span>TEAM</span></div>
+<h2>Driving<br/>Innovation<br/>with<br/><span class="yellow">Proprietary</span><br/><span class="yellow">Technology</span></h2>
+</div>
+<div class="tech-stack">
+<div>
+<h3 class="tech-section-title">Global AI Team</h3>
+<div class="tech-grid">
+<div class="tech-tile">
+<div class="tech-icon">🇺🇸</div>
+<h4>Silicon Valley</h4>
+<p>Core R&amp;D</p>
+</div>
+<div class="tech-tile">
+<div class="tech-icon">🇯🇵</div>
+<h4>Japan</h4>
+<p>AI Live Innovation</p>
+</div>
+<div class="tech-tile">
+<div class="tech-icon">🇸🇬</div>
+<h4>Singapore</h4>
+<p>Product &amp; Operations</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="tech-section-title">Proprietary AI Technology</h3>
+<div class="tech-grid">
+<div class="tech-tile highlight">
+<div class="tech-icon">🤖</div>
+<h4>AI Live-Specialized<br/>Large Model</h4>
+</div>
+<div class="tech-tile highlight">
+<div class="tech-icon">👤</div>
+<h4>Digital Twin<br/>Technology</h4>
+</div>
+<div class="tech-tile highlight">
+<div class="tech-icon">⚖️</div>
+<h4>AI Live Platform<br/>Intellectual Property</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 13: Team Experience -->
+<section class="slide">
+<div class="content">
+<div class="expertise-layout">
+<div class="expertise-copy">
+<div class="kicker">PROVEN<br/>EXPERTISE</div>
+<h2><span class="title-line">Professional</span><span class="title-line">Team</span><span class="title-line">with <span class="yellow">Proven</span></span><span class="title-line yellow">AI Experience</span><span class="title-line yellow">at Scale</span></h2>
+</div>
+<div class="expertise-stack">
+<div class="expertise-stats">
+<div class="expertise-stat">
+<div class="expertise-number">30M</div>
+<p>Team operates AI companion product with 30M MAU</p>
+</div>
+<div class="expertise-stat">
+<div class="expertise-number">$60M</div>
+<p>AI consumer product MRR exceeds $60M</p>
+</div>
+</div>
+<div class="expertise-points">
+<div class="item"><span class="mark">✓</span> Years of AI interaction and monetization expertise</div>
+<div class="item"><span class="mark">✓</span> Applying proven AI experience to creator economy</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 14: Contact -->
+<section class="slide" id="contact">
+<div class="content">
+<div class="contact-layout">
+<div class="contact-copy contact-copy-en">
+<div class="kicker">BUILD<br/>THE FUTURE<br/>TOGETHER</div>
+<p class="tagline">
+<span>In the AI era, partner with us</span>
+<span>to <strong>win bigger markets.</strong></span>
+<span class="phrase-gap">Let's build the next generation</span>
+<span>of <strong>creator business</strong> together.</span>
+</p>
+</div>
+<div class="contact-card">
+<h2>Ready to Enter the<br/><span class="yellow">AI Growth Era?</span></h2>
+<div class="contact-links">
+<a class="contact-link" href="https://www.ifanzy.com">www.ifanzy.com</a>
+<a class="contact-link" href="mailto:business@ifanzy.com">business@ifanzy.com</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+// Language switcher with scroll position preservation
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetUrl = this.getAttribute('href');
+    const currentScroll = window.pageYOffset;
+    const slideHeight = window.innerHeight;
+    const currentSlide = Math.round(currentScroll / slideHeight);
+
+    // Store scroll position
+    sessionStorage.setItem('slidePosition', currentSlide);
+
+    // Navigate to target page
+    window.location.href = targetUrl;
+  });
+});
+
+// Restore scroll position on load
+window.addEventListener('load', function() {
+  const savedSlide = sessionStorage.getItem('slidePosition');
+  if (savedSlide !== null) {
+    const slideHeight = window.innerHeight;
+    window.scrollTo({
+      top: parseInt(savedSlide) * slideHeight,
+      behavior: 'instant'
+    });
+    sessionStorage.removeItem('slidePosition');
+  }
+});
+</script>
+
+</body>
+</html>

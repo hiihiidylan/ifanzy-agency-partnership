@@ -6,7 +6,17 @@ const { PDFDocument } = require('pdf-lib');
 const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const outputDir = path.join(__dirname, 'outputs', 'pdf');
 
-async function generatePDF(htmlFile, outputPdf) {
+function resolveHtmlPath(htmlFile) {
+  const mobilePath = path.join(__dirname, 'mobile', htmlFile);
+  if (fs.existsSync(mobilePath)) {
+    return mobilePath;
+  }
+  return path.join(__dirname, htmlFile);
+}
+
+async function generatePDF(htmlFile, outputPdf, options = {}) {
+  const width = options.width || 1920;
+  const height = options.height || 1080;
   console.log(`Generating ${outputPdf}...`);
 
   const browser = await puppeteer.launch({
@@ -16,9 +26,9 @@ async function generatePDF(htmlFile, outputPdf) {
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
+  await page.setViewport({ width, height, deviceScaleFactor: 1 });
 
-  const htmlPath = path.join(__dirname, 'mobile', htmlFile);
+  const htmlPath = resolveHtmlPath(htmlFile);
   await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
 
   await page.evaluate(() => {
@@ -63,12 +73,12 @@ async function generatePDF(htmlFile, outputPdf) {
 
   for (const screenshot of screenshots) {
     const image = await pdfDoc.embedPng(screenshot);
-    const pdfPage = pdfDoc.addPage([1920, 1080]);
+    const pdfPage = pdfDoc.addPage([width, height]);
     pdfPage.drawImage(image, {
       x: 0,
       y: 0,
-      width: 1920,
-      height: 1080,
+      width,
+      height,
     });
   }
 
@@ -84,7 +94,9 @@ async function generatePDF(htmlFile, outputPdf) {
   try {
     await generatePDF('agency_partnership_mobile.html', 'agency_partnership_mobile_en.pdf');
     await generatePDF('agency_partnership_mobile_tc.html', 'agency_partnership_mobile_tc.pdf');
-    console.log('All mobile PDFs generated successfully.');
+    await generatePDF('agency_partnership_4x3.html', 'agency_partnership_4x3_en.pdf', { width: 1600, height: 1200 });
+    await generatePDF('agency_partnership_4x3_tc.html', 'agency_partnership_4x3_tc.pdf', { width: 1600, height: 1200 });
+    console.log('All PDFs generated successfully.');
   } catch (error) {
     console.error(error);
     process.exit(1);

@@ -138,6 +138,114 @@ h1 {
 .hero-tagline span {
   display:block;
 }
+.hero-card-kicker {
+  display:block;
+  font-size:16cqw !important;
+  line-height:1.02;
+  font-weight:950;
+  letter-spacing:-.025em;
+  margin-bottom:clamp(26px,3.4vh,40px) !important;
+  white-space:nowrap;
+}
+.hero-card-tagline {
+  font-size:11.2cqw !important;
+  line-height:1.26;
+  font-weight:880;
+  letter-spacing:-.035em;
+  color:var(--white) !important;
+}
+.hero-card-tagline span {
+  white-space:nowrap;
+}
+.hero-card-panel {
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+  text-align:left;
+  container-type:inline-size;
+}
+.hero-card-copy {
+  transform:translateX(clamp(-16px,-1.1vw,-10px));
+}
+.hero-page .two,
+.market-page .two {
+  transform:scale(1.07);
+  transform-origin:center;
+}
+.hero-page .hero-title {
+  font-size:clamp(94px,13.8vh,132px) !important;
+}
+.hero-page .hero-card-panel {
+  min-height:0;
+  aspect-ratio:1.35 / 1;
+  display:flex;
+  align-items:center;
+}
+.hero-page .hero-card-copy {
+  width:100%;
+}
+.market-page .market-copy .kicker {
+  font-size:clamp(38px,5.8vh,56px);
+}
+.market-page .market-copy h2 {
+  font-size:clamp(62px,9vh,92px) !important;
+}
+.market-page .market-copy .tagline {
+  font-size:clamp(32px,4.6vh,46px) !important;
+}
+.market-page .market-copy .tagline .line {
+  white-space:nowrap;
+}
+.market-page .market-stat {
+  min-height:0 !important;
+  aspect-ratio:1.85 / 1;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.market-stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(18px,2.2vw,28px);
+}
+.market-stat {
+  text-align:left !important;
+  container-type:inline-size;
+}
+.market-stats .market-stat {
+  padding:clamp(18px,2vw,24px) clamp(28px,3vw,42px) !important;
+}
+.market-stats .market-stat h3 {
+  width:100%;
+  color:var(--yellow);
+  background:none;
+  -webkit-text-fill-color:var(--yellow);
+  font-size:27.5cqw;
+  line-height:.9;
+  margin-bottom:clamp(14px,1.7vh,20px);
+  text-shadow:0 0 34px rgba(255,198,26,.28);
+  white-space:nowrap;
+}
+.market-stats .market-stat h3.stat-value {
+  display:block;
+  letter-spacing:-.08em;
+}
+.market-stats .market-stat h3.stat-value span {
+  display:inline;
+}
+.market-stats .market-stat p {
+  color:var(--white);
+  font-weight:800;
+  font-size:14.5cqw;
+  line-height:1.15;
+  margin:0;
+  text-align:left;
+  white-space:nowrap;
+  width:111.111%;
+  transform:scaleX(.9);
+  transform-origin:left center;
+}
 .market-copy .kicker {
   font-size:clamp(32px,4.8vh,48px);
   font-weight:900;
@@ -168,6 +276,100 @@ h1 {
   line-height:1.02;
   font-weight:950;
   letter-spacing:-.025em;
+}
+.problem-page .two {
+  grid-template-columns:.82fr 1.18fr;
+  gap:clamp(24px,3vw,40px);
+  transform:scale(1.06);
+  transform-origin:center;
+}
+.problem-page .problem-copy .kicker {
+  font-size:clamp(46px,6.8vh,68px) !important;
+  line-height:1.04;
+  letter-spacing:.08em;
+  margin-bottom:clamp(30px,4vh,46px);
+  white-space:nowrap;
+}
+.problem-page .problem-copy h2 .line {
+  display:block;
+  white-space:nowrap;
+}
+.problem-page .problem-copy h2 {
+  font-size:clamp(80px,11.8vh,122px) !important;
+  line-height:1.06;
+  letter-spacing:-.035em;
+}
+.problem-grid {
+  display:grid;
+  min-width:0;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(12px,1.5vw,18px);
+}
+.problem-card {
+  position:relative;
+  container-type:inline-size;
+  aspect-ratio:1.9 / 1;
+  min-width:0;
+  padding:clamp(18px,2vw,24px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,198,26,.035));
+  border:1px solid rgba(255,198,26,.18);
+  border-radius:10px;
+  box-shadow:0 14px 44px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.025) inset;
+}
+.problem-card .problem-num {
+  position:absolute;
+  top:clamp(10px,1.2vw,14px);
+  right:clamp(12px,1.4vw,16px);
+  color:var(--yellow);
+  font-size:clamp(12px,6cqw,15px);
+  font-weight:900;
+  opacity:.58;
+}
+.problem-card h3 {
+  margin:0 0 clamp(7px,1vh,10px);
+  color:var(--white);
+  font-size:clamp(30px,19.5cqw,42px);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-.035em;
+  white-space:nowrap;
+}
+.problem-card p {
+  margin:0;
+  color:var(--white);
+  font-size:clamp(16px,10cqw,22px);
+  line-height:1.12;
+  font-weight:720;
+  letter-spacing:-.015em;
+  white-space:nowrap;
+}
+.problem-result {
+  grid-column:1 / -1;
+  aspect-ratio:auto;
+  min-height:clamp(88px,12vh,126px);
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(135deg,rgba(255,198,26,.18),rgba(255,198,26,.065));
+  border-color:rgba(255,198,26,.52);
+  box-shadow:0 18px 56px rgba(0,0,0,.4),0 0 30px rgba(255,198,26,.08) inset;
+}
+.problem-result h3 {
+  color:var(--yellow);
+  font-size:clamp(36px,10cqw,50px);
+}
+.problem-result p {
+  font-size:clamp(18px,4.6cqw,24px);
+}
+.problem-result .problem-arrow {
+  color:var(--yellow);
+  font-size:clamp(34px,8cqw,52px);
+  font-weight:900;
+  line-height:1;
 }
 .solution-copy .kicker {
   font-size:clamp(36px,5.4vh,56px);
@@ -449,6 +651,231 @@ p {
   background-clip:text;
   filter:drop-shadow(0 0 40px rgba(255,198,26,.3));
 }
+.solution-stage {
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(350px,400px);
+  gap:clamp(24px,2.8vw,36px);
+  align-items:center;
+  transform:scale(1.055);
+  transform-origin:center;
+}
+.solution-stage-copy {
+  transform:translateX(clamp(44px,4.7vw,60px));
+}
+.solution-stage-copy .kicker {
+  font-size:clamp(42px,6vh,64px);
+  line-height:1.04;
+  letter-spacing:.14em;
+  margin-bottom:clamp(20px,2.5vh,30px);
+}
+.solution-stage-copy h2 {
+  font-size:clamp(78px,11.2vh,116px);
+  line-height:1.04;
+  font-weight:950;
+  letter-spacing:-.035em;
+}
+.solution-stage-copy h2 .line {
+  display:block;
+  white-space:nowrap;
+}
+.solution-stage-caption {
+  margin-top:clamp(34px,4.5vh,50px);
+  color:var(--white);
+  font-size:clamp(36px,3.9vw,48px);
+  line-height:1.18;
+  font-weight:850;
+  letter-spacing:-.02em;
+}
+.solution-stage-caption .line {
+  display:block;
+  white-space:nowrap;
+}
+.solution-values {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(14px,1.9vh,20px);
+  width:100%;
+  max-width:400px;
+  justify-self:end;
+  transform:translateX(clamp(-64px,-4.8vw,-44px));
+}
+.solution-value {
+  min-width:0;
+  container-type:inline-size;
+  padding:clamp(24px,3vw,34px) clamp(28px,3.5vw,42px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
+  box-shadow:0 12px 32px rgba(0,0,0,.24);
+}
+.solution-value h3 {
+  color:var(--yellow);
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:0;
+  margin-bottom:clamp(12px,1.6vh,18px);
+  white-space:nowrap;
+}
+.solution-title-tc {
+  display:block;
+  width:100%;
+  letter-spacing:.04em;
+}
+.solution-title-tc.tc-four {font-size:18cqw;}
+.solution-title-tc.tc-five {font-size:15.2cqw;}
+.solution-title-tc.tc-ai {font-size:13.2cqw;}
+.solution-title-tc span {
+  display:inline;
+}
+.solution-title-tc .ai-prefix {
+  margin-right:.12em;
+}
+.solution-value p {
+  color:var(--white);
+  font-size:clamp(18px,1.85vw,22px);
+  line-height:1.22;
+  font-weight:680;
+}
+.revenue-page .content {
+  padding-left:clamp(52px,6.5vw,82px);
+  padding-right:clamp(52px,6.5vw,82px);
+}
+.revenue-modules {
+  width:100%;
+}
+.revenue-modules-grid {
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) !important;
+  gap:clamp(6px,.8vw,10px) !important;
+  align-items:stretch !important;
+  width:100%;
+  transform:scale(1.01);
+  transform-origin:center;
+}
+.revenue-operator {
+  align-self:center;
+  color:var(--yellow);
+  font-size:clamp(32px,3.8vw,46px);
+  line-height:1;
+  font-weight:950;
+  text-align:center;
+  text-shadow:0 0 28px rgba(255,198,26,.45);
+}
+.revenue-module {
+  border-radius:10px !important;
+  padding:clamp(28px,3.4vw,40px) !important;
+  min-width:0;
+  container-type:inline-size;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.revenue-module * {
+  min-width:0;
+}
+.revenue-module .revenue-title,
+.revenue-module .revenue-subtitle,
+.revenue-module .revenue-result-number {
+  width:100%;
+  text-align:center;
+  white-space:nowrap;
+  letter-spacing:0;
+}
+.revenue-module-platforms .revenue-title {
+  font-size:23cqw !important;
+  line-height:1 !important;
+  margin-bottom:clamp(14px,1.8vh,20px) !important;
+}
+.revenue-module-platforms .revenue-subtitle {
+  font-size:22cqw !important;
+  line-height:1 !important;
+  margin-bottom:clamp(20px,2.5vh,28px) !important;
+}
+.revenue-module-ifanzy .revenue-title {
+  font-size:29cqw !important;
+  line-height:1 !important;
+  margin:0 0 clamp(14px,1.8vh,20px) !important;
+}
+.revenue-module-ifanzy .revenue-subtitle {
+  font-size:16cqw !important;
+  line-height:1 !important;
+  margin-bottom:clamp(22px,2.8vh,30px) !important;
+}
+.revenue-module-ifanzy {
+  padding-left:clamp(24px,2.2vw,28px) !important;
+  padding-right:clamp(24px,2.2vw,28px) !important;
+}
+.revenue-channel-label {
+  top:clamp(-52px,-6vh,-42px) !important;
+  left:0 !important;
+  right:0 !important;
+  transform:none !important;
+  width:100%;
+  padding:0 !important;
+  background:none !important;
+  color:var(--yellow) !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  font-size:clamp(20px,2.2vw,28px) !important;
+  line-height:1 !important;
+  text-align:center;
+  letter-spacing:.08em !important;
+}
+.revenue-module-result .revenue-title {
+  font-size:42cqw !important;
+  line-height:1 !important;
+  margin-bottom:clamp(18px,2.2vh,26px) !important;
+}
+.revenue-module-result .revenue-result-number {
+  font-size:50cqw !important;
+  line-height:.9 !important;
+  margin-bottom:clamp(14px,1.8vh,20px) !important;
+}
+.revenue-module-result {
+  padding-left:clamp(28px,2.6vw,32px) !important;
+  padding-right:clamp(28px,2.6vw,32px) !important;
+}
+.revenue-footer-copy,
+.revenue-extra-copy {
+  font-size:clamp(21px,2.3vw,25px) !important;
+  line-height:1.42 !important;
+  font-weight:750 !important;
+}
+.revenue-footer-copy {
+  color:var(--white) !important;
+}
+.revenue-extra-copy {
+  font-size:clamp(24px,2.6vw,28px) !important;
+  line-height:1.34 !important;
+}
+.revenue-benefit {
+  gap:clamp(10px,1.2vw,14px) !important;
+}
+.revenue-benefit > :first-child {
+  font-size:clamp(23px,2.5vw,27px) !important;
+}
+.revenue-benefit-copy {
+  font-size:clamp(20px,2.1vw,23px) !important;
+  line-height:1.25 !important;
+  color:var(--white) !important;
+  font-weight:650;
+}
+.revenue-dual-income {
+  font-size:clamp(22px,2.4vw,26px) !important;
+  line-height:1.2 !important;
+}
+.revenue-ai-feature {
+  gap:clamp(10px,1.2vw,14px) !important;
+}
+.revenue-ai-feature > :first-child {
+  font-size:clamp(26px,2.8vw,30px) !important;
+}
+.revenue-ai-feature-copy {
+  font-size:clamp(22px,2.2vw,24px) !important;
+  line-height:1.2 !important;
+  white-space:nowrap;
+}
 
 /* List with better spacing */
 .list {
@@ -550,19 +977,46 @@ p {
 }
 .partnership-panels {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(16px,2.2vw,28px);
+  grid-template-columns:1fr;
+  gap:clamp(18px,2.4vh,24px);
+  width:64%;
+  max-width:520px;
+  justify-self:start;
 }
 .partnership-panels .panel {
-  min-height:clamp(320px,39vh,420px);
-  padding:clamp(24px,3vw,36px);
+  min-height:clamp(292px,41vh,300px);
+  height:clamp(292px,41vh,300px);
+  padding:clamp(17px,2.1vh,20px) clamp(24px,2.4vw,30px);
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
 }
 .partnership-panels .panel h3 {
-  font-size:clamp(19px,1.9vw,25px) !important;
+  font-size:clamp(31px,3.1vw,40px) !important;
   line-height:1.05 !important;
-  margin-bottom:clamp(18px,2.2vh,28px) !important;
+  margin-bottom:clamp(10px,1.4vh,14px) !important;
   letter-spacing:-.035em;
   white-space:nowrap;
+}
+.partnership-page .partnership-layout {
+  grid-template-columns:minmax(340px,.92fr) minmax(0,1.08fr);
+  gap:clamp(24px,3vw,40px);
+}
+.partnership-page .content {
+  padding-top:clamp(34px,4.3vh,38px);
+  padding-bottom:clamp(34px,4.3vh,38px);
+}
+.partnership-page .partnership-panels .list {
+  display:grid;
+  grid-template-columns:1fr;
+  row-gap:clamp(6px,1vh,8px);
+  margin-top:0;
+  flex:1;
+  align-content:space-between;
+}
+.partnership-page .partnership-panels .item {
+  font-size:clamp(22px,2.1vw,25px);
+  line-height:1.14;
 }
 .launch-layout {
   display:grid;
@@ -603,21 +1057,57 @@ p {
   justify-self:end;
 }
 .launch-steps .step {
-  min-height:auto;
-  padding:clamp(16px,1.9vw,22px) clamp(22px,2.7vw,30px);
+  min-height:clamp(128px,17vh,144px);
+  padding:clamp(17px,2.1vh,21px) clamp(14px,1.5vw,18px) clamp(17px,2.1vh,21px) clamp(16px,1.8vw,20px);
+  border-radius:10px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:
+    "title num"
+    "copy copy";
+  column-gap:clamp(12px,1.5vw,18px);
+  row-gap:clamp(8px,1.1vh,11px);
+  align-items:center;
+  container-type:inline-size;
 }
 .launch-steps .step .num {
-  font-size:clamp(13px,1.35vw,16px);
-  margin-bottom:clamp(8px,1vh,11px);
+  grid-area:num;
+  justify-self:end;
+  align-self:start;
+  font-size:clamp(14px,1.45vw,17px);
+  margin:0;
+  white-space:nowrap;
 }
 .launch-steps .step h3 {
-  font-size:clamp(22px,2.35vw,29px);
-  margin-bottom:clamp(4px,.6vh,7px);
-  line-height:1.15;
+  grid-area:title;
+  font-size:clamp(36px,10.8cqw,44px);
+  margin:0;
+  line-height:1.04;
+  color:var(--yellow);
+  font-weight:950;
+  letter-spacing:-.04em;
+  white-space:nowrap;
 }
 .launch-steps .step p {
-  font-size:clamp(16px,1.65vw,20px);
-  line-height:1.28;
+  grid-area:copy;
+  width:100%;
+  font-size:clamp(24px,6.8cqw,28px);
+  line-height:1.15;
+  color:var(--white) !important;
+  font-weight:700;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+}
+.launch-page .content {
+  padding-top:clamp(44px,6vh,56px);
+  padding-bottom:clamp(44px,6vh,56px);
+}
+.launch-page .launch-layout {
+  grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);
+  gap:clamp(20px,2.4vw,28px);
+}
+.launch-page .launch-steps {
+  max-width:none;
 }
 .revenue-formula {
   display:grid;
@@ -717,9 +1207,89 @@ p {
   line-height:1.22;
   white-space:normal;
 }
+.features-page .features-layout {
+  grid-template-columns:.55fr 1.45fr !important;
+  gap:clamp(18px,2.3vw,28px) !important;
+  align-items:center;
+  transform:scale(1);
+  transform-origin:center;
+}
+.features-page .features-copy .kicker {
+  font-size:clamp(46px,6.4vh,68px);
+  line-height:1.08;
+  letter-spacing:.08em;
+  margin-bottom:clamp(24px,3vh,34px);
+}
+.features-page .features-copy h2 .title-line {
+  display:block;
+  white-space:nowrap;
+}
+.features-page .features-copy h2 {
+  font-size:clamp(78px,10.8vh,112px) !important;
+  line-height:1.02;
+  letter-spacing:-.035em;
+}
+.features-page .features-grid {
+  grid-template-columns:repeat(12,minmax(0,1fr)) !important;
+  grid-template-rows:repeat(4,minmax(145px,1fr));
+  gap:clamp(7px,.9vw,10px) !important;
+}
+.features-page .feature-card:nth-child(1),
+.features-page .feature-card:nth-child(4),
+.features-page .feature-card:nth-child(6),
+.features-page .feature-card:nth-child(7) {grid-column:span 5;}
+.features-page .feature-card:nth-child(2),
+.features-page .feature-card:nth-child(3),
+.features-page .feature-card:nth-child(5),
+.features-page .feature-card:nth-child(8) {grid-column:span 7;}
+.features-page .feature-card {
+  min-height:0 !important;
+  container-type:inline-size;
+  border-radius:10px !important;
+  padding:clamp(10px,1.25vw,14px) clamp(14px,1.65vw,18px) !important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.features-page .feature-card h3 {
+  width:100%;
+  color:var(--yellow);
+  background:none;
+  -webkit-text-fill-color:var(--yellow);
+  letter-spacing:0;
+  line-height:.96;
+  margin-bottom:clamp(7px,.9vh,11px);
+  white-space:nowrap;
+  text-align:left;
+  transform:scaleX(var(--title-scale,1));
+  transform-origin:left center;
+}
+.features-page .feature-card p {
+  color:var(--white);
+  font-size:clamp(13px,1.3vw,16px);
+  line-height:1.15;
+  font-weight:650;
+  text-align:left;
+}
+.feature-title-tc {font-size:48px !important;}
+.feature-title-tc.tc-ai-twin {--title-scale:1;}
+.feature-title-tc.tc-live {--title-scale:1;}
+.feature-title-tc.tc-real-ai {--title-scale:.88;}
+.feature-title-tc.tc-content {--title-scale:.98;}
+.feature-title-tc.tc-monetization {--title-scale:1;}
+.feature-title-tc.tc-wallet {--title-scale:1;}
+.feature-title-tc.tc-analytics {--title-scale:.98;}
+.feature-title-tc.tc-dashboard {--title-scale:.89;}
 .roi-layout {
-  grid-template-columns:1.05fr .95fr;
-  gap:clamp(28px,4vw,54px);
+  grid-template-columns:.9fr 1.1fr;
+  gap:24px;
+}
+.roi-page .content {
+  padding-top:clamp(52px,7vh,72px);
+  padding-bottom:clamp(52px,7vh,72px);
+}
+.roi-page .roi-layout {
+  transform:translateX(clamp(20px,2.2vw,28px));
 }
 .roi-copy .kicker {
   font-size:clamp(25px,2.75vw,38px);
@@ -755,25 +1325,46 @@ p {
   font-weight:900 !important;
 }
 .roi-compare {
-  gap:clamp(12px,1.55vw,20px);
+  grid-template-columns:1fr;
+  gap:clamp(18px,2.4vh,24px);
   margin-top:0;
+  width:100%;
+  max-width:410px;
+  justify-self:start;
 }
 .roi-compare .panel {
-  min-height:clamp(270px,32vh,360px);
-  padding:clamp(24px,3vw,38px);
-  border-radius:clamp(20px,2.4vw,28px);
+  min-height:clamp(266px,37.5vh,272px);
+  height:clamp(266px,37.5vh,272px);
+  padding:clamp(32px,4.2vh,40px) clamp(20px,1.8vw,22px);
+  border-radius:10px;
   min-width:0;
+  container-type:inline-size;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  text-align:left !important;
 }
 .roi-compare .panel h3 {
-  font-size:clamp(20px,2.05vw,27px) !important;
-  margin-bottom:clamp(14px,1.7vh,22px) !important;
-  line-height:1.08 !important;
-  letter-spacing:-.035em;
+  width:100%;
+  margin:0 0 clamp(18px,2.5vh,24px) !important;
+  line-height:1 !important;
+  letter-spacing:0;
   white-space:nowrap;
+  text-align:left;
+  font-weight:950;
+}
+.roi-compare .panel .roi-title-ai {
+  font-size:clamp(76px,7.3vw,90px) !important;
+}
+.roi-compare .panel .roi-title-traditional {
+  font-size:clamp(70px,6.8vw,84px) !important;
 }
 .roi-compare .panel p {
-  font-size:clamp(15px,1.65vw,20px) !important;
-  line-height:1.35 !important;
+  width:100%;
+  max-width:none !important;
+  font-size:clamp(34px,3.25vw,40px) !important;
+  line-height:1.2 !important;
+  color:#fff !important;
+  text-align:left;
 }
 .advantages-layout {
   display:grid;
@@ -811,25 +1402,60 @@ p {
   line-height:.96;
   letter-spacing:-.075em;
 }
+.advantages-copy.advantages-copy-tc h2 .yellow {
+  display:block;
+  font-size:.68em;
+  letter-spacing:.025em;
+}
 .advantages-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:clamp(14px,2vw,22px);
 }
 .advantages-grid .card {
-  min-height:clamp(130px,16vh,170px);
-  padding:clamp(22px,2.8vw,30px) clamp(20px,2.5vw,28px);
+  min-height:clamp(148px,19vh,160px);
+  padding:clamp(14px,1.8vh,18px) 6px clamp(14px,1.8vh,18px) 14px;
+  border-radius:10px;
+  border:1.5px solid rgba(255,198,26,.22);
+  background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));
+  box-shadow:0 16px 48px rgba(0,0,0,.42),0 0 0 1px rgba(255,198,26,.07) inset;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  text-align:left;
+  container-type:inline-size;
 }
 .advantages-grid .card h3 {
-  font-size:clamp(18px,1.9vw,25px) !important;
-  margin-bottom:clamp(9px,1.2vh,13px) !important;
-  line-height:1.08 !important;
-  white-space:normal;
+  width:100%;
+  color:var(--yellow) !important;
+  background:none !important;
+  -webkit-text-fill-color:var(--yellow) !important;
+  font-size:49px !important;
+  margin-bottom:16px !important;
+  line-height:.95 !important;
+  font-weight:950;
+  letter-spacing:-.065em;
+  text-shadow:0 0 26px rgba(255,198,26,.24);
+  white-space:nowrap;
+  overflow-wrap:normal;
 }
 .advantages-grid .card p {
-  font-size:clamp(14px,1.45vw,17px) !important;
-  line-height:1.28 !important;
-  white-space:normal;
+  width:100%;
+  color:var(--white) !important;
+  font-size:19px !important;
+  line-height:1.15 !important;
+  font-weight:750;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+}
+.advantages-page .content {
+  padding-top:clamp(46px,6.3vh,58px);
+  padding-bottom:clamp(46px,6.3vh,58px);
+}
+.advantages-page .advantages-layout {
+  grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr);
+  gap:clamp(22px,3vw,36px);
 }
 .vision-layout {
   display:grid;
@@ -1149,6 +1775,14 @@ p {
   :root { --slide-w:100vw; --slide-h:75vw; }
   .slide { min-height:var(--slide-h); }
   .two, .compare, .partnership-layout, .launch-layout, .advantages-layout, .vision-layout, .tech-layout, .expertise-layout, .contact-layout { grid-template-columns:1fr; gap:clamp(32px,5vh,48px); }
+  .roi-layout { grid-template-columns:.9fr 1.1fr !important; gap:24px !important; }
+  .roi-compare { grid-template-columns:1fr !important; gap:clamp(18px,2.4vh,24px) !important; }
+  .partnership-page .partnership-layout { grid-template-columns:minmax(340px,.92fr) minmax(0,1.08fr) !important; gap:24px !important; }
+  .launch-page .launch-layout { grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr) !important; gap:20px !important; }
+  .launch-page .launch-copy { text-align:left !important; }
+  .launch-page .launch-copy .tagline { margin-left:0; margin-right:0; }
+  .advantages-page .advantages-layout { grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr) !important; gap:22px !important; }
+  .advantages-page .advantages-copy { text-align:left !important; }
   .card-grid, .flow { grid-template-columns:1fr 1fr; }
   .partnership-copy, .launch-copy, .advantages-copy, .vision-copy, .tech-copy, .expertise-copy, .contact-copy { text-align:center; }
   .partnership-copy .tagline, .launch-copy .tagline, .contact-copy .tagline { margin-left:auto; margin-right:auto; }
@@ -1172,22 +1806,20 @@ p {
 </div>
 
 <!-- Slide 1: Hero -->
-<section class="slide">
+<section class="slide hero-page">
 <div class="content">
 <div class="two" style="grid-template-columns:1.08fr .92fr;align-items:center;gap:clamp(32px,4vw,56px)">
 <div>
 <h1 class="hero-title"><span>引領</span><span class="yellow">AI 創作者</span><span>商業</span><span class="yellow">新紀元</span></h1>
 </div>
-<div style="background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.25);border-radius:clamp(24px,3vw,32px);padding:clamp(40px,5vw,60px);backdrop-filter:blur(24px);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.1) inset">
-<div class="kicker" style="margin-bottom:clamp(18px,2.2vh,26px)">機構合作夥伴</div>
-<p class="tagline hero-tagline" style="margin-top:0;font-size:clamp(20px,2.4vw,28px)">
+<div class="hero-card-panel" style="background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.25);border-radius:16px;padding:clamp(40px,5vw,60px);backdrop-filter:blur(24px);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.1) inset">
+<div class="hero-card-copy">
+<div class="kicker hero-card-kicker" style="margin-bottom:clamp(18px,2.2vh,26px)">機構合作夥伴</div>
+<p class="tagline hero-tagline hero-card-tagline" style="margin-top:0;font-size:clamp(20px,2.4vw,28px)">
 <span>與頂尖創作者機構</span>
 <span>共創 AI 時代新商機</span>
 </p>
-<div class="accent" style="margin-left:0;margin-top:clamp(28px,3.5vh,38px)"></div>
-<div style="margin-top:clamp(32px,4vh,44px)">
-<a href="#contact" class="btn">開始合作 →</a>
-</div>
+<div class="accent" style="margin-left:0;margin-top:clamp(34px,4.2vh,50px)"></div>
 </div>
 </div>
 </div>
@@ -1195,31 +1827,31 @@ p {
 </section>
 
 <!-- Slide 2: Market -->
-<section class="slide">
+<section class="slide market-page">
 <div class="content">
 <div class="two" style="grid-template-columns:.8fr 1.2fr;align-items:center">
 <div class="market-copy">
 <div class="kicker">市場機遇</div>
 <h2 style="font-size:clamp(28px,3.4vw,46px)"><span class="line">創作者經濟</span><span class="line">正在進入</span><span class="line yellow">AI 時代</span></h2>
 <p class="tagline" style="font-size:clamp(15px,1.6vw,20px);font-weight:600;color:var(--yellow);margin-top:clamp(18px,2.2vh,26px)">
-<span class="line">AI 正在</span><span class="line">重新定義</span><span class="line">創作者經濟的未來</span>
+<span class="line">AI 正在重新定義</span><span class="line">創作者經濟的未來</span>
 </p>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.2vw,28px)">
-<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3>$500B+</h3>
+<div class="market-stats">
+<div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3 class="stat-value stat-six"><span>$</span><span>5</span><span>0</span><span>0</span><span>B</span><span>+</span></h3>
 <p>創作者經濟</p>
 </div>
-<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3>70M+</h3>
+<div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3 class="stat-value stat-four"><span>7</span><span>0</span><span>M</span><span>+</span></h3>
 <p>全球創作者</p>
 </div>
-<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3>24/7</h3>
+<div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3 class="stat-value stat-four"><span>2</span><span>4</span><span>/</span><span>7</span></h3>
 <p>全天候期待</p>
 </div>
-<div class="card" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3>AI</h3>
+<div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
+<h3 class="stat-value stat-two"><span>A</span><span>I</span></h3>
 <p>下一個增長引擎</p>
 </div>
 </div>
@@ -1228,41 +1860,23 @@ p {
 </section>
 
 <!-- Slide 3: Problem -->
-<section class="slide">
+<section class="slide problem-page">
 <div class="content">
-<div class="two" style="align-items:center">
+<div class="two problem-layout" style="align-items:center">
 <div class="problem-copy">
-<div class="kicker" style="font-size:clamp(16px,1.7vw,23px)">發展瓶頸</div>
-<h2 style="font-size:clamp(24px,2.8vw,38px)">傳統機構<br/>遇到<br/><span class="yellow">天花板</span></h2>
+<div class="kicker">發展瓶頸</div>
+<h2><span class="line">傳統機構</span><span class="line">遇到</span><span class="line yellow">天花板</span></h2>
 </div>
-<div style="display:flex;flex-direction:column;gap:clamp(8px,1vh,12px)">
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">01</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">創作者時間</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">僅限24小時</p></div>
-</div>
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">02</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">人工聊天</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">依賴人力</p></div>
-</div>
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">03</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">聊天團隊</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">擴展成本高</p></div>
-</div>
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">04</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">營運</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">開銷倍增</p></div>
-</div>
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">05</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">管理</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">複雜度增長</p></div>
-</div>
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">06</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15">支援</h3><p style="font-size:clamp(14px,1.5vw,17px);line-height:1.25">資源緊張</p></div>
-</div>
-<div class="step" style="min-height:auto;padding:clamp(14px,1.7vw,20px) clamp(20px,2.4vw,27px);display:flex;align-items:center;gap:clamp(14px,1.7vw,20px);background:linear-gradient(145deg,rgba(255,198,26,.15),rgba(255,198,26,.08));border-color:rgba(255,198,26,.5)">
-<div class="num" style="margin-bottom:0;flex:none;font-size:clamp(16px,1.8vw,22px)">→</div>
-<div><h3 style="margin-bottom:2px;font-size:clamp(18px,2.1vw,24px);line-height:1.15;color:var(--yellow)">收入天花板</h3><p style="color:var(--gray);font-size:clamp(14px,1.5vw,17px);line-height:1.25">利潤萎縮</p></div>
+<div class="problem-grid">
+<div class="problem-card"><span class="problem-num">01</span><h3>創作者時間</h3><p>僅限 24 小時</p></div>
+<div class="problem-card"><span class="problem-num">02</span><h3>人工聊天</h3><p>依賴人力</p></div>
+<div class="problem-card"><span class="problem-num">03</span><h3>聊天團隊</h3><p>擴展成本高</p></div>
+<div class="problem-card"><span class="problem-num">04</span><h3>營運</h3><p>開銷倍增</p></div>
+<div class="problem-card"><span class="problem-num">05</span><h3>管理</h3><p>複雜度增長</p></div>
+<div class="problem-card"><span class="problem-num">06</span><h3>支援</h3><p>資源緊張</p></div>
+<div class="problem-card problem-result">
+<div><h3>收入天花板</h3><p>利潤萎縮</p></div>
+<span class="problem-arrow">→</span>
 </div>
 </div>
 </div>
@@ -1270,48 +1884,42 @@ p {
 </section>
 
 <!-- Slide 4: Solution -->
-<section class="slide">
+<section class="slide solution-page">
 <div class="content">
-<div class="two" style="gap:clamp(24px,3vw,40px)">
-<div class="solution-copy">
+<div class="solution-stage">
+<div class="solution-stage-copy">
 <div class="kicker">AI 改變一切</div>
-<h2>從有限到<br/><span class="yellow">無限規模</span></h2>
-<div class="list">
-<div class="item"><span class="mark">✓</span> 同時進行無限對話</div>
-<div class="item"><span class="mark">✓</span> 全時區24/7可用</div>
-<div class="item"><span class="mark">✓</span> 收入增長不需增加人員</div>
-<div class="item"><span class="mark">✓</span> AI 數位分身倍增創作者產能</div>
-<div class="item"><span class="mark">✓</span> 全天候自動化變現</div>
+<h2><span class="line">從有限到</span><span class="line yellow">無限規模</span></h2>
+<p class="solution-stage-caption"><span class="line">AI 無限倍增</span><span class="line">創作者產能</span></p>
 </div>
+<div class="solution-values">
+<div class="solution-value">
+<h3 class="solution-title-tc tc-four"><span>無</span><span>限</span><span>對</span><span>話</span></h3>
+<p>全時區 24/7 可用</p>
 </div>
-<div style="text-align:center;background:linear-gradient(135deg,rgba(255,198,26,.14),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.3);border-radius:clamp(24px,3vw,32px);padding:clamp(40px,5vw,64px) clamp(32px,4vw,48px);backdrop-filter:blur(24px);box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.12) inset">
-<div class="big-number">∞</div>
-<p style="margin-top:clamp(24px,3vh,36px);font-size:clamp(20px,2.4vw,28px);color:var(--yellow);font-weight:700;letter-spacing:-.015em">
-AI 無限倍增創作者產能
-</p>
+<div class="solution-value">
+<h3 class="solution-title-tc tc-five"><span>規</span><span>模</span><span>化</span><span>收</span><span>入</span></h3>
+<p>收入增長不需增加人員</p>
+</div>
+<div class="solution-value">
+<h3 class="solution-title-tc tc-ai"><span class="ai-prefix">AI</span><span>分</span><span>身</span><span>自</span><span>動</span><span>化</span></h3>
+<p>倍增創作者產能，全天候變現</p>
+</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- Slide 5: 額外收入渠道 -->
-<section class="slide">
+<section class="slide revenue-page">
 <div class="content">
-<div class="two" style="grid-template-columns:.55fr 1.45fr;gap:clamp(28px,3.5vw,48px);align-items:center">
-
-  <!-- 左側：文字 -->
-  <div class="revenue-copy">
-    <div class="kicker">與<br/>現有平台<br/>共存</div>
-    <h2 style="font-size:clamp(24px,3vw,40px)"><span class="yellow">額外<br/>收入</span><br/>而非<br/>平台<br/>替代</h2>
-  </div>
-
-  <!-- 右側：3個模塊 -->
-  <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(16px,2vw,28px);align-items:stretch">
+<div class="revenue-modules">
+  <div class="revenue-modules-grid">
 
   <!-- 現有平台保持不變 -->
-  <div style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1.5px solid rgba(255,255,255,.15);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(0,0,0,.4)">
-    <h3 style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:rgba(255,255,255,.95)">現有平台</h3>
-    <div style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700">保持不變</div>
+  <div class="revenue-module revenue-module-platforms" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1.5px solid rgba(255,255,255,.15);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(0,0,0,.4)">
+    <h3 class="revenue-title" style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:rgba(255,255,255,.95)">現有平台</h3>
+    <div class="revenue-subtitle" style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700">保持不變</div>
     <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
       <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
         <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">OnlyFans</div>
@@ -1324,59 +1932,57 @@ AI 無限倍增創作者產能
       </div>
     </div>
     <div style="margin-top:clamp(14px,1.8vh,20px);padding-top:clamp(14px,1.8vh,20px);border-top:1px solid rgba(255,255,255,.08)">
-      <div style="font-size:clamp(12px,1.3vw,15px);color:#999;line-height:1.6;text-align:center">繼續運營<br/>收入不變</div>
+      <div class="revenue-footer-copy" style="font-size:clamp(12px,1.3vw,15px);color:#999;line-height:1.6;text-align:center">繼續運營<br/>收入不變</div>
     </div>
   </div>
 
-  <!-- 加號 -->
-  <div style="font-size:clamp(30px,3.8vw,46px);font-weight:900;color:var(--yellow);text-shadow:0 0 30px rgba(255,198,26,.5);line-height:1;align-self:center">+</div>
+  <div class="revenue-operator" aria-hidden="true">+</div>
 
   <!-- 增加 iFanzy -->
-  <div style="background:linear-gradient(135deg,rgba(255,198,26,.16),rgba(255,198,26,.05));border:2px solid rgba(255,198,26,.45);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 20px 72px rgba(255,198,26,.25),0 0 0 1px rgba(255,198,26,.2) inset;position:relative">
-    <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;font-size:clamp(10px,1.1vw,13px);font-weight:800;padding:clamp(5px,.7vw,7px) clamp(11px,1.5vw,15px);border-radius:clamp(11px,1.3vw,14px);letter-spacing:.08em;box-shadow:0 4px 16px rgba(255,198,26,.4);white-space:nowrap">新渠道</div>
-    <h3 style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);margin-top:clamp(6px,.8vh,10px);text-align:center;color:var(--yellow)">iFanzy</h3>
-    <div style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700;opacity:.9">AI 全自動化</div>
+  <div class="revenue-module revenue-module-ifanzy" style="background:linear-gradient(135deg,rgba(255,198,26,.16),rgba(255,198,26,.05));border:2px solid rgba(255,198,26,.45);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 20px 72px rgba(255,198,26,.25),0 0 0 1px rgba(255,198,26,.2) inset;position:relative">
+    <div class="revenue-channel-label" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;font-size:clamp(10px,1.1vw,13px);font-weight:800;padding:clamp(5px,.7vw,7px) clamp(11px,1.5vw,15px);border-radius:clamp(11px,1.3vw,14px);letter-spacing:.08em;box-shadow:0 4px 16px rgba(255,198,26,.4);white-space:nowrap">新渠道</div>
+    <h3 class="revenue-title" style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);margin-top:clamp(6px,.8vh,10px);text-align:center;color:var(--yellow)">iFanzy</h3>
+    <div class="revenue-subtitle" style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700;opacity:.9">AI 全自動化</div>
     <div style="display:flex;flex-direction:column;gap:clamp(12px,1.4vh,16px)">
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-ai-feature" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">🤖</div>
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI 自動聊天</div>
+        <div class="revenue-ai-feature-copy" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI 自動聊天</div>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-ai-feature" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">📹</div>
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI 自動直播</div>
+        <div class="revenue-ai-feature-copy" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI 自動直播</div>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-ai-feature" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">💰</div>
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI 自動變現</div>
+        <div class="revenue-ai-feature-copy" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI 自動變現</div>
       </div>
     </div>
     <div style="margin-top:clamp(14px,1.8vh,20px);padding-top:clamp(14px,1.8vh,20px);border-top:1px solid rgba(255,198,26,.2)">
-      <div style="font-size:clamp(12px,1.3vw,15px);color:var(--yellow);line-height:1.6;text-align:center;font-weight:700">零人工介入<br/>純額外收入</div>
+      <div class="revenue-extra-copy" style="font-size:clamp(12px,1.3vw,15px);color:var(--yellow);line-height:1.6;text-align:center;font-weight:700">零人工介入<br/>純額外收入</div>
     </div>
   </div>
 
-  <!-- 等號 -->
-  <div style="font-size:clamp(30px,3.8vw,46px);font-weight:900;color:var(--yellow);text-shadow:0 0 30px rgba(255,198,26,.5);line-height:1;align-self:center">=</div>
+  <div class="revenue-operator" aria-hidden="true">=</div>
 
   <!-- 雙倍收入 -->
-  <div style="background:linear-gradient(135deg,rgba(255,198,26,.12),rgba(255,198,26,.03));border:1.5px solid rgba(255,198,26,.3);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(255,198,26,.15)">
-    <h3 style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:var(--yellow)">結果</h3>
+  <div class="revenue-module revenue-module-result" style="background:linear-gradient(135deg,rgba(255,198,26,.12),rgba(255,198,26,.03));border:1.5px solid rgba(255,198,26,.3);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(255,198,26,.15)">
+    <h3 class="revenue-title" style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:var(--yellow)">結果</h3>
     <div style="text-align:center;margin-bottom:clamp(16px,2vh,22px)">
-      <div style="font-size:clamp(30px,3.6vw,46px);font-weight:900;color:var(--yellow);line-height:1;margin-bottom:clamp(8px,1vh,12px);text-shadow:0 0 30px rgba(255,198,26,.4)">2×</div>
-      <div style="font-size:clamp(15px,1.7vw,19px);font-weight:800;color:rgba(255,255,255,.95);line-height:1.4">雙倍收入</div>
+      <div class="revenue-result-number" style="font-size:clamp(30px,3.6vw,46px);font-weight:900;color:var(--yellow);line-height:1;margin-bottom:clamp(8px,1vh,12px);text-shadow:0 0 30px rgba(255,198,26,.4)">2×</div>
+      <div class="revenue-dual-income" style="font-size:clamp(15px,1.7vw,19px);font-weight:800;color:rgba(255,255,255,.95);line-height:1.4">雙倍收入</div>
     </div>
     <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-benefit" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="color:var(--yellow);font-size:clamp(14px,1.6vw,18px);line-height:1">✓</div>
-        <div style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">額外渠道</div>
+        <div class="revenue-benefit-copy" style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">額外渠道</div>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-benefit" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="color:var(--yellow);font-size:clamp(14px,1.6vw,18px);line-height:1">✓</div>
-        <div style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">零額外時間</div>
+        <div class="revenue-benefit-copy" style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">零額外時間</div>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-benefit" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="color:var(--yellow);font-size:clamp(14px,1.6vw,18px);line-height:1">✓</div>
-        <div style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">疊加收益</div>
+        <div class="revenue-benefit-copy" style="font-size:clamp(12px,1.4vw,16px);color:#b0b0b0">疊加收益</div>
       </div>
     </div>
   </div>
@@ -1388,44 +1994,44 @@ AI 無限倍增創作者產能
 </section>
 
 <!-- Slide 7: Platform Features -->
-<section class="slide">
+<section class="slide features-page">
 <div class="content">
 <div class="two features-layout" style="grid-template-columns:.65fr 1.35fr;align-items:center;gap:clamp(28px,3.5vw,48px)">
 <div class="features-copy features-copy-tc">
 <div class="kicker">平台功能</div>
-<h2 style="font-size:clamp(24px,3vw,40px)">完整<br/>創作者<br/><span class="yellow">業務<br/>套件</span></h2>
+<h2 style="font-size:clamp(24px,3vw,40px)"><span class="title-line">完整</span><span class="title-line">創作者</span><span class="title-line yellow">業務</span><span class="title-line yellow">套件</span></h2>
 </div>
 <div class="features-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)">
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>AI 分身</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-ai-twin">AI 分身</h3>
 <p>打造經創作者授權的 AI 數位分身</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>直播工作室</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-live">直播工作室</h3>
 <p>隨時啟動 AI 驅動的直播</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>真人與 AI 模式</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-real-ai">真人與 AI 模式</h3>
 <p>創作者本人與AI自由切換</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>內容管理</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-content">內容管理</h3>
 <p>管理貼文、付費內容和 AI 資產</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>變現</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-monetization">變現</h3>
 <p>訂閱、打賞、付費內容、AI 直播等</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>錢包</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-wallet">錢包</h3>
 <p>追蹤收入並安全提現</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>數據分析</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-analytics">數據分析</h3>
 <p>了解粉絲行為並優化增長</p>
 </div>
-<div class="card enhanced" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
-<h3>創作者儀表板</h3>
+<div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
+<h3 class="feature-title-tc tc-dashboard">創作者儀表板</h3>
 <p>集中管理整個創作者業務</p>
 </div>
 </div>
@@ -1434,7 +2040,7 @@ AI 無限倍增創作者產能
 </section>
 
 <!-- Slide 7: ROI -->
-<section class="slide">
+<section class="slide roi-page">
 <div class="content">
 <div class="two roi-layout">
 <div class="roi-copy">
@@ -1451,13 +2057,13 @@ AI 無限倍增創作者產能
 </div>
 <div>
 <div class="compare roi-compare">
-<div class="panel" style="background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
-<h3 style="color:#999;font-size:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vh,36px);line-height:1.1">傳統模式</h3>
-<p class="small" style="font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">招募瓶頸<br/>限制擴張</p>
-</div>
 <div class="panel" style="background:linear-gradient(135deg,rgba(255,198,26,.14),rgba(255,198,26,.05));border:1px solid rgba(255,198,26,.45);box-shadow:0 1px 0 rgba(255,198,26,.15) inset,0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,198,26,.12),0 8px 32px rgba(255,198,26,.15);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
-<h3 style="color:var(--yellow);font-size:clamp(26px,3vw,36px);margin-bottom:clamp(24px,3vh,36px);text-shadow:0 0 20px rgba(255,198,26,.3);line-height:1.1">AI 驅動</h3>
+<h3 class="roi-title-ai" style="color:var(--yellow);text-shadow:0 0 20px rgba(255,198,26,.3)">AI 驅動</h3>
 <p class="small" style="color:var(--gray);font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">無需增員<br/>無限擴張</p>
+</div>
+<div class="panel" style="background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 12px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+<h3 class="roi-title-traditional" style="color:#fff">傳統模式</h3>
+<p class="small" style="font-size:clamp(17px,1.9vw,22px);line-height:1.65;max-width:320px">招募瓶頸<br/>限制擴張</p>
 </div>
 </div>
 </div>
@@ -1466,7 +2072,7 @@ AI 無限倍增創作者產能
 </section>
 
 <!-- Slide 8: Partnership -->
-<section class="slide">
+<section class="slide partnership-page">
 <div class="content">
 <div class="partnership-layout">
 <div class="partnership-copy partnership-copy-tc">
@@ -1504,7 +2110,7 @@ AI 無限倍增創作者產能
 </section>
 
 <!-- Slide 9: Launch -->
-<section class="slide">
+<section class="slide launch-page">
 <div class="content">
 <div class="launch-layout">
 <div class="launch-copy">
@@ -1541,7 +2147,7 @@ AI 無限倍增創作者產能
 </section>
 
 <!-- Slide 10: Advantages -->
-<section class="slide">
+<section class="slide advantages-page">
 <div class="content">
 <div class="advantages-layout">
 <div class="advantages-copy advantages-copy-tc">

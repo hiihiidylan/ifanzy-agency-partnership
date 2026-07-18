@@ -51,6 +51,12 @@ npm install
 node generate_mobile_pdf.js --4x3-only
 ```
 
+只生成 4:3 繁体中文版 PDF：
+
+```bash
+node generate_mobile_pdf.js --4x3-tc-only
+```
+
 脚本当前使用以下策略保证 PDF 尽量匹配本地预览：
 
 - 使用 `1280 x 720` 浏览器视口渲染，与当前预览环境一致。
@@ -158,4 +164,3 @@ pdftoppm -png outputs/pdf/agency_partnership_4x3_tc.pdf tmp/tc-page
 - 不要提交临时截图、PDF 渲染检查图或本地缓存。
 - 未收到明确指令时，不主动提交或推送。
 - 若远端已更新，先检查差异并在保留当前设计成果的前提下整合，不要使用破坏性重置。
-

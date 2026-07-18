@@ -47,7 +47,7 @@ async function generatePDF(htmlFile, outputPdf, options = {}) {
       const style = document.createElement('style');
       style.textContent = `
         html[lang="zh-Hant"].pdf-export .partnership-copy.partnership-copy-tc h2 {
-          font-size:104px !important;
+          font-size:83px !important;
           line-height:1.02 !important;
         }
         html[lang="en"].pdf-export .advantages-copy h2 {
@@ -147,7 +147,8 @@ async function generatePDF(htmlFile, outputPdf, options = {}) {
 (async () => {
   try {
     const fourByThreeOnly = process.argv.includes('--4x3-only');
-    if (!fourByThreeOnly) {
+    const fourByThreeTcOnly = process.argv.includes('--4x3-tc-only');
+    if (!fourByThreeOnly && !fourByThreeTcOnly) {
       await generatePDF('agency_partnership_mobile.html', 'agency_partnership_mobile_en.pdf');
       await generatePDF('agency_partnership_mobile_tc.html', 'agency_partnership_mobile_tc.pdf');
     }
@@ -160,7 +161,9 @@ async function generatePDF(htmlFile, outputPdf, options = {}) {
       deviceScaleFactor: 2,
       pdfLayoutFixes: true,
     };
-    await generatePDF('agency_partnership_4x3.html', 'agency_partnership_4x3_en.pdf', previewOptions);
+    if (!fourByThreeTcOnly) {
+      await generatePDF('agency_partnership_4x3.html', 'agency_partnership_4x3_en.pdf', previewOptions);
+    }
     await generatePDF('agency_partnership_4x3_tc.html', 'agency_partnership_4x3_tc.pdf', previewOptions);
     console.log('All PDFs generated successfully.');
   } catch (error) {

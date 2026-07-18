@@ -140,21 +140,42 @@ h1 {
 }
 .hero-card-kicker {
   display:block;
-  font-size:10.6cqw !important;
-  line-height:1.02;
+  font-size:inherit !important;
+  line-height:.94;
   font-weight:900;
-  letter-spacing:-.07em;
-  margin-bottom:clamp(26px,3.4vh,40px) !important;
+  letter-spacing:0;
+  margin:0 !important;
   white-space:nowrap;
 }
+.hero-card-kicker span {
+  display:block;
+  width:max-content;
+}
+.hero-card-kicker span:first-child {
+  font-size:26.4cqw;
+}
+.hero-card-kicker span:last-child {
+  font-size:15.6cqw;
+}
 .hero-card-tagline {
-  font-size:10cqw !important;
-  line-height:1.3;
+  line-height:1.13;
   font-weight:820;
-  letter-spacing:-.04em;
+  letter-spacing:0;
   color:var(--white) !important;
+  margin:0 !important;
+}
+.hero-card-tagline span:nth-child(1) {
+  font-size:11.35cqw;
+}
+.hero-card-tagline span:nth-child(2) {
+  font-size:11.6cqw;
+}
+.hero-card-tagline span:nth-child(3) {
+  font-size:10.35cqw;
 }
 .hero-card-tagline span {
+  display:block;
+  width:max-content;
   white-space:nowrap;
 }
 .hero-card-panel {
@@ -163,9 +184,12 @@ h1 {
   box-sizing:border-box;
   text-align:left;
   container-type:inline-size;
+  border-radius:10px !important;
+  padding:clamp(16px,2vw,24px) !important;
 }
 .hero-card-copy {
-  transform:translateX(clamp(-16px,-1.1vw,-10px));
+  width:100%;
+  transform:none;
 }
 .hero-page .two,
 .market-page .two {
@@ -174,17 +198,26 @@ h1 {
 }
 .hero-page .hero-card-panel {
   min-height:0;
-  aspect-ratio:1.35 / 1;
+  aspect-ratio:1.05 / 1;
   display:flex;
   align-items:center;
 }
 .hero-page .hero-card-copy {
   width:100%;
 }
+.hero-page .hero-card-panel .accent {
+  width:100%;
+  height:1px;
+  margin:clamp(16px,2.1vh,22px) 0 clamp(18px,2.4vh,26px);
+  border-radius:0;
+  background:rgba(255,255,255,.16);
+  box-shadow:none;
+}
 .market-page .market-stat {
   min-height:0 !important;
-  aspect-ratio:1.85 / 1;
+  aspect-ratio:1.35 / 1;
   border-radius:10px;
+  overflow:hidden;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -200,46 +233,68 @@ h1 {
 .market-stats {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:clamp(18px,2.2vw,28px);
+  gap:clamp(14px,1.8vw,22px);
 }
 .market-stat {
   text-align:left !important;
   container-type:inline-size;
 }
 .market-stats .market-stat {
-  padding:clamp(18px,2vw,24px) clamp(28px,3vw,42px) !important;
+  padding:11px !important;
 }
 .market-stats .market-stat h3 {
   width:100%;
   color:var(--yellow);
   background:none;
   -webkit-text-fill-color:var(--yellow);
-  font-size:27.5cqw;
-  line-height:.9;
-  letter-spacing:-.075em;
-  margin-bottom:clamp(14px,1.7vh,20px);
+  font-size:23.75cqw;
+  line-height:.92;
+  letter-spacing:0;
+  padding-bottom:clamp(10px,1.35vh,14px);
+  margin:0 0 clamp(10px,1.35vh,14px);
+  border-bottom:1px solid rgba(255,255,255,.16);
   text-shadow:0 0 34px rgba(255,198,26,.28);
   white-space:nowrap;
 }
 .market-stats .market-stat h3.stat-value {
   display:block;
-  letter-spacing:-.08em;
+  letter-spacing:0;
 }
 .market-stats .market-stat h3.stat-value span {
-  display:inline;
+  display:block;
+  width:max-content;
+}
+.market-stats .market-stat h3.stat-four {
+  font-size:23.75cqw;
+}
+.market-stats .market-stat h3.stat-two {
+  font-size:23.75cqw;
+  line-height:.92;
+}
+.market-stats .market-stat:nth-child(3) h3 {
+  font-size:23.75cqw;
 }
 .market-stats .market-stat p {
   color:var(--white);
   font-weight:800;
-  font-size:9cqw;
-  line-height:1.15;
+  font-size:11.8cqw;
+  line-height:1.08;
   margin:0;
   text-align:left;
   white-space:nowrap;
   overflow-wrap:normal;
-  width:111.111%;
-  transform:scaleX(.9);
-  transform-origin:left center;
+  width:max-content;
+  transform:none;
+  letter-spacing:0;
+}
+.market-stats .market-stat:nth-child(3) p {
+  font-size:8cqw;
+}
+.market-stats .market-stat:nth-child(4) p {
+  font-size:10.15cqw;
+}
+.market-stats .market-stat:nth-child(2) p {
+  font-size:13.1cqw;
 }
 .market-copy .kicker {
   font-size:clamp(32px,4.8vh,48px);
@@ -270,10 +325,14 @@ h1 {
   letter-spacing:-.025em;
 }
 .problem-page .two {
-  grid-template-columns:.82fr 1.18fr;
-  gap:clamp(24px,3vw,40px);
+  grid-template-columns:.78fr 1.22fr;
+  gap:10px;
   transform:scale(1.06);
   transform-origin:center;
+}
+.problem-page .content {
+  padding-left:42px;
+  padding-right:42px;
 }
 .problem-page .problem-copy .kicker {
   font-size:clamp(34px,5.2vh,52px) !important;
@@ -295,14 +354,15 @@ h1 {
   display:grid;
   min-width:0;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(12px,1.5vw,18px);
+  gap:10px;
 }
 .problem-card {
   position:relative;
   container-type:inline-size;
-  aspect-ratio:1.9 / 1;
+  aspect-ratio:auto;
   min-width:0;
-  padding:clamp(18px,2vw,24px);
+  min-height:0;
+  padding:12px 8px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -310,58 +370,71 @@ h1 {
   background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,198,26,.035));
   border:1px solid rgba(255,198,26,.18);
   border-radius:10px;
+  overflow:hidden;
   box-shadow:0 14px 44px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.025) inset;
 }
-.problem-card .problem-num {
+.problem-card:not(.problem-result) {
+  width:99%;
+  min-width:0;
+  max-width:100%;
+  justify-self:start;
+  box-sizing:border-box;
+}
+.problem-card:not(.problem-result)::after {
+  content:"";
   position:absolute;
-  top:clamp(10px,1.2vw,14px);
-  right:clamp(12px,1.4vw,16px);
-  color:var(--yellow);
-  font-size:clamp(12px,6cqw,15px);
-  font-weight:900;
-  opacity:.58;
+  left:8px;
+  right:8px;
+  top:56px;
+  height:1px;
+  background:rgba(255,255,255,.16);
+}
+.problem-card:not(.problem-result) h3 {
+  width:max-content;
+  padding-bottom:0;
+  margin-bottom:24px;
+  border-bottom:0;
 }
 .problem-card h3 {
-  margin:0 0 clamp(7px,1vh,10px);
-  color:var(--white);
-  font-size:clamp(26px,15cqw,38px);
-  line-height:1;
+  width:100%;
+  margin:0 0 clamp(9px,1.2vh,12px);
+  padding-bottom:clamp(9px,1.2vh,12px);
+  color:var(--yellow);
+  font-size:clamp(35.2px,15cqw,37px);
+  line-height:.96;
   font-weight:900;
   letter-spacing:-.035em;
   white-space:nowrap;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  text-shadow:0 0 26px rgba(255,198,26,.24);
 }
 .problem-card p {
   margin:0;
   color:var(--white);
-  font-size:clamp(14px,7cqw,19px);
-  line-height:1.12;
-  font-weight:720;
-  letter-spacing:-.015em;
+  font-size:clamp(15px,8.2cqw,19px);
+  line-height:1.08;
+  font-weight:800;
+  letter-spacing:0;
   white-space:nowrap;
 }
 .problem-result {
   grid-column:1 / -1;
   aspect-ratio:auto;
   min-height:clamp(88px,12vh,126px);
-  flex-direction:row;
-  align-items:center;
-  justify-content:space-between;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
   background:linear-gradient(135deg,rgba(255,198,26,.18),rgba(255,198,26,.065));
   border-color:rgba(255,198,26,.52);
   box-shadow:0 18px 56px rgba(0,0,0,.4),0 0 30px rgba(255,198,26,.08) inset;
 }
 .problem-result h3 {
   color:var(--yellow);
-  font-size:clamp(34px,9cqw,48px);
+  font-size:clamp(41px,10.8cqw,56px);
+  letter-spacing:-.02em;
 }
 .problem-result p {
   font-size:clamp(16px,3.8cqw,22px);
-}
-.problem-result .problem-arrow {
-  color:var(--yellow);
-  font-size:clamp(34px,8cqw,52px);
-  font-weight:900;
-  line-height:1;
 }
 .solution-copy .kicker {
   font-size:clamp(32px,4.8vh,50px);
@@ -683,50 +756,60 @@ p {
   display:block;
   white-space:nowrap;
 }
+.solution-stage-caption.caption-two-lines {
+  font-size:clamp(25px,2.6vw,31px);
+  line-height:1.18;
+}
 .solution-values {
   display:grid;
   grid-template-columns:1fr;
-  gap:clamp(10px,1.4vh,14px);
+  gap:clamp(10px,1.35vh,13px);
   width:100%;
-  max-width:400px;
+  max-width:420px;
   justify-self:end;
   transform:translateX(clamp(-34px,-2.6vw,-24px));
 }
 .solution-value {
   min-width:0;
   container-type:inline-size;
-  padding:clamp(18px,2.2vw,26px) clamp(26px,3.2vw,38px);
-  border:1px solid rgba(255,255,255,.12);
+  box-sizing:border-box;
+  padding:clamp(13px,1.55vw,17px) clamp(16px,1.9vw,22px);
+  border:1.5px solid rgba(255,198,26,.22);
   border-radius:10px;
-  background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
-  box-shadow:0 12px 32px rgba(0,0,0,.24);
+  background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));
+  box-shadow:0 16px 48px rgba(0,0,0,.34),0 0 0 1px rgba(255,198,26,.07) inset;
 }
 .solution-value h3 {
+  width:100%;
   color:var(--yellow);
-  line-height:1.05;
-  font-weight:900;
+  line-height:.9;
+  font-weight:950;
   letter-spacing:0;
-  margin-bottom:clamp(12px,1.6vh,18px);
+  margin:0 0 clamp(8px,1vh,10px);
+  padding-bottom:clamp(8px,1vh,10px);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  text-shadow:0 0 34px rgba(255,198,26,.28);
 }
 .solution-title .title-line {
   display:block;
   width:100%;
   white-space:nowrap;
 }
-.solution-title .en-unlimited {font-size:11.5cqw;}
-.solution-title .en-conversations {font-size:8.7cqw;}
-.solution-title .en-scalable {font-size:12cqw;}
-.solution-title .en-revenue {font-size:13cqw;}
-.solution-title .en-ai-twin {font-size:13cqw;}
-.solution-title .en-automation {font-size:10.5cqw;}
+.solution-title .en-unlimited {font-size:14.5cqw;}
+.solution-title .en-conversations {font-size:10cqw;}
+.solution-title .en-scalable {font-size:15.6cqw;}
+.solution-title .en-revenue {font-size:17.7cqw;}
+.solution-title .en-ai-twin {font-size:17.2cqw;}
+.solution-title .en-automation {font-size:12.6cqw;}
 .solution-title .title-line + .title-line {
   margin-top:.04em;
 }
 .solution-value p {
   color:var(--white);
-  font-size:clamp(18px,2vw,23px);
-  line-height:1.22;
-  font-weight:680;
+  font-size:clamp(17px,1.8vw,21px);
+  line-height:1.16;
+  font-weight:800;
+  margin:0;
 }
 .revenue-page .content {
   padding-left:clamp(52px,6.5vw,82px);
@@ -755,7 +838,7 @@ p {
 }
 .revenue-module {
   border-radius:10px !important;
-  padding:clamp(28px,3.4vw,40px) !important;
+  padding:clamp(18px,2.1vw,24px) clamp(17px,1.9vw,21px) clamp(24px,2.8vw,32px) !important;
   min-width:0;
   container-type:inline-size;
   display:flex;
@@ -769,42 +852,48 @@ p {
 .revenue-module .revenue-subtitle,
 .revenue-module .revenue-result-number {
   width:100%;
-  text-align:center;
+  text-align:left;
   white-space:nowrap;
   letter-spacing:0;
 }
+.revenue-module-heading {
+  width:100%;
+  padding-bottom:clamp(14px,1.7vh,18px);
+  margin-bottom:clamp(16px,2vh,22px);
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
 .revenue-module-platforms .revenue-title {
-  font-size:10.2cqw !important;
-  line-height:1 !important;
-  margin-bottom:clamp(14px,1.8vh,20px) !important;
+  font-size:9.8cqw !important;
+  line-height:.96 !important;
+  margin:0 0 clamp(8px,1vh,11px) !important;
 }
 .revenue-module-platforms .revenue-subtitle {
-  font-size:14cqw !important;
-  line-height:1 !important;
-  margin-bottom:clamp(22px,2.8vh,30px) !important;
+  font-size:13.8cqw !important;
+  line-height:.96 !important;
+  margin:0 !important;
 }
 .revenue-module-ifanzy .revenue-title {
-  font-size:25cqw !important;
-  line-height:1 !important;
-  margin:0 0 clamp(14px,1.8vh,20px) !important;
+  font-size:29cqw !important;
+  line-height:.94 !important;
+  margin:0 0 clamp(8px,1vh,11px) !important;
 }
 .revenue-module-ifanzy .revenue-subtitle {
   font-size:9.5cqw !important;
-  line-height:1 !important;
-  margin-bottom:clamp(22px,2.8vh,30px) !important;
+  line-height:.96 !important;
+  margin:0 !important;
 }
 .revenue-module-result .revenue-title {
-  font-size:25cqw !important;
-  line-height:1 !important;
-  margin-bottom:clamp(18px,2.2vh,26px) !important;
+  font-size:28cqw !important;
+  line-height:.94 !important;
+  margin:0 0 clamp(8px,1vh,11px) !important;
 }
 .revenue-module-result .revenue-result-number {
-  font-size:38cqw !important;
-  line-height:.9 !important;
-  margin-bottom:clamp(14px,1.8vh,20px) !important;
+  font-size:76cqw !important;
+  line-height:.82 !important;
+  margin:0 !important;
 }
 .revenue-channel-label {
-  top:clamp(-52px,-6vh,-42px) !important;
+  top:clamp(-64px,-7.2vh,-50px) !important;
   left:0 !important;
   right:0 !important;
   transform:none !important;
@@ -814,7 +903,7 @@ p {
   color:var(--yellow) !important;
   border-radius:0 !important;
   box-shadow:none !important;
-  font-size:clamp(18px,2vw,24px) !important;
+  font-size:15cqw !important;
   line-height:1 !important;
   text-align:center;
   letter-spacing:.08em !important;
@@ -840,6 +929,41 @@ p {
   color:var(--white) !important;
   font-weight:650;
 }
+.revenue-platform-list > div {
+  padding-top:clamp(10px,1.25vh,13px) !important;
+  padding-bottom:clamp(10px,1.25vh,13px) !important;
+}
+.revenue-platform-name {
+  line-height:1 !important;
+  white-space:nowrap;
+}
+.revenue-platform-name.platform-onlyfans {font-size:17.5cqw !important;}
+.revenue-platform-name.platform-patreon {font-size:20cqw !important;}
+.revenue-platform-name.platform-fanvue {font-size:24cqw !important;}
+.revenue-footer-copy .footer-line,
+.revenue-extra-copy .extra-line {
+  display:block;
+  width:max-content;
+  max-width:100%;
+  white-space:nowrap;
+  margin-inline:auto;
+}
+.revenue-footer-copy .footer-operations {font-size:9cqw;}
+.revenue-footer-copy .footer-income {font-size:10.2cqw;}
+.revenue-ai-feature-copy {line-height:1 !important;white-space:nowrap;}
+.revenue-ai-feature:nth-child(1) .revenue-ai-feature-copy {font-size:11.5cqw !important;}
+.revenue-ai-feature:nth-child(2) .revenue-ai-feature-copy {font-size:9.2cqw !important;}
+.revenue-ai-feature:nth-child(3) .revenue-ai-feature-copy {font-size:7.8cqw !important;}
+.revenue-extra-copy .extra-manual {font-size:10.8cqw;}
+.revenue-extra-copy .extra-income {font-size:7.9cqw;}
+.revenue-dual-income {
+  font-size:15cqw !important;
+  line-height:1 !important;
+  white-space:nowrap;
+}
+.revenue-module-result .revenue-benefit:nth-child(1) .revenue-benefit-copy {font-size:7.5cqw !important;}
+.revenue-module-result .revenue-benefit:nth-child(2) .revenue-benefit-copy,
+.revenue-module-result .revenue-benefit:nth-child(3) .revenue-benefit-copy {font-size:9cqw !important;}
 
 /* List with better spacing */
 .list {
@@ -965,15 +1089,92 @@ p {
 }
 .partnership-page .partnership-panels .list {
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:8px;
   row-gap:clamp(6px,1vh,8px);
   margin-top:0;
   flex:1;
   align-content:space-between;
 }
 .partnership-page .partnership-panels .item {
-  font-size:clamp(22px,2.1vw,25px);
+  min-width:0;
+  font-size:clamp(17.5px,1.75vw,20px);
   line-height:1.14;
+}
+.partnership-panels .partnership-matrix {
+  width:100%;
+  height:clamp(608px,81vh,624px);
+  min-height:clamp(608px,81vh,624px);
+  padding:0;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:42% 58%;
+  container-type:inline-size;
+  background:linear-gradient(145deg,rgba(255,198,26,.11),rgba(255,255,255,.025) 48%,rgba(0,0,0,.12));
+  border:1px solid rgba(255,198,26,.32);
+  box-shadow:0 16px 48px rgba(0,0,0,.42),0 0 0 1px rgba(255,198,26,.08) inset;
+}
+.partnership-matrix .matrix-section {
+  min-height:0;
+  padding:clamp(14px,1.9vh,18px);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.partnership-matrix .matrix-section + .matrix-section {
+  border-top:1px solid rgba(255,198,26,.55);
+  background:linear-gradient(135deg,rgba(255,198,26,.08),rgba(255,198,26,.015));
+}
+.partnership-matrix .matrix-title {
+  width:100%;
+  margin:0 0 clamp(10px,1.3vh,13px) !important;
+  color:var(--yellow);
+  -webkit-text-fill-color:var(--yellow);
+  font-weight:950;
+  line-height:.88 !important;
+  letter-spacing:0;
+  text-align:left;
+  text-transform:uppercase;
+  padding-bottom:0 !important;
+  border:0 !important;
+}
+.partnership-matrix .matrix-title .title-line {
+  display:block;
+  width:max-content;
+  white-space:nowrap;
+}
+.partnership-matrix .matrix-title-agency .title-line:first-child {font-size:18cqw;}
+.partnership-matrix .matrix-title-agency .title-line:last-child {font-size:11.8cqw;}
+.partnership-matrix .matrix-title-ifanzy .title-line:first-child {font-size:20cqw;text-transform:none;}
+.partnership-matrix .matrix-title-ifanzy .title-line:last-child {font-size:17.5cqw;}
+.partnership-page .partnership-matrix .matrix-list {
+  flex:1;
+  min-height:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:1fr;
+  gap:0;
+  margin:0;
+  align-content:stretch;
+}
+.partnership-page .partnership-matrix .matrix-list .item {
+  min-width:0;
+  padding:clamp(7px,1vh,10px) 8px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  font-size:clamp(16.5px,1.65vw,19px);
+  line-height:1.08;
+  font-weight:760;
+  letter-spacing:0;
+}
+.partnership-matrix .matrix-list .item:nth-child(odd) {
+  padding-left:0;
+  border-right:1px solid rgba(255,255,255,.13);
+}
+.partnership-matrix .matrix-list .item:nth-child(even) {padding-right:0;}
+.partnership-matrix .matrix-list .item:not(:nth-last-child(-n+2)) {
+  border-bottom:1px solid rgba(255,255,255,.13);
 }
 .launch-layout {
   display:grid;
@@ -1015,6 +1216,7 @@ p {
 }
 .launch-steps .step {
   min-height:clamp(128px,17vh,144px);
+  height:138px;
   padding:clamp(17px,2.1vh,21px) clamp(14px,1.5vw,18px) clamp(17px,2.1vh,21px) clamp(16px,1.8vw,20px);
   border-radius:10px;
   display:grid;
@@ -1023,7 +1225,7 @@ p {
     "title num"
     "copy copy";
   column-gap:clamp(12px,1.5vw,18px);
-  row-gap:clamp(8px,1.1vh,11px);
+  row-gap:6px;
   align-items:center;
   container-type:inline-size;
 }
@@ -1039,12 +1241,16 @@ p {
   grid-area:title;
   font-size:clamp(30px,9.2cqw,36px);
   margin:0;
-  line-height:1.04;
+  line-height:.9;
   color:var(--yellow);
   font-weight:950;
-  letter-spacing:-.04em;
+  letter-spacing:0;
   white-space:nowrap;
 }
+.launch-page .launch-steps .step:nth-child(1) h3 {font-size:9cqw;}
+.launch-page .launch-steps .step:nth-child(2) h3 {font-size:12cqw;}
+.launch-page .launch-steps .step:nth-child(3) h3 {font-size:17cqw;}
+.launch-page .launch-steps .step:nth-child(4) h3 {font-size:18.5cqw;}
 .launch-steps .step p {
   grid-area:copy;
   width:100%;
@@ -1178,7 +1384,7 @@ p {
 }
 .features-page .features-grid {
   grid-template-columns:repeat(12,minmax(0,1fr)) !important;
-  grid-template-rows:repeat(4,minmax(124px,1fr));
+  grid-template-rows:repeat(4,140px);
   gap:clamp(7px,.9vw,10px) !important;
 }
 .features-page .feature-card:nth-child(1),
@@ -1196,7 +1402,7 @@ p {
   padding:clamp(10px,1.25vw,14px) clamp(14px,1.65vw,18px) !important;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
 }
 .features-page .feature-card h3 {
   width:100%;
@@ -1205,12 +1411,11 @@ p {
   -webkit-text-fill-color:var(--yellow);
   letter-spacing:0;
   line-height:.94;
-  margin-bottom:clamp(7px,.9vh,11px);
+  margin-bottom:8px;
   text-transform:uppercase;
   white-space:nowrap;
   text-align:left;
-  transform:scaleX(var(--title-scale,1));
-  transform-origin:left center;
+  transform:none;
 }
 .features-page .feature-card h3 .title-line {
   display:block;
@@ -1218,8 +1423,8 @@ p {
 }
 .features-page .feature-card p {
   color:var(--white);
-  font-size:clamp(13px,1.25vw,15px);
-  line-height:1.15;
+  font-size:17px;
+  line-height:1.12;
   font-weight:650;
   text-align:left;
 }
@@ -1227,12 +1432,33 @@ p {
   display:block;
   white-space:nowrap;
 }
+.features-page .feature-card:nth-child(2) p {
+  font-size:15.5px;
+  white-space:nowrap;
+}
+.features-page .feature-card:nth-child(3) p,
+.features-page .feature-card:nth-child(4) p,
+.features-page .feature-card:nth-child(8) p {
+  font-size:15.5px;
+  line-height:1.08;
+}
+.features-page .feature-card:nth-child(4) p {
+  white-space:nowrap;
+}
 .feature-title-en {
-  font-size:36px !important;
-  line-height:.88 !important;
+  font-size:var(--feature-title-size,38px) !important;
+  line-height:.9 !important;
   transform:none !important;
   white-space:normal !important;
 }
+.feature-title-en.en-ai-twins {--feature-title-size:22cqw;}
+.feature-title-en.en-live-studio {--feature-title-size:16.5cqw;}
+.feature-title-en.en-real-ai {--feature-title-size:18.5cqw;}
+.feature-title-en.en-content {--feature-title-size:12.8cqw;}
+.feature-title-en.en-monetization {--feature-title-size:12.4cqw;}
+.feature-title-en.en-wallet {--feature-title-size:25cqw;}
+.feature-title-en.en-analytics {--feature-title-size:15.3cqw;}
+.feature-title-en.en-dashboard {--feature-title-size:15cqw;}
 .features-page .feature-card:nth-child(3),
 .features-page .feature-card:nth-child(4),
 .features-page .feature-card:nth-child(1),
@@ -1243,6 +1469,20 @@ p {
 .features-page .feature-card:nth-child(6) {
   padding-left:6px !important;
   padding-right:6px !important;
+}
+.features-page .feature-card:nth-child(3),
+.features-page .feature-card:nth-child(4),
+.features-page .feature-card:nth-child(8) {
+  padding-top:7px !important;
+  padding-bottom:7px !important;
+}
+.features-page .feature-card:nth-child(3) h3,
+.features-page .feature-card:nth-child(4) h3,
+.features-page .feature-card:nth-child(8) h3 {
+  margin-bottom:7px;
+}
+.features-page .features-grid .card.enhanced.feature-card {
+  padding:8px !important;
 }
 .roi-layout {
   grid-template-columns:.9fr 1.1fr;
@@ -1299,7 +1539,7 @@ p {
 .roi-compare .panel {
   min-height:clamp(266px,37.5vh,272px);
   height:clamp(266px,37.5vh,272px);
-  padding:clamp(32px,4.2vh,40px) clamp(20px,1.8vw,22px);
+  padding:clamp(16px,2.2vh,18px);
   border-radius:10px;
   min-width:0;
   container-type:inline-size;
@@ -1309,24 +1549,26 @@ p {
 }
 .roi-compare .panel h3 {
   width:100%;
-  margin:0 0 clamp(18px,2.5vh,24px) !important;
-  line-height:1 !important;
+  margin:0 0 clamp(14px,1.8vh,18px) !important;
+  line-height:.92 !important;
   letter-spacing:0;
   white-space:nowrap;
   text-align:left;
   font-weight:950;
+  color:var(--yellow) !important;
+  -webkit-text-fill-color:var(--yellow);
 }
 .roi-compare .panel .roi-title-traditional {
-  font-size:clamp(35px,12cqw,40px) !important;
+  font-size:11.5cqw !important;
 }
 .roi-compare .panel .roi-title-ai {
-  font-size:clamp(54px,17cqw,58px) !important;
+  font-size:17cqw !important;
 }
 .roi-compare .panel p {
   width:100%;
   max-width:none !important;
-  font-size:clamp(34px,11cqw,38px) !important;
-  line-height:1.26 !important;
+  font-size:12cqw !important;
+  line-height:1.12 !important;
   color:#fff !important;
   text-align:left;
 }
@@ -1380,12 +1622,16 @@ p {
   color:var(--yellow) !important;
   background:none !important;
   -webkit-text-fill-color:var(--yellow) !important;
-  font-size:clamp(34px,14cqw,36px) !important;
-  margin-bottom:clamp(10px,1.3vh,14px) !important;
-  line-height:.95 !important;
+  font-size:13.8cqw !important;
+  margin:0 0 clamp(10px,1.3vh,14px) !important;
+  padding-bottom:clamp(10px,1.3vh,14px);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  line-height:.92 !important;
   font-weight:950;
   letter-spacing:-.045em;
   text-shadow:0 0 26px rgba(255,198,26,.24);
+  height:1.84em;
+  box-sizing:content-box;
   white-space:normal;
   overflow-wrap:normal;
 }
@@ -1408,8 +1654,8 @@ p {
 }
 .vision-layout {
   display:grid;
-  grid-template-columns:minmax(360px,1.1fr) minmax(0,.9fr);
-  gap:clamp(14px,2vw,30px);
+  grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr);
+  gap:clamp(22px,3vw,36px);
   align-items:center;
   width:100%;
 }
@@ -1417,18 +1663,17 @@ p {
   text-align:left;
 }
 .vision-copy .kicker {
-  font-size:clamp(32px,3.35vw,48px);
-  line-height:1.08;
+  font-size:clamp(28px,3vw,44px);
+  line-height:.94;
   font-weight:900;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
 .vision-copy h2 {
-  font-size:clamp(64px,6.65vw,94px);
-  line-height:1.02;
+  font-size:clamp(58px,6.2vw,88px);
+  line-height:.9;
   font-weight:950;
   letter-spacing:-.065em;
-  max-width:720px;
 }
 .vision-copy h2 .title-line {
   display:block;
@@ -1437,22 +1682,51 @@ p {
 .vision-steps {
   display:grid;
   grid-template-columns:1fr;
-  gap:clamp(14px,1.9vh,22px);
-  width:100%;
-  max-width:clamp(360px,34vw,500px);
+  gap:clamp(10px,1.5vw,14px);
+  width:min(100%,550px);
   justify-self:start;
 }
 .vision-steps .step {
-  min-height:auto;
-  padding:clamp(22px,2.7vw,32px) clamp(24px,3vw,36px);
+  width:100%;
+  min-height:180px;
+  height:180px;
+  padding:11px 14px;
+  border-radius:10px;
+  border:1.5px solid rgba(255,198,26,.22);
+  background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));
+  box-shadow:0 16px 48px rgba(0,0,0,.42),0 0 0 1px rgba(255,198,26,.07) inset;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  text-align:left;
+  container-type:inline-size;
 }
 .vision-steps .step h3 {
-  font-size:clamp(22px,2.4vw,30px);
+  width:100%;
+  color:var(--yellow);
+  font-size:60px;
+  line-height:.92;
+  font-weight:950;
+  letter-spacing:-.035em;
+  margin:0 0 10px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  text-shadow:0 0 26px rgba(255,198,26,.24);
   white-space:nowrap;
 }
 .vision-steps .step p {
-  font-size:clamp(15px,1.5vw,18px);
+  width:100%;
+  color:var(--white);
+  font-size:clamp(23px,5.2cqw,26px);
+  line-height:1.08;
+  font-weight:750;
+  letter-spacing:-.02em;
   white-space:nowrap;
+}
+.vision-page .content {
+  padding-top:clamp(46px,6.3vh,58px);
+  padding-bottom:clamp(46px,6.3vh,58px);
 }
 .tech-layout {
   display:grid;
@@ -1484,85 +1758,173 @@ p {
 .tech-stack {
   display:grid;
   grid-template-columns:1fr;
-  gap:clamp(22px,3vh,34px);
+  gap:clamp(16px,2.2vh,22px);
+  width:100%;
+}
+.tech-group {
+  min-height:clamp(258px,32vh,274px);
+  padding:clamp(20px,2.5vh,26px) clamp(20px,2.1vw,28px);
+  border:1.5px solid rgba(255,198,26,.22);
+  border-radius:10px;
+  background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));
+  box-shadow:0 16px 48px rgba(0,0,0,.42),0 0 0 1px rgba(255,198,26,.07) inset;
+  container-type:inline-size;
 }
 .tech-section-title {
   color:var(--yellow);
-  font-size:clamp(18px,2vw,24px);
-  margin-bottom:clamp(16px,2vh,24px);
+  font-size:clamp(48px,10cqw,58px);
+  line-height:.95;
+  font-weight:950;
+  margin-bottom:clamp(18px,2.3vh,24px);
   text-align:left;
-  letter-spacing:.04em;
+  letter-spacing:-.04em;
+  white-space:nowrap;
+  text-shadow:0 0 26px rgba(255,198,26,.24);
 }
 .tech-grid {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:clamp(12px,1.6vw,18px);
+  grid-template-columns:1fr;
+  gap:0;
 }
 .tech-tile {
-  border:1.5px solid rgba(255,255,255,.18);
-  background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%);
-  border-radius:clamp(14px,1.8vw,18px);
-  padding:clamp(18px,2.2vw,26px);
-  backdrop-filter:blur(32px);
-  box-shadow:0 12px 48px rgba(0,0,0,.5);
-  text-align:center;
+  min-height:clamp(54px,6.7vh,60px);
+  padding:clamp(7px,.85vh,9px) 0;
+  border:0;
+  border-top:1px solid rgba(255,255,255,.13);
+  background:none;
+  box-shadow:none;
+  text-align:left;
+  display:grid;
+  grid-template-columns:max-content max-content minmax(0,1fr);
+  grid-template-areas:"title icon description";
+  align-items:center;
+  column-gap:clamp(8px,1vw,12px);
+}
+.tech-tile:first-child {
+  border-top:0;
 }
 .tech-tile.highlight {
-  border-color:rgba(255,198,26,.35);
-  background:linear-gradient(135deg, rgba(255,198,26,.12) 0%, rgba(255,198,26,.03) 100%);
-  box-shadow:0 16px 56px rgba(255,198,26,.15),0 0 0 1px rgba(255,198,26,.1) inset;
+  background:none;
+  box-shadow:none;
 }
 .tech-icon {
-  width:clamp(38px,4.4vw,46px);
-  height:clamp(38px,4.4vw,46px);
-  border-radius:10px;
-  background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
-  border:1.5px solid rgba(255,255,255,.2);
+  grid-area:icon;
+  width:auto;
+  height:auto;
+  border-radius:0;
+  background:none;
+  border:0;
   display:grid;
   place-items:center;
-  margin:0 auto clamp(10px,1.3vh,14px);
-  font-size:clamp(18px,2.2vw,24px);
+  margin:0;
+  font-size:clamp(28px,2.8vw,34px);
 }
 .tech-tile.highlight .tech-icon {
-  background:linear-gradient(135deg, rgba(255,198,26,.25), rgba(255,198,26,.1));
-  border-color:rgba(255,198,26,.5);
+  background:none;
+  border:0;
   color:var(--yellow);
-  box-shadow:0 0 32px rgba(255,198,26,.25);
+  box-shadow:none;
 }
 .tech-tile h4 {
-  font-size:clamp(14px,1.5vw,18px);
-  font-weight:800;
-  margin:0 0 clamp(4px,.6vh,6px);
-  line-height:1.3;
+  grid-area:title;
+  color:var(--white);
+  font-size:clamp(25px,5cqw,29px);
+  font-weight:900;
+  margin:0;
+  line-height:1;
+  letter-spacing:-.02em;
+  white-space:nowrap;
 }
 .tech-tile p {
-  font-size:clamp(12px,1.25vw,14px);
-  color:#b0b0b0;
-  line-height:1.4;
+  grid-area:description;
+  justify-self:end;
+  font-size:clamp(14px,2.25cqw,16px);
+  color:var(--white);
+  line-height:1;
+  font-weight:750;
+  white-space:nowrap;
+}
+.tech-group:first-child .tech-tile h4 {
+  font-size:clamp(32px,6.4cqw,37px);
+  white-space:normal;
+}
+.tech-group:first-child .tech-tile p {
+  font-size:clamp(19px,3.8cqw,22px);
+  white-space:nowrap;
+}
+.tech-group:first-child .tech-icon {
+  font-size:clamp(32px,6.4cqw,37px);
+}
+.tech-group:first-child .tech-grid {
+  grid-template-columns:repeat(3,max-content);
+  justify-content:space-between;
+}
+.tech-group:first-child {
+  min-height:0;
+}
+.tech-group:first-child .tech-tile {
+  min-height:100px;
+  padding:11px 0 clamp(8px,1vh,12px) 10px;
+  border-top:0;
+  border-left:1px solid rgba(255,255,255,.13);
+  grid-template-columns:max-content max-content minmax(0,1fr);
+  grid-template-areas:"title icon ." "description description description";
+  align-content:start;
+  justify-content:start;
+  column-gap:4px;
+  row-gap:clamp(8px,1vh,10px);
+}
+.tech-group:first-child .tech-tile:first-child {
+  border-left:0;
+  padding-left:0;
+}
+.tech-group:first-child .tech-tile:last-child {
+  padding-right:0;
+}
+.tech-group:first-child .tech-tile p {
+  justify-self:start;
+  white-space:nowrap;
+  line-height:1.1;
+}
+.tech-group:first-child .tech-tile .tech-icon {
+  align-self:end;
+  margin-bottom:2px;
+}
+.tech-group:last-child .tech-tile {
+  grid-template-areas:"icon title description";
+}
+.tech-group:last-child .tech-tile:last-child h4 {
+  letter-spacing:-.035em;
+}
+.tech-page .content {
+  padding-top:clamp(46px,6.3vh,58px);
+  padding-bottom:clamp(46px,6.3vh,58px);
 }
 .expertise-layout {
   display:grid;
-  grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr);
-  gap:clamp(22px,3.3vw,48px);
+  grid-template-columns:minmax(300px,.76fr) minmax(0,1.24fr);
+  gap:clamp(24px,3vw,42px);
   align-items:center;
   width:100%;
 }
 .expertise-copy {
   text-align:left;
+  container-type:inline-size;
+  width:calc(100% + 18px);
 }
 .expertise-copy .kicker {
-  font-size:clamp(32px,3.35vw,48px);
+  font-size:clamp(38px,11.5cqw,50px);
   line-height:1;
   font-weight:900;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
 .expertise-copy h2 {
-  font-size:clamp(48px,5vw,72px);
-  line-height:.96;
+  font-size:clamp(48px,15.6cqw,66px);
+  line-height:1.03;
   font-weight:950;
-  letter-spacing:-.06em;
-  max-width:720px;
+  letter-spacing:-.045em;
+  max-width:none;
 }
 .expertise-copy h2 .title-line {
   display:block;
@@ -1571,64 +1933,84 @@ p {
 .expertise-stack {
   display:grid;
   grid-template-columns:1fr;
-  gap:clamp(18px,2.25vh,28px);
-  max-width:clamp(540px,48vw,700px);
+  gap:clamp(16px,2vh,22px);
+  width:100%;
+  max-width:560px;
   justify-self:end;
-}
-.expertise-stats {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(12px,1.6vw,20px);
+  container-type:inline-size;
 }
 .expertise-stat {
   border:1px solid rgba(255,198,26,.3);
   background:linear-gradient(135deg, rgba(255,198,26,.08) 0%, rgba(255,198,26,.02) 100%);
-  border-radius:clamp(22px,2.8vw,30px);
-  padding:clamp(20px,2.4vw,30px);
-  text-align:center;
+  border-radius:10px;
+  padding:clamp(18px,2.4vh,24px) clamp(24px,3cqw,32px);
+  min-height:276px;
+  height:276px;
+  display:grid;
+  align-content:center;
+  gap:clamp(12px,1.6vh,16px);
+  text-align:left;
+  box-shadow:0 18px 54px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.06);
 }
-.expertise-number {
-  font-size:clamp(42px,4.9vw,62px);
-  font-weight:900;
-  color:var(--yellow);
-  margin-bottom:clamp(14px,1.8vh,22px);
-  text-shadow:0 0 30px rgba(255,198,26,.4);
-}
-.expertise-stat p {
-  font-size:clamp(14px,1.4vw,17px);
-  line-height:1.35;
-}
-.expertise-points {
+.expertise-primary {
   display:grid;
   grid-template-columns:1fr;
-  gap:clamp(10px,1.35vh,16px);
+  gap:clamp(10px,1.4vh,14px);
 }
-.expertise-points .item {
-  font-size:clamp(17px,1.8vw,23px);
-  font-weight:700;
+.expertise-number {
+  font-size:clamp(84px,18.5cqw,104px);
+  line-height:1;
+  font-weight:950;
+  letter-spacing:-.045em;
+  color:var(--yellow);
+  text-shadow:0 0 30px rgba(255,198,26,.4);
+  white-space:nowrap;
+}
+.expertise-stat p {
+  color:var(--white);
+  font-size:clamp(20px,4.5cqw,25px);
+  line-height:1.24;
+  font-weight:650;
+}
+.expertise-proof {
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:clamp(10px,1.5cqw,14px);
+  align-items:start;
+  padding-top:clamp(10px,1.3vh,14px);
+  border-top:1px solid rgba(255,255,255,.13);
+  color:var(--white);
+  font-size:clamp(22px,4.8cqw,27px);
+  line-height:1.18;
+  font-weight:800;
+}
+.expertise-proof .mark {
+  color:var(--yellow);
 }
 .contact-layout {
   display:grid;
-  grid-template-columns:minmax(360px,1.05fr) minmax(0,.95fr);
-  gap:clamp(28px,4vw,58px);
+  grid-template-columns:minmax(410px,1.05fr) minmax(340px,.95fr);
+  gap:clamp(22px,2.6vw,32px);
   align-items:center;
   width:100%;
+  container-type:inline-size;
 }
 .contact-copy {
   text-align:left;
+  container-type:inline-size;
 }
 .contact-copy .kicker {
-  font-size:clamp(42px,4.4vw,64px);
-  line-height:.98;
-  font-weight:900;
+  font-size:clamp(52px,12cqw,66px);
+  line-height:1;
+  font-weight:950;
   letter-spacing:.06em;
   text-transform:uppercase;
 }
 .contact-copy .tagline {
   color:var(--white);
-  font-size:clamp(29px,3vw,44px);
-  max-width:720px;
-  line-height:1.08;
+  font-size:clamp(29px,6.5cqw,38px);
+  max-width:none;
+  line-height:1.1;
   font-weight:850;
   letter-spacing:-.04em;
   margin-top:clamp(26px,3.2vh,38px);
@@ -1647,9 +2029,37 @@ p {
   font-weight:950;
 }
 .contact-copy.contact-copy-en .tagline {
-  font-size:clamp(24px,2.45vw,35px);
-  line-height:1.12;
-  max-width:760px;
+  font-size:clamp(27px,6.2cqw,34px);
+  line-height:1.13;
+  max-width:none;
+}
+.contact-copy.contact-copy-en .kicker span {
+  display:block;
+  white-space:nowrap;
+}
+.contact-copy.contact-copy-en .kicker span:nth-child(1) {
+  font-size:clamp(120px,32cqw,140px);
+}
+.contact-copy.contact-copy-en .kicker span:nth-child(2) {
+  font-size:clamp(60px,15.5cqw,72px);
+}
+.contact-copy.contact-copy-en .kicker span:nth-child(3) {
+  font-size:clamp(74px,19cqw,86px);
+}
+.contact-copy.contact-copy-en .tagline span {
+  white-space:nowrap;
+}
+.contact-copy.contact-copy-en .tagline span:nth-child(1) {
+  font-size:clamp(30px,7.6cqw,36px);
+}
+.contact-copy.contact-copy-en .tagline span:nth-child(2) {
+  font-size:clamp(35px,9.4cqw,42px);
+}
+.contact-copy.contact-copy-en .tagline span:nth-child(3) {
+  font-size:clamp(28px,7.1cqw,34px);
+}
+.contact-copy.contact-copy-en .tagline span:nth-child(4) {
+  font-size:clamp(29px,7.3cqw,35px);
 }
 .contact-copy.contact-copy-en .tagline .phrase-gap {
   margin-top:clamp(14px,1.8vh,22px);
@@ -1657,15 +2067,17 @@ p {
 .contact-card {
   position:relative;
   overflow:hidden;
-  border:1px solid rgba(255,198,26,.36);
-  background:
-    radial-gradient(circle at 85% 12%, rgba(255,198,26,.18), transparent 36%),
-    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
-  border-radius:clamp(24px,2.8vw,32px);
-  padding:clamp(32px,3.8vw,48px);
+  border:1px solid rgba(255,198,26,.34);
+  background:linear-gradient(135deg, rgba(255,198,26,.1), rgba(255,255,255,.025));
+  border-radius:10px;
+  padding:clamp(30px,3.6vw,42px);
+  min-height:clamp(360px,48vh,410px);
+  display:grid;
+  align-content:center;
+  container-type:inline-size;
   box-shadow:
     0 1px 0 rgba(255,255,255,.14) inset,
-    0 24px 70px rgba(0,0,0,.55),
+    0 20px 58px rgba(0,0,0,.45),
     0 0 0 1px rgba(255,198,26,.12),
     0 18px 58px rgba(255,198,26,.14);
   backdrop-filter:blur(28px) saturate(180%);
@@ -1675,22 +2087,69 @@ p {
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(115deg, rgba(255,255,255,.16), transparent 42%);
-  opacity:.55;
+  background:linear-gradient(115deg, rgba(255,255,255,.1), transparent 42%);
+  opacity:.45;
 }
 .contact-card > * {
   position:relative;
   z-index:1;
 }
 .contact-card h2 {
-  font-size:clamp(32px,3.7vw,52px);
-  line-height:1.12;
-  margin-bottom:clamp(28px,3.5vh,42px);
+  font-size:clamp(34px,9.2cqw,46px);
+  line-height:1.08;
+  margin-bottom:clamp(34px,4.2vh,46px);
+}
+.contact-card h2 span {
+  display:block;
+  white-space:nowrap;
+}
+.contact-page .contact-card {
+  padding-left:12px;
+  padding-right:12px;
+  padding-top:16px;
+  padding-bottom:clamp(22px,6cqw,30px);
+  align-content:start;
+  box-sizing:border-box;
+  min-height:0;
+  height:auto;
+  grid-template-rows:auto auto;
+}
+.contact-page .contact-card h2 {
+  overflow:hidden;
+  font-size:82px;
+  line-height:1;
+  margin-bottom:24px;
+}
+.contact-page .contact-card h2 span {
+  width:max-content;
+}
+.contact-page .contact-card h2 span:nth-child(1) {
+  font-size:clamp(86px,23.2cqw,124px);
+}
+.contact-page .contact-card h2 span:nth-child(2) {
+  font-size:clamp(83px,23cqw,122px);
+}
+.contact-page .contact-card h2 span:nth-child(3) {
+  font-size:clamp(56px,15.2cqw,82px);
+  word-spacing:normal;
+}
+.contact-page .contact-links {
+  padding-top:20px;
+  align-self:start;
+  margin-bottom:0;
+}
+.contact-page .contact-link:first-child {
+  font-size:clamp(36px,11.5cqw,44px);
+}
+.contact-page .contact-link:last-child {
+  font-size:clamp(28px,8.7cqw,36px);
 }
 .contact-links {
   display:grid;
   grid-template-columns:1fr;
-  gap:clamp(10px,1.35vh,16px);
+  gap:clamp(14px,1.8vh,20px);
+  padding-top:clamp(22px,2.8vh,30px);
+  border-top:1px solid rgba(255,255,255,.14);
 }
 .contact-link {
   display:block;
@@ -1700,7 +2159,7 @@ p {
   padding:0;
   color:var(--yellow);
   text-decoration:none;
-  font-size:clamp(20px,2.15vw,28px);
+  font-size:clamp(20px,5.6cqw,26px);
   font-weight:850;
   text-shadow:0 0 20px rgba(255,198,26,.28);
 }
@@ -1718,6 +2177,16 @@ p {
   .launch-page .launch-copy .tagline { margin-left:0; margin-right:0; }
   .advantages-page .advantages-layout { grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr) !important; gap:22px !important; }
   .advantages-page .advantages-copy { text-align:left !important; }
+  .vision-page .vision-layout { grid-template-columns:minmax(240px,.62fr) minmax(0,1.38fr) !important; gap:22px !important; }
+  .vision-page .vision-copy { text-align:left !important; }
+  .tech-page .tech-layout { grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr) !important; gap:22px !important; }
+  .tech-page .tech-copy { text-align:left !important; }
+  .tech-page .tech-section-title { text-align:left !important; }
+  .expertise-page .expertise-layout { grid-template-columns:minmax(300px,.76fr) minmax(0,1.24fr) !important; gap:24px !important; }
+  .expertise-page .expertise-copy { text-align:left !important; }
+  .contact-page .contact-layout { grid-template-columns:minmax(410px,1.05fr) minmax(340px,.95fr) !important; gap:22px !important; }
+  .contact-page .contact-copy { text-align:left !important; }
+  .contact-page .contact-copy .tagline { margin-left:0; margin-right:0; }
   .card-grid, .flow { grid-template-columns:1fr 1fr; }
   .partnership-copy, .launch-copy, .advantages-copy, .vision-copy, .tech-copy, .expertise-copy, .contact-copy { text-align:center; }
   .partnership-copy .tagline, .launch-copy .tagline, .contact-copy .tagline { margin-left:auto; margin-right:auto; }
@@ -1749,13 +2218,13 @@ p {
 </div>
 <div class="hero-card-panel" style="background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.25);border-radius:16px;padding:clamp(40px,5vw,60px);backdrop-filter:blur(24px);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.1) inset">
 <div class="hero-card-copy">
-<div class="kicker hero-card-kicker" style="margin-bottom:clamp(18px,2.2vh,26px)">AGENCY PARTNERSHIP</div>
+<div class="kicker hero-card-kicker"><span>AGENCY</span><span>PARTNERSHIP</span></div>
+<div class="accent"></div>
 <p class="tagline hero-tagline hero-card-tagline" style="margin-top:0;font-size:clamp(20px,2.4vw,28px)">
 <span>Co-creating AI-era</span>
 <span>opportunities with</span>
 <span>top creator agencies</span>
 </p>
-<div class="accent" style="margin-left:0;margin-top:clamp(34px,4.2vh,50px)"></div>
 </div>
 </div>
 </div>
@@ -1777,19 +2246,19 @@ p {
 </div>
 <div class="market-stats">
 <div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3 class="stat-value stat-six"><span>$</span><span>5</span><span>0</span><span>0</span><span>B</span><span>+</span></h3>
+<h3 class="stat-value stat-six"><span>$500B+</span></h3>
 <p>Creator Economy</p>
 </div>
 <div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3 class="stat-value stat-four"><span>7</span><span>0</span><span>M</span><span>+</span></h3>
+<h3 class="stat-value stat-four"><span>70M+</span></h3>
 <p>Global Creators</p>
 </div>
 <div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3 class="stat-value stat-four"><span>2</span><span>4</span><span>/</span><span>7</span></h3>
+<h3 class="stat-value stat-four"><span>24/7</span></h3>
 <p>Always-On Expectations</p>
 </div>
 <div class="card market-stat" style="min-height:auto;padding:clamp(38px,4.6vw,56px);background:linear-gradient(135deg,rgba(255,198,26,.1),rgba(255,255,255,.02));border:1.5px solid rgba(255,198,26,.22);box-shadow:0 20px 72px rgba(0,0,0,.5),0 0 0 1px rgba(255,198,26,.08) inset">
-<h3 class="stat-value stat-two"><span>A</span><span>I</span></h3>
+<h3 class="stat-value stat-two"><span>AI</span></h3>
 <p>Next Growth Engine</p>
 </div>
 </div>
@@ -1806,15 +2275,14 @@ p {
 <h2><span class="line">Traditional</span><span class="line">Agencies</span><span class="line">Hit The</span><span class="line yellow">Ceiling</span></h2>
 </div>
 <div class="problem-grid">
-<div class="problem-card"><span class="problem-num">01</span><h3>Creator Time</h3><p>Limited to 24 hours</p></div>
-<div class="problem-card"><span class="problem-num">02</span><h3>Manual Chat</h3><p>Labor-dependent</p></div>
-<div class="problem-card"><span class="problem-num">03</span><h3>Chat Teams</h3><p>High scaling costs</p></div>
-<div class="problem-card"><span class="problem-num">04</span><h3>Operations</h3><p>Expenses multiply</p></div>
-<div class="problem-card"><span class="problem-num">05</span><h3>Management</h3><p>Complexity grows</p></div>
-<div class="problem-card"><span class="problem-num">06</span><h3>Support</h3><p>Resources strained</p></div>
+<div class="problem-card"><h3>Creator Time</h3><p>Limited to 24 hours</p></div>
+<div class="problem-card"><h3>Manual Chat</h3><p>Labor-dependent</p></div>
+<div class="problem-card"><h3>Chat Teams</h3><p>High scaling costs</p></div>
+<div class="problem-card"><h3>Operations</h3><p>Expenses multiply</p></div>
+<div class="problem-card"><h3>Management</h3><p>Complexity grows</p></div>
+<div class="problem-card"><h3>Support</h3><p>Resources strained</p></div>
 <div class="problem-card problem-result">
 <div><h3>Revenue Ceiling</h3><p>Margins shrink</p></div>
-<span class="problem-arrow">→</span>
 </div>
 </div>
 </div>
@@ -1828,7 +2296,7 @@ p {
 <div class="solution-stage-copy">
 <div class="kicker">AI Changes<br/>Everything</div>
 <h2><span class="line">From</span><span class="line">Limited to</span><span class="line yellow">Infinite</span><span class="line yellow">Scale</span></h2>
-<p class="solution-stage-caption"><span class="line">AI infinitely</span><span class="line">multiplies creator</span><span class="line">capacity</span></p>
+<p class="solution-stage-caption caption-two-lines"><span class="line">AI infinitely multiplies</span><span class="line">creator capacity</span></p>
 </div>
 <div class="solution-values">
 <div class="solution-value">
@@ -1856,21 +2324,23 @@ p {
 
   <!-- Existing Platforms Stay the Same -->
   <div class="revenue-module revenue-module-platforms" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1.5px solid rgba(255,255,255,.15);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(0,0,0,.4)">
+    <div class="revenue-module-heading">
     <h3 class="revenue-title" style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:rgba(255,255,255,.95)">Existing Platforms</h3>
     <div class="revenue-subtitle" style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700">Stay the Same</div>
-    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
+    </div>
+    <div class="revenue-platform-list" style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
       <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">OnlyFans</div>
+        <div class="revenue-platform-name platform-onlyfans" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">OnlyFans</div>
       </div>
       <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">Patreon</div>
+        <div class="revenue-platform-name platform-patreon" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">Patreon</div>
       </div>
       <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:clamp(10px,1.2vw,14px);padding:clamp(11px,1.3vw,15px);text-align:center">
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">Fanvue</div>
+        <div class="revenue-platform-name platform-fanvue" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.9)">Fanvue</div>
       </div>
     </div>
     <div style="margin-top:clamp(14px,1.8vh,20px);padding-top:clamp(14px,1.8vh,20px);border-top:1px solid rgba(255,255,255,.08)">
-      <div class="revenue-footer-copy" style="font-size:clamp(12px,1.3vw,15px);color:#999;line-height:1.6;text-align:center">Continue operations<br/>Income unchanged</div>
+      <div class="revenue-footer-copy" style="font-size:clamp(12px,1.3vw,15px);color:#999;line-height:1.6;text-align:center"><span class="footer-line footer-operations">Continue operations</span><span class="footer-line footer-income">Income unchanged</span></div>
     </div>
   </div>
 
@@ -1879,24 +2349,26 @@ p {
   <!-- Add iFanzy -->
   <div class="revenue-module revenue-module-ifanzy" style="background:linear-gradient(135deg,rgba(255,198,26,.16),rgba(255,198,26,.05));border:2px solid rgba(255,198,26,.45);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 20px 72px rgba(255,198,26,.25),0 0 0 1px rgba(255,198,26,.2) inset;position:relative">
     <div class="revenue-channel-label" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;font-size:clamp(10px,1.1vw,13px);font-weight:800;padding:clamp(5px,.7vw,7px) clamp(11px,1.5vw,15px);border-radius:clamp(11px,1.3vw,14px);letter-spacing:.08em;box-shadow:0 4px 16px rgba(255,198,26,.4);white-space:nowrap">NEW CHANNEL</div>
+    <div class="revenue-module-heading">
     <h3 class="revenue-title" style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);margin-top:clamp(6px,.8vh,10px);text-align:center;color:var(--yellow)">iFanzy</h3>
     <div class="revenue-subtitle" style="font-size:clamp(13px,1.4vw,16px);color:var(--yellow);margin-bottom:clamp(14px,1.8vh,20px);text-align:center;font-weight:700;opacity:.9">AI Fully Automated</div>
+    </div>
     <div style="display:flex;flex-direction:column;gap:clamp(12px,1.4vh,16px)">
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-ai-feature" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">🤖</div>
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Auto-Chat</div>
+        <div class="revenue-ai-feature-copy" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Auto-Chat</div>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-ai-feature" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">📹</div>
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Live Streaming</div>
+        <div class="revenue-ai-feature-copy" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Live Streaming</div>
       </div>
-      <div style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
+      <div class="revenue-ai-feature" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
         <div style="font-size:clamp(18px,2.2vw,26px);line-height:1">💰</div>
-        <div style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Auto-Monetization</div>
+        <div class="revenue-ai-feature-copy" style="font-size:clamp(14px,1.6vw,18px);font-weight:700;color:rgba(255,255,255,.95)">AI Auto-Monetization</div>
       </div>
     </div>
     <div style="margin-top:clamp(14px,1.8vh,20px);padding-top:clamp(14px,1.8vh,20px);border-top:1px solid rgba(255,198,26,.2)">
-      <div class="revenue-extra-copy" style="font-size:clamp(12px,1.3vw,15px);color:var(--yellow);line-height:1.6;text-align:center;font-weight:700">Zero Manual Work<br/>Pure Additional Income</div>
+      <div class="revenue-extra-copy" style="font-size:clamp(12px,1.3vw,15px);color:var(--yellow);line-height:1.6;text-align:center;font-weight:700"><span class="extra-line extra-manual">Zero Manual Work</span><span class="extra-line extra-income">Pure Additional Income</span></div>
     </div>
   </div>
 
@@ -1904,10 +2376,12 @@ p {
 
   <!-- Dual Income -->
   <div class="revenue-module revenue-module-result" style="background:linear-gradient(135deg,rgba(255,198,26,.12),rgba(255,198,26,.03));border:1.5px solid rgba(255,198,26,.3);border-radius:clamp(20px,2.4vw,28px);padding:clamp(30px,3.6vw,44px);backdrop-filter:blur(20px);box-shadow:0 16px 64px rgba(255,198,26,.15)">
+    <div class="revenue-module-heading">
     <h3 class="revenue-title" style="font-size:clamp(19px,2.1vw,26px);margin-bottom:clamp(13px,1.6vh,18px);text-align:center;color:var(--yellow)">Result</h3>
+    <div class="revenue-result-number" style="font-size:clamp(30px,3.6vw,46px);font-weight:900;color:var(--yellow);line-height:1;margin-bottom:clamp(8px,1vh,12px);text-shadow:0 0 30px rgba(255,198,26,.4)">2×</div>
+    </div>
     <div style="text-align:center;margin-bottom:clamp(16px,2vh,22px)">
-      <div class="revenue-result-number" style="font-size:clamp(30px,3.6vw,46px);font-weight:900;color:var(--yellow);line-height:1;margin-bottom:clamp(8px,1vh,12px);text-shadow:0 0 30px rgba(255,198,26,.4)">2×</div>
-      <div style="font-size:clamp(15px,1.7vw,19px);font-weight:800;color:rgba(255,255,255,.95);line-height:1.4">Dual Income</div>
+      <div class="revenue-dual-income" style="font-size:clamp(15px,1.7vw,19px);font-weight:800;color:rgba(255,255,255,.95);line-height:1.4">Dual Income</div>
     </div>
     <div style="display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px)">
       <div class="revenue-benefit" style="display:flex;align-items:center;gap:clamp(8px,1vw,12px)">
@@ -1946,7 +2420,7 @@ p {
 </div>
 <div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
 <h3 class="feature-title-en en-live-studio">Live Studio</h3>
-<p><span class="desc-line">Launch AI-powered</span><span class="desc-line">live streams anytime</span></p>
+<p>Launch AI-powered live streams anytime</p>
 </div>
 <div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
 <h3 class="feature-title-en en-real-ai"><span class="title-line">Real &amp;</span><span class="title-line">AI Modes</span></h3>
@@ -1954,7 +2428,7 @@ p {
 </div>
 <div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
 <h3 class="feature-title-en en-content"><span class="title-line">Content</span><span class="title-line">Management</span></h3>
-<p><span class="desc-line">Manage posts, paid content,</span><span class="desc-line">and AI assets</span></p>
+<p>Manage posts, paid content, and AI assets</p>
 </div>
 <div class="card enhanced feature-card" style="min-height:auto;padding:clamp(26px,3.2vw,38px)">
 <h3 class="feature-title-en en-monetization">Monetization</h3>
@@ -2010,7 +2484,7 @@ Revenue grows faster than operational costs
 </section>
 
 <!-- Slide 8: Partnership -->
-<section class="slide partnership-page">
+<section class="slide partnership-page" id="partnership">
 <div class="content">
 <div class="partnership-layout">
 <div class="partnership-copy partnership-copy-en">
@@ -2021,25 +2495,26 @@ Focus on your strengths<br/>leave the rest to us
 </p>
 </div>
 <div class="partnership-panels">
-<div class="panel">
-<h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">Agency Focuses On</h3>
-<div class="list">
-<div class="item"><span class="mark">•</span> Creator recruitment</div>
-<div class="item"><span class="mark">•</span> Content strategy</div>
-<div class="item"><span class="mark">•</span> Creator management</div>
-<div class="item"><span class="mark">•</span> Community growth</div>
-<div class="item"><span class="mark">•</span> Community operations</div>
+<div class="panel partnership-matrix">
+<div class="matrix-section matrix-agency">
+<h3 class="matrix-title matrix-title-agency"><span class="title-line">Agency</span><span class="title-line">Focuses On</span></h3>
+<div class="list matrix-list">
+<div class="item">Creator recruitment</div>
+<div class="item">Content strategy</div>
+<div class="item">Creator management</div>
+<div class="item">Community operations</div>
 </div>
 </div>
-<div class="panel">
-<h3 style="font-size:clamp(26px,3vw,36px);margin-bottom:clamp(28px,3.5vh,40px)">iFanzy Handles</h3>
-<div class="list">
-<div class="item"><span class="mark">•</span> AI platform</div>
-<div class="item"><span class="mark">•</span> Payment processing</div>
-<div class="item"><span class="mark">•</span> KYC & compliance</div>
-<div class="item"><span class="mark">•</span> Content moderation</div>
-<div class="item"><span class="mark">•</span> Product updates</div>
-<div class="item"><span class="mark">•</span> Customer support</div>
+<div class="matrix-section matrix-ifanzy">
+<h3 class="matrix-title matrix-title-ifanzy"><span class="title-line">iFanzy</span><span class="title-line">Handles</span></h3>
+<div class="list matrix-list">
+<div class="item">AI platform</div>
+<div class="item">Payment processing</div>
+<div class="item">KYC &amp; compliance</div>
+<div class="item">Content moderation</div>
+<div class="item">Product updates</div>
+<div class="item">Customer support</div>
+</div>
 </div>
 </div>
 </div>
@@ -2048,7 +2523,7 @@ Focus on your strengths<br/>leave the rest to us
 </section>
 
 <!-- Slide 9: Launch -->
-<section class="slide launch-page">
+<section class="slide launch-page" id="quick-launch">
 <div class="content">
 <div class="launch-layout">
 <div class="launch-copy">
@@ -2085,7 +2560,7 @@ Start generating<br/>revenue in weeks<br/>not months
 </section>
 
 <!-- Slide 10: Advantages -->
-<section class="slide advantages-page">
+<section class="slide advantages-page" id="advantages">
 <div class="content">
 <div class="advantages-layout">
 <div class="advantages-copy">
@@ -2094,28 +2569,28 @@ Start generating<br/>revenue in weeks<br/>not months
 </div>
 <div class="advantages-grid">
 <div class="card">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Creator Authorization</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">Every AI is creator-authorized and verified</p>
+<h3>Creator<br/>Authorization</h3>
+<p>Every AI is creator-authorized and verified</p>
 </div>
 <div class="card">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Agency Dashboard</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">Enterprise-grade management tools</p>
+<h3>Agency<br/>Dashboard</h3>
+<p>Enterprise-grade management tools</p>
 </div>
 <div class="card">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">24/7 AI Live</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">Industry-first continuous<br/>AI live streaming</p>
+<h3>AI<br/>Monetization</h3>
+<p>Multiple revenue streams<br/>for AI</p>
 </div>
 <div class="card">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Global Payments</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">Multi-currency support and compliance</p>
+<h3>Global<br/>Payments</h3>
+<p>Multi-currency support and compliance</p>
 </div>
 <div class="card">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">AI Monetization</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">Multiple revenue streams<br/>for AI</p>
+<h3 class="single-line-title">24/7 AI Live</h3>
+<p>Industry-first continuous<br/>AI live streaming</p>
 </div>
 <div class="card">
-<h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(10px,1.3vh,14px)">Security</h3>
-<p style="font-size:clamp(14px,1.5vw,16px)">KYC, moderation, and risk control</p>
+<h3>Security</h3>
+<p>KYC, moderation, and risk control</p>
 </div>
 </div>
 </div>
@@ -2123,7 +2598,7 @@ Start generating<br/>revenue in weeks<br/>not months
 </section>
 
 <!-- Slide 11: Vision -->
-<section class="slide">
+<section class="slide vision-page" id="vision">
 <div class="content">
 <div class="vision-layout">
 <div class="vision-copy">
@@ -2132,16 +2607,16 @@ Start generating<br/>revenue in weeks<br/>not months
 </div>
 <div class="vision-steps">
 <div class="step">
-<h3>AI Live & Voice</h3>
-<p>Real-time voice interaction and live streaming</p>
+<h3>AI Live &amp; Voice</h3>
+<p>Real-time voice interaction<br/>and live streaming</p>
 </div>
 <div class="step">
 <h3>AI Twin Ecosystem</h3>
-<p>Multi-dimensional AI twin interaction experience</p>
+<p>Multi-dimensional AI twin<br/>interaction experience</p>
 </div>
 <div class="step">
 <h3>AI Creator Hub</h3>
-<p>Complete AI creator business ecosystem</p>
+<p>Complete AI creator<br/>business ecosystem</p>
 </div>
 </div>
 </div>
@@ -2149,7 +2624,7 @@ Start generating<br/>revenue in weeks<br/>not months
 </section>
 
 <!-- Slide 12: Global AI Team -->
-<section class="slide">
+<section class="slide tech-page">
 <div class="content">
 <div class="tech-layout">
 <div class="tech-copy">
@@ -2157,12 +2632,12 @@ Start generating<br/>revenue in weeks<br/>not months
 <h2>Driving<br/>Innovation<br/>with<br/><span class="yellow">Proprietary</span><br/><span class="yellow">Technology</span></h2>
 </div>
 <div class="tech-stack">
-<div>
+<div class="tech-group">
 <h3 class="tech-section-title">Global AI Team</h3>
 <div class="tech-grid">
 <div class="tech-tile">
 <div class="tech-icon">🇺🇸</div>
-<h4>Silicon Valley</h4>
+<h4>US</h4>
 <p>Core R&amp;D</p>
 </div>
 <div class="tech-tile">
@@ -2177,20 +2652,20 @@ Start generating<br/>revenue in weeks<br/>not months
 </div>
 </div>
 </div>
-<div>
-<h3 class="tech-section-title">Proprietary AI Technology</h3>
+<div class="tech-group">
+<h3 class="tech-section-title">Proprietary AI<br/>Technology</h3>
 <div class="tech-grid">
 <div class="tech-tile highlight">
 <div class="tech-icon">🤖</div>
-<h4>AI Live-Specialized<br/>Large Model</h4>
+<h4>AI Live-Specialized Large Model</h4>
 </div>
 <div class="tech-tile highlight">
 <div class="tech-icon">👤</div>
-<h4>Digital Twin<br/>Technology</h4>
+<h4>Digital Twin Technology</h4>
 </div>
 <div class="tech-tile highlight">
 <div class="tech-icon">⚖️</div>
-<h4>AI Live Platform<br/>Intellectual Property</h4>
+<h4>AI Live Platform Intellectual Property</h4>
 </div>
 </div>
 </div>
@@ -2200,7 +2675,7 @@ Start generating<br/>revenue in weeks<br/>not months
 </section>
 
 <!-- Slide 13: Team Experience -->
-<section class="slide">
+<section class="slide expertise-page">
 <div class="content">
 <div class="expertise-layout">
 <div class="expertise-copy">
@@ -2208,19 +2683,19 @@ Start generating<br/>revenue in weeks<br/>not months
 <h2><span class="title-line">Professional</span><span class="title-line">Team</span><span class="title-line">with <span class="yellow">Proven</span></span><span class="title-line yellow">AI Experience</span><span class="title-line yellow">at Scale</span></h2>
 </div>
 <div class="expertise-stack">
-<div class="expertise-stats">
 <div class="expertise-stat">
+<div class="expertise-primary">
 <div class="expertise-number">30M</div>
 <p>Team operates AI companion product with 30M MAU</p>
 </div>
+<div class="expertise-proof"><span class="mark">✓</span><span>Years of AI interaction and monetization expertise</span></div>
+</div>
 <div class="expertise-stat">
+<div class="expertise-primary">
 <div class="expertise-number">$60M</div>
 <p>AI consumer product MRR exceeds $60M</p>
 </div>
-</div>
-<div class="expertise-points">
-<div class="item"><span class="mark">✓</span> Years of AI interaction and monetization expertise</div>
-<div class="item"><span class="mark">✓</span> Applying proven AI experience to creator economy</div>
+<div class="expertise-proof"><span class="mark">✓</span><span>Applying proven AI experience to creator economy</span></div>
 </div>
 </div>
 </div>
@@ -2228,11 +2703,11 @@ Start generating<br/>revenue in weeks<br/>not months
 </section>
 
 <!-- Slide 14: Contact -->
-<section class="slide" id="contact">
+<section class="slide contact-page" id="contact">
 <div class="content">
 <div class="contact-layout">
 <div class="contact-copy contact-copy-en">
-<div class="kicker">BUILD<br/>THE FUTURE<br/>TOGETHER</div>
+<div class="kicker"><span>BUILD</span><span>THE FUTURE</span><span>TOGETHER</span></div>
 <p class="tagline">
 <span>In the AI era, partner with us</span>
 <span>to <strong>win bigger markets.</strong></span>
@@ -2241,7 +2716,7 @@ Start generating<br/>revenue in weeks<br/>not months
 </p>
 </div>
 <div class="contact-card">
-<h2>Ready to Enter the<br/><span class="yellow">AI Growth Era?</span></h2>
+<h2><span>Ready to</span><span>Enter the</span><span class="yellow">AI Growth Era</span></h2>
 <div class="contact-links">
 <a class="contact-link" href="https://www.ifanzy.com">www.ifanzy.com</a>
 <a class="contact-link" href="mailto:business@ifanzy.com">business@ifanzy.com</a>

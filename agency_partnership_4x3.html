@@ -1783,8 +1783,10 @@ p {
 }
 .tech-grid {
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:minmax(0,1fr);
   gap:0;
+  min-width:0;
+  width:100%;
 }
 .tech-tile {
   min-height:clamp(54px,6.7vh,60px);
